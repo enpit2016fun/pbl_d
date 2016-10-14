@@ -13,8 +13,10 @@
 1. [進捗](#ProgressReport)
 1. [想定する機能](#anchar1)
 2. [参考にした既存サービス](#anchar2)
-3. [顧客](#anchar3)
-4. [次回の予定](#anchar4)
+3. [代替手段](#anchar3)
+4. [顧客](#anchar4)
+5. [コンセプト](#anchar5)
+6. [次回の予定](#anchar6)
 
 ### 今日の成果物
 - UC図　URL : http://○○
@@ -40,7 +42,7 @@
 想定する機能、参考にした既存サービス、ステークホルダーは会議中に話し合いが行われたならば、必ず記入をお願いします。
 -->
 
-## <div id="anchar1"/><font color = "red">*</font>
+## <div id="anchar1"/>想定する機能<font color = "red">*</font>
 1. 投稿内容一覧表示機能
 	- ソート機能
 2. 投稿機能
@@ -49,10 +51,18 @@
 4. ユーザ設定機能
 
 ## <div id="anchar2"/>参考にした既存サービス<font color = "red">*</font>
-- 
-- ○○
+- [Groovy](http://www.tabroid.jp/app/multimedia/2013/03/com.gr_oo_vy.html)
+- [リブライズ 〜すべての本棚を図書館に〜](https://librize.com/ja)
 
-## <div id="anchar3"/>顧客<font color = "red">*</font>
+## <div id="anchar3"/>代替手段<font color = "red">*</font>
+- 紙やスマホにメモ
+- 口約束
+- 既存のシステム(貸した相手と物をメモしておく程度の物が多い)
+
+	- 現在の手段では貸し借りした相手と物を記録しておくだけの物が多い
+	- 貸し借り状況をグループ内で共有し、又貸しなどを支援する機能が欲しい
+
+## <div id="anchar4"/>顧客<font color = "red">*</font>
 - 小・中学生
 	- ものの貸し借りを良く行う人
 	- 今まで貸し借りをやったことがない人 
@@ -61,8 +71,18 @@
 - 要検討内容
 	- 現在はゲーム，漫画，CDなどはデジタル化されている→データの貸借りは既存にはない
 	- ゲーム，CDは今はダウンロードが多い？ただ，漫画や雑誌は小中学生は今も紙媒体で買ってると思われる…（調査必要？）
+
+
+
+## <div id="anchar5"/>コンセプト案(未決定)<font color = "red">*</font>
+- UNIQUE VALUE PROPOSITION
+	- 今までしたことがない人が貸借りをしたくなるシステム→(変更)他人の貸し借り情報が見える
+- HIGH-LEVEL CONCEPTS
+	- 又貸ししよう！！
+	- We should MATAGASHI!!
+	- 人との繋がりをメインとするか 製品を買ってもらうためのものとするか
 	
-## <div id="anchar4"/>次回の予定
+## <div id="anchar6"/>次回の予定
 |項目|内容|
 |:--:|:--:|
 | 日時 | 2016/07/14  9:00 ~ 12:10|
