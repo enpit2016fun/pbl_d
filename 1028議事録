@@ -1,0 +1,81 @@
+# 議事録案(設計)
+---
+## ヘッダー
+|項目|内容|
+|:--:|:--:|
+| 日時 | 2016/10/28 9:00 ~ 12:10|
+| 参加者 | A，B，C，D，E |
+| 会議種別 | 定期会議 |
+| 場所 | 未来大：R723、室工大：R202 |
+
+---
+## 目次
+1. [進捗](#ProgressReport)
+1. [実装予定の機能](#anchar1)
+2. [利用言語・開発環境](#anchar2)
+3. [利用ツール](#anchar3)
+4. [その他特記事項](#anchar4)
+5. [次回の予定](#anchar5)
+
+### 今日の成果物
+- 画面遷移図　URL : http://○○ （完成次第リンク貼る）
+
+---
+
+## <div id="ProgressReport"/> 進捗<font color = "red">*</font>
+
+| メンバー | 担当タスク | 進捗 |
+| :-- | :--: | :-- |
+| 諸原 | 欠席 | - |
+| 西村 | issue #[3](https://github.com/enpit2016fun/pbl_d/issues/3) | 完了 |
+| 中江 | issue #[3](https://github.com/enpit2016fun/pbl_d/issues/3) | 完了 |
+| 御代 | issue #[6](https://github.com/enpit2016fun/pbl_d/issues/6) | 完了 |
+| 小川 | issue #[6](https://github.com/enpit2016fun/pbl_d/issues/6) | 完了 |
+
+
+## <div id="anchar1"/>実装予定の機能<font color = "red">*</font>
+- 登録画面
+  - 氏名
+  - 学校
+  - 年齢 （or 生年月日）
+- Topページ
+	- マイページへのリンク
+	- 検索ページへのリンク
+	- 申請確認ページへのリンク
+- マイページ
+	- 貸し出しリストの表示
+	- 貸し出しリストへの追加
+	- レンタルリストの表示
+- 検索ページ
+	- ジャンル毎の検索
+	- よく借りられている物ランキングの表示
+  - 検索結果から申請画面へのリンク
+- 申請確認ページ
+	- 申請リストの表示
+	- 申請リストから許可・拒否の応答
+  - DMでの貸し借り場所・日時のやり取りを行う機能（？）
+
+## <div id="anchar2"/>利用言語・開発環境<font color = "red">*</font>
+- 言語
+	- Swift
+- 開発環境
+	- XCode
+
+## <div id="anchar3"/>利用ツール<font color = "red">*</font>
+- プロジェクト管理、バージョン管理、タスク管理
+	- GitHub
+
+## <div id="anchar5"/>次回の予定
+|項目|内容|
+|:--:|:--:|
+| 日時 | 2016/11/04  9:00 ~ 12:10|
+| 内容 | 画面遷移・UIの確認，開発スタート |
+
+### 担当タスク
+| メンバー | 担当タスク | 予定進捗 |
+| :-- | :--: | :-- |
+| 諸原 | - | - |
+| 西村 | issue #[10](https://github.com/enpit2016fun/pbl_d/issues/10) | 完了 |
+| 中江 | issue #[11](https://github.com/enpit2016fun/pbl_d/issues/11) | 完了 |
+| 御代 | issue #[9](https://github.com/enpit2016fun/pbl_d/issues/9) | 完了 |
+| 小川 | issue #[10](https://github.com/enpit2016fun/pbl_d/issues/10) | 完了 |
