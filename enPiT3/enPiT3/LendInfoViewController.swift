@@ -45,10 +45,13 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    @IBAction func returnButtonAction(_ sender: Any) {
+    @IBAction func returnButtonAction(_ sender: UIButton) {
+        let cell = sender.superview?.superview as! UITableViewCell
+        let row = lendList.indexPath(for: cell)?.row
+        
         let alertController = UIAlertController(
             title: "返してもらった？",
-            message: "",
+            message: "行番号：\(row!)",
             preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(
