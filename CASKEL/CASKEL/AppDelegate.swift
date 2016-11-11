@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    //********** APIキーの設定 **********
+    let applicationkey = "c05fc25c1f7c916177138283764fd10030dd4486b11b59bf51c1c87e9f9a2e4f"
+    let clientkey      = "827d17a38e569d3ede2e0bd88b11fa0e2b6bd2e5d3b9287ed095b3175685c0dc"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //********** SDKの初期化 **********
+        NCMB.setApplicationKey(applicationkey, clientKey: clientkey)
+        
         return true
     }
 

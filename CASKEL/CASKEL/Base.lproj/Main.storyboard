@@ -133,6 +133,7 @@
                                     <color key="titleColor" red="0.045086676829999998" green="0.094069756609999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="tapRegisterButton:" destination="s4C-nx-DRe" eventType="touchUpInside" id="A2N-b5-ngS"/>
                                     <segue destination="vMT-to-kJt" kind="presentation" id="MGs-Du-3Tq"/>
                                 </connections>
                             </button>
