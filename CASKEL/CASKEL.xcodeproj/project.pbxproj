@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */; };
+		D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */; };
+		D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */; };
+		D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5D31DD5F4AC00A8DABC /* LaunchScreen.storyboard */; };
+		D25CB5E01DD5F4AC00A8DABC /* CASKELTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5DF1DD5F4AC00A8DABC /* CASKELTests.swift */; };
+		D25CB5EB1DD5F4AC00A8DABC /* CASKELUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5EA1DD5F4AC00A8DABC /* CASKELUITests.swift */; };
+		D25CB5F91DD5F61B00A8DABC /* ConfirmLendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5F81DD5F61B00A8DABC /* ConfirmLendViewController.swift */; };
+		D25CB5FB1DD5F62100A8DABC /* InputLendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5FA1DD5F62100A8DABC /* InputLendViewController.swift */; };
+		D25CB5FD1DD5F62600A8DABC /* LendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5FC1DD5F62600A8DABC /* LendInfoViewController.swift */; };
+		D25CB5FF1DD5F62B00A8DABC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5FE1DD5F62B00A8DABC /* RegisterViewController.swift */; };
+		D25CB6011DD5F63000A8DABC /* RentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6001DD5F63000A8DABC /* RentInfoViewController.swift */; };
+		D25CB6031DD5F63B00A8DABC /* RentLendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6021DD5F63B00A8DABC /* RentLendViewController.swift */; };
+		D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6041DD5F64000A8DABC /* TitleViewController.swift */; };
+		D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6061DD5F64400A8DABC /* TopViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D25CB5DC1DD5F4AC00A8DABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D25CB5BF1DD5F4AB00A8DABC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D25CB5C61DD5F4AB00A8DABC;
+			remoteInfo = CASKEL;
+		};
+		D25CB5E71DD5F4AC00A8DABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D25CB5BF1DD5F4AB00A8DABC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D25CB5C61DD5F4AB00A8DABC;
+			remoteInfo = CASKEL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CASKEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D25CB5CF1DD5F4AC00A8DABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D25CB5D41DD5F4AC00A8DABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D25CB5D61DD5F4AC00A8DABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25CB5DB1DD5F4AC00A8DABC /* CASKELTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CASKELTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25CB5DF1DD5F4AC00A8DABC /* CASKELTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CASKELTests.swift; sourceTree = "<group>"; };
+		D25CB5E11DD5F4AC00A8DABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25CB5E61DD5F4AC00A8DABC /* CASKELUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CASKELUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25CB5EA1DD5F4AC00A8DABC /* CASKELUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CASKELUITests.swift; sourceTree = "<group>"; };
+		D25CB5EC1DD5F4AC00A8DABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25CB5F81DD5F61B00A8DABC /* ConfirmLendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmLendViewController.swift; sourceTree = "<group>"; };
+		D25CB5FA1DD5F62100A8DABC /* InputLendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLendViewController.swift; sourceTree = "<group>"; };
+		D25CB5FC1DD5F62600A8DABC /* LendInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LendInfoViewController.swift; sourceTree = "<group>"; };
+		D25CB5FE1DD5F62B00A8DABC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D25CB6001DD5F63000A8DABC /* RentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentInfoViewController.swift; sourceTree = "<group>"; };
+		D25CB6021DD5F63B00A8DABC /* RentLendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentLendViewController.swift; sourceTree = "<group>"; };
+		D25CB6041DD5F64000A8DABC /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		D25CB6061DD5F64400A8DABC /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D25CB5C41DD5F4AB00A8DABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5D81DD5F4AC00A8DABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5E31DD5F4AC00A8DABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D25CB5BE1DD5F4AB00A8DABC = {
+			isa = PBXGroup;
+			children = (
+				D25CB5C91DD5F4AC00A8DABC /* CASKEL */,
+				D25CB5DE1DD5F4AC00A8DABC /* CASKELTests */,
+				D25CB5E91DD5F4AC00A8DABC /* CASKELUITests */,
+				D25CB5C81DD5F4AB00A8DABC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D25CB5C81DD5F4AB00A8DABC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */,
+				D25CB5DB1DD5F4AC00A8DABC /* CASKELTests.xctest */,
+				D25CB5E61DD5F4AC00A8DABC /* CASKELUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D25CB5C91DD5F4AC00A8DABC /* CASKEL */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */,
+				D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */,
+				D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */,
+				D25CB5F81DD5F61B00A8DABC /* ConfirmLendViewController.swift */,
+				D25CB5D31DD5F4AC00A8DABC /* LaunchScreen.storyboard */,
+				D25CB5FE1DD5F62B00A8DABC /* RegisterViewController.swift */,
+				D25CB5FC1DD5F62600A8DABC /* LendInfoViewController.swift */,
+				D25CB5FA1DD5F62100A8DABC /* InputLendViewController.swift */,
+				D25CB6041DD5F64000A8DABC /* TitleViewController.swift */,
+				D25CB6061DD5F64400A8DABC /* TopViewController.swift */,
+				D25CB6021DD5F63B00A8DABC /* RentLendViewController.swift */,
+				D25CB6001DD5F63000A8DABC /* RentInfoViewController.swift */,
+				D25CB5D61DD5F4AC00A8DABC /* Info.plist */,
+			);
+			path = CASKEL;
+			sourceTree = "<group>";
+		};
+		D25CB5DE1DD5F4AC00A8DABC /* CASKELTests */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5DF1DD5F4AC00A8DABC /* CASKELTests.swift */,
+				D25CB5E11DD5F4AC00A8DABC /* Info.plist */,
+			);
+			path = CASKELTests;
+			sourceTree = "<group>";
+		};
+		D25CB5E91DD5F4AC00A8DABC /* CASKELUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5EA1DD5F4AC00A8DABC /* CASKELUITests.swift */,
+				D25CB5EC1DD5F4AC00A8DABC /* Info.plist */,
+			);
+			path = CASKELUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D25CB5C61DD5F4AB00A8DABC /* CASKEL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25CB5EF1DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKEL" */;
+			buildPhases = (
+				D25CB5C31DD5F4AB00A8DABC /* Sources */,
+				D25CB5C41DD5F4AB00A8DABC /* Frameworks */,
+				D25CB5C51DD5F4AB00A8DABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CASKEL;
+			productName = CASKEL;
+			productReference = D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D25CB5DA1DD5F4AC00A8DABC /* CASKELTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25CB5F21DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELTests" */;
+			buildPhases = (
+				D25CB5D71DD5F4AC00A8DABC /* Sources */,
+				D25CB5D81DD5F4AC00A8DABC /* Frameworks */,
+				D25CB5D91DD5F4AC00A8DABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D25CB5DD1DD5F4AC00A8DABC /* PBXTargetDependency */,
+			);
+			name = CASKELTests;
+			productName = CASKELTests;
+			productReference = D25CB5DB1DD5F4AC00A8DABC /* CASKELTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D25CB5E51DD5F4AC00A8DABC /* CASKELUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25CB5F51DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELUITests" */;
+			buildPhases = (
+				D25CB5E21DD5F4AC00A8DABC /* Sources */,
+				D25CB5E31DD5F4AC00A8DABC /* Frameworks */,
+				D25CB5E41DD5F4AC00A8DABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D25CB5E81DD5F4AC00A8DABC /* PBXTargetDependency */,
+			);
+			name = CASKELUITests;
+			productName = CASKELUITests;
+			productReference = D25CB5E61DD5F4AC00A8DABC /* CASKELUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D25CB5BF1DD5F4AB00A8DABC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "enPiT TeamD";
+				TargetAttributes = {
+					D25CB5C61DD5F4AB00A8DABC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D25CB5DA1DD5F4AC00A8DABC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D25CB5C61DD5F4AB00A8DABC;
+					};
+					D25CB5E51DD5F4AC00A8DABC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D25CB5C61DD5F4AB00A8DABC;
+					};
+				};
+			};
+			buildConfigurationList = D25CB5C21DD5F4AB00A8DABC /* Build configuration list for PBXProject "CASKEL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D25CB5BE1DD5F4AB00A8DABC;
+			productRefGroup = D25CB5C81DD5F4AB00A8DABC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D25CB5C61DD5F4AB00A8DABC /* CASKEL */,
+				D25CB5DA1DD5F4AC00A8DABC /* CASKELTests */,
+				D25CB5E51DD5F4AC00A8DABC /* CASKELUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D25CB5C51DD5F4AB00A8DABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */,
+				D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */,
+				D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5D91DD5F4AC00A8DABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5E41DD5F4AC00A8DABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D25CB5C31DD5F4AB00A8DABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25CB5FB1DD5F62100A8DABC /* InputLendViewController.swift in Sources */,
+				D25CB6011DD5F63000A8DABC /* RentInfoViewController.swift in Sources */,
+				D25CB5FF1DD5F62B00A8DABC /* RegisterViewController.swift in Sources */,
+				D25CB6031DD5F63B00A8DABC /* RentLendViewController.swift in Sources */,
+				D25CB5FD1DD5F62600A8DABC /* LendInfoViewController.swift in Sources */,
+				D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */,
+				D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */,
+				D25CB5F91DD5F61B00A8DABC /* ConfirmLendViewController.swift in Sources */,
+				D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5D71DD5F4AC00A8DABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25CB5E01DD5F4AC00A8DABC /* CASKELTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5E21DD5F4AC00A8DABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25CB5EB1DD5F4AC00A8DABC /* CASKELUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D25CB5DD1DD5F4AC00A8DABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D25CB5C61DD5F4AB00A8DABC /* CASKEL */;
+			targetProxy = D25CB5DC1DD5F4AC00A8DABC /* PBXContainerItemProxy */;
+		};
+		D25CB5E81DD5F4AC00A8DABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D25CB5C61DD5F4AB00A8DABC /* CASKEL */;
+			targetProxy = D25CB5E71DD5F4AC00A8DABC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D25CB5CF1DD5F4AC00A8DABC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D25CB5D31DD5F4AC00A8DABC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D25CB5D41DD5F4AC00A8DABC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D25CB5ED1DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D25CB5EE1DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D25CB5F01DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CASKEL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKEL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D25CB5F11DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CASKEL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKEL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D25CB5F31DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CASKELTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CASKEL.app/CASKEL";
+			};
+			name = Debug;
+		};
+		D25CB5F41DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CASKELTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CASKEL.app/CASKEL";
+			};
+			name = Release;
+		};
+		D25CB5F61DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CASKELUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CASKEL;
+			};
+			name = Debug;
+		};
+		D25CB5F71DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CASKELUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CASKEL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D25CB5C21DD5F4AB00A8DABC /* Build configuration list for PBXProject "CASKEL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5ED1DD5F4AC00A8DABC /* Debug */,
+				D25CB5EE1DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25CB5EF1DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKEL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5F01DD5F4AC00A8DABC /* Debug */,
+				D25CB5F11DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25CB5F21DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5F31DD5F4AC00A8DABC /* Debug */,
+				D25CB5F41DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25CB5F51DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5F61DD5F4AC00A8DABC /* Debug */,
+				D25CB5F71DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D25CB5BF1DD5F4AB00A8DABC /* Project object */;
+}
