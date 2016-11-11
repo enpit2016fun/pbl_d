@@ -21,4 +21,8 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tapView(_ sender: Any) {
+        //キーボードを閉じる
+        view.endEditing(true)
+    }
 }

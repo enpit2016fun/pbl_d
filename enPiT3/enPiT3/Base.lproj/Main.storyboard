@@ -162,9 +162,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hmJ-zv-peZ" appends="YES" id="VQW-Sf-WNB"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJ3-Cx-5ZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hmJ-zv-peZ">
+                    <connections>
+                        <action selector="tapView:" destination="EXs-sc-OWy" id="FSM-IM-4EV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-767" y="35"/>
         </scene>
@@ -300,6 +309,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HBd-LM-C5W" appends="YES" id="1k9-Uj-lAg"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="lendWhat" destination="eDD-3X-o3D" id="Lfu-zb-jwk"/>
@@ -309,6 +322,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsL-G4-Q2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ft2-J1-ivH" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="HBd-LM-C5W">
+                    <connections>
+                        <action selector="tapView:" destination="Hzj-TP-4m3" id="O17-B3-YUD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="69" y="846"/>
         </scene>
@@ -501,7 +519,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wBb-C9-Mzy" id="giV-5o-Xf5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-lQ-Glr">
@@ -580,7 +598,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0mh-We-4Y4" id="Cul-qn-fm0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px0-cl-vjR">

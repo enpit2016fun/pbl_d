@@ -32,6 +32,11 @@ class InputLendViewController: UIViewController {
         }
     }
     
+    @IBAction func tapView(_ sender: Any) {
+        //キーボードを閉じる
+        view.endEditing(true)
+    }
+    
     @IBAction func returnInputLend(segue: UIStoryboardSegue) {
         
     }

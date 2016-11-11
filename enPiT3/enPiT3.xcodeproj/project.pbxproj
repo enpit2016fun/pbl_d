@@ -214,6 +214,7 @@
 				TargetAttributes = {
 					D2A47F9F1DD333D30058A850 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8V64VANYRR;
 						ProvisioningStyle = Automatic;
 					};
 					D2A47FB31DD333D30058A850 = {
@@ -438,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8V64VANYRR;
 				INFOPLIST_FILE = enPiT3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.enPiT3;
@@ -450,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8V64VANYRR;
 				INFOPLIST_FILE = enPiT3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.enPiT3;
@@ -531,6 +534,7 @@
 				D2A47FCA1DD333D30058A850 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2A47FCB1DD333D30058A850 /* Build configuration list for PBXNativeTarget "enPiT3Tests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +543,7 @@
 				D2A47FCD1DD333D30058A850 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2A47FCE1DD333D30058A850 /* Build configuration list for PBXNativeTarget "enPiT3UITests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +552,7 @@
 				D2A47FD01DD333D30058A850 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,9 +12,9 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var lendList: UITableView!
     
-    let objectList: NSArray = ["aaa", "sss"]
-    let personList: NSArray = ["ppp", "qqq"]
-    let dateList: NSArray = ["2016/11/15", "2016/11/22"]
+    let objectList: NSArray = ["モンスターハンター", "ゼルダの伝説", "スマブラ"]
+    let personList: NSArray = ["山田", "高橋", "田中"]
+    let dateList: NSArray = ["2016/11/15", "2016/11/22", "2016/12/01"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

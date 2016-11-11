@@ -12,8 +12,8 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var rentList: UITableView!
     
-    let objectList: NSArray = ["aaa", "sss"]
-    let personList: NSArray = ["ppp", "qqq"]
+    let objectList: NSArray = ["マリオカート", "ポケモン ムーン"]
+    let personList: NSArray = ["山本", "佐藤"]
     let dateList: NSArray = ["2016/11/15", "2016/11/22"]
     
     override func viewDidLoad() {
