@@ -98,6 +98,10 @@ class RegisterViewController: UIViewController {
                 }
             } else {
                 // 新規登録成功時の処理
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(self.userNameTextField.text, forKey: "UserID")
+                defaults.setObject(self.passwordTextField.text, forKey: "Password")
+                
                 self.performSegueWithIdentifier("register", sender: self)
             }
         }

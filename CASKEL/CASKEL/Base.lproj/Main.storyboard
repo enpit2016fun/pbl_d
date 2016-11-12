@@ -31,11 +31,15 @@
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="J8X-21-XHe" kind="presentation" identifier="toLogin" id="B5y-A6-6QZ"/>
+                        <segue destination="vMT-to-kJt" kind="presentation" identifier="toTop" id="f29-wp-pxT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4OB-O4-RSa">
                     <connections>
-                        <segue destination="J8X-21-XHe" kind="presentation" id="Big-r8-KeE"/>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="g1v-rZ-cXx"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -64,30 +68,36 @@
                                     <segue destination="s4C-nx-DRe" kind="presentation" id="OMq-21-XsO"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6HY-Av-uXe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="ログイン" id="qpE-hL-B6o"/>
+                                </items>
+                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBU-WP-JMY">
-                                <rect key="frame" x="57" y="71" width="72" height="22"/>
+                                <rect key="frame" x="57" y="87" width="72" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1U-l5-ruS">
-                                <rect key="frame" x="57" y="110" width="207" height="30"/>
+                                <rect key="frame" x="57" y="126" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58b-er-CCc">
-                                <rect key="frame" x="57" y="181" width="90" height="22"/>
+                                <rect key="frame" x="57" y="197" width="90" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-l8-zXG">
-                                <rect key="frame" x="57" y="220" width="207" height="30"/>
+                                <rect key="frame" x="57" y="236" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ike-dq-ypd">
-                                <rect key="frame" x="114" y="291" width="92" height="41"/>
+                                <rect key="frame" x="114" y="307" width="92" height="41"/>
                                 <color key="backgroundColor" red="0.045086676829999998" green="0.094069756609999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="ログイン">
@@ -285,8 +295,26 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ようこそ！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkR-kF-Qh9">
+                                <rect key="frame" x="58" y="72" width="90" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXr-xT-aPW">
+                                <rect key="frame" x="58" y="118" width="154" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="さん" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrV-Dn-70V">
+                                <rect key="frame" x="220" y="118" width="42" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-G2-QAp">
-                                <rect key="frame" x="58" y="184" width="204" height="40"/>
+                                <rect key="frame" x="58" y="242" width="204" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.37323347740000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸し借り情報を見る">
@@ -297,7 +325,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sno-0h-M3t">
-                                <rect key="frame" x="58" y="335" width="204" height="40"/>
+                                <rect key="frame" x="58" y="393" width="204" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸した！">
@@ -312,6 +340,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="userNameLabel" destination="aXr-xT-aPW" id="6RE-bw-UZI"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="358-de-v6Q"/>
                     </connections>
                 </viewController>
@@ -357,7 +386,7 @@
                                     <color key="titleColor" red="0.045086676829999998" green="0.094069756609999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ak8-a3-5iG" kind="presentation" identifier="toConfirmLend" id="64E-Ot-Bdv"/>
+                                    <action selector="tapDecisionButton:" destination="xah-Cf-1Qv" eventType="touchUpInside" id="SgD-kZ-RAw"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-Gu-JYM">
@@ -401,6 +430,7 @@
                         <outlet property="lendWhat" destination="zdt-Gu-JYM" id="ZVS-f8-Syw"/>
                         <outlet property="lendWho" destination="dDn-p4-Pkm" id="vL5-Mn-QdM"/>
                         <outlet property="returnWhen" destination="ONs-bN-HXt" id="GUq-gh-esR"/>
+                        <segue destination="Ak8-a3-5iG" kind="presentation" identifier="toConfirm" id="Xkv-ok-rA8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-AF-C4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -724,6 +754,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="97F-Xt-pl3"/>
+        <segue reference="f29-wp-pxT"/>
     </inferredMetricsTieBreakers>
 </document>

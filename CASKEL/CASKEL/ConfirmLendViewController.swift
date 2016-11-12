@@ -34,10 +34,11 @@ class ConfirmLendViewController: UIViewController {
 
     @IBAction func tapOKButton(sender: AnyObject) {
         //*** データベースへレンタル情報を送信 ***
+        let userid = NCMBUser.currentUser().userName
         // 保存先クラスを作成
         let obj = NCMBObject(className: "Test_RentalTable")
         // 値を設定
-        obj.setObject("admin", forKey: "lender")
+        obj.setObject(userid, forKey: "lender")
         obj.setObject(person, forKey: "renter")
         obj.setObject(object, forKey: "object")
         obj.setObject(date, forKey: "returnDate")

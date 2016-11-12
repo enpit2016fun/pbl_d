@@ -67,8 +67,12 @@ class LoginViewController: UIViewController {
                     
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
-            }else{
+            } else {
                 // ログイン成功時の処理
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(self.userNameTextField.text, forKey: "UserID")
+                defaults.setObject(self.passwordTextField.text, forKey: "Password")
+                
                 self.performSegueWithIdentifier("login", sender: self)
             }
             

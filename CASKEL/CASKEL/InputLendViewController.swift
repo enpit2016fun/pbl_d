@@ -15,14 +15,32 @@ class InputLendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDatePicker()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func tapDecisionButton(sender: AnyObject) {
+        if isTextFieldEmpty() {
+            let alertController = UIAlertController(
+                title: "未入力の項目があります",
+                message: "",
+                preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        self.performSegueWithIdentifier("toConfirm", sender: self)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toConfirmLend" {
+        if segue.identifier == "toConfirm" {
             let clvc = segue.destinationViewController as! ConfirmLendViewController
             clvc.object = lendWhat.text!
             clvc.person = lendWho.text!
@@ -37,6 +55,23 @@ class InputLendViewController: UIViewController {
     
     @IBAction func returnInputLend(segue: UIStoryboardSegue) {
         
+    }
+    
+    func isTextFieldEmpty() -> Bool {
+        return (self.lendWhat.text!.isEmpty || self.lendWho.text!.isEmpty)
+    }
+    
+    func setupDatePicker() {
+        let day: Double = 60*60*24
+        let week: Double = day * 7
+        
+        let defaultDate = NSDate(timeIntervalSinceNow: day)
+        let minDate = NSDate(timeIntervalSinceNow: day)
+        let maxDate = NSDate(timeIntervalSinceNow: week * 4)
+        
+        returnWhen.date = defaultDate
+        returnWhen.minimumDate = minDate
+        returnWhen.maximumDate = maxDate
     }
 
 }

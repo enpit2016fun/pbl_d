@@ -10,8 +10,11 @@ import UIKit
 
 class TopViewController: UIViewController {
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameLabel.text = NCMBUser.currentUser().userName
     }
     
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,9 @@ class TopViewController: UIViewController {
     
     @IBAction func tapLogoutButton(sender: AnyObject) {
         NCMBUser.logOut()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(nil, forKey: "UserID")
+        defaults.setObject(nil, forKey: "Password")
         let alertController = UIAlertController(
             title: "ログアウトしました",
             message: "",
