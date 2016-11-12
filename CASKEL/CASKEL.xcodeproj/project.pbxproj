@@ -22,6 +22,7 @@
 		D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6041DD5F64000A8DABC /* TitleViewController.swift */; };
 		D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6061DD5F64400A8DABC /* TopViewController.swift */; };
 		D263253F1DD61D410059D748 /* NCMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D263253E1DD61D410059D748 /* NCMB.framework */; };
+		D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D25CB6061DD5F64400A8DABC /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		D263253E1DD61D410059D748 /* NCMB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NCMB.framework; path = NCMB/NCMB.framework; sourceTree = "<group>"; };
 		D26325401DD61D730059D748 /* CASKEL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CASKEL-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */,
+				D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */,
 				D26325401DD61D730059D748 /* CASKEL-Bridging-Header.h */,
 				D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */,
 				D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */,
@@ -291,6 +294,7 @@
 				D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */,
 				D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */,
 				D25CB5F91DD5F61B00A8DABC /* ConfirmLendViewController.swift in Sources */,
+				D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */,
 				D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,11 +35,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4OB-O4-RSa">
                     <connections>
-                        <segue destination="s4C-nx-DRe" kind="presentation" id="W67-0U-bu4"/>
+                        <segue destination="J8X-21-XHe" kind="presentation" id="Big-r8-KeE"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="161" y="369"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="YjF-6F-sEh">
+            <objects>
+                <viewController id="J8X-21-XHe" customClass="LoginViewController" customModule="CASKEL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bLs-43-Itc"/>
+                        <viewControllerLayoutGuide type="bottom" id="VMS-tb-9Wc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h9J-fu-clU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoA-hz-slH">
+                                <rect key="frame" x="83" y="441" width="154" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="新規ユーザ登録">
+                                    <color key="titleColor" red="1" green="0.97258216850000001" blue="0.57191615009999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s4C-nx-DRe" kind="presentation" id="OMq-21-XsO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBU-WP-JMY">
+                                <rect key="frame" x="57" y="71" width="72" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1U-l5-ruS">
+                                <rect key="frame" x="57" y="110" width="207" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58b-er-CCc">
+                                <rect key="frame" x="57" y="181" width="90" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-l8-zXG">
+                                <rect key="frame" x="57" y="220" width="207" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ike-dq-ypd">
+                                <rect key="frame" x="114" y="291" width="92" height="41"/>
+                                <color key="backgroundColor" red="0.045086676829999998" green="0.094069756609999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapLoginButton:" destination="J8X-21-XHe" eventType="touchUpInside" id="aTi-b3-bg6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oQM-Vx-iFX" appends="YES" id="97Q-5v-4my"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="ZAc-l8-zXG" id="9fs-ST-aaH"/>
+                        <outlet property="userNameTextField" destination="K1U-l5-ruS" id="lhi-DU-omX"/>
+                        <segue destination="vMT-to-kJt" kind="presentation" identifier="login" id="bgw-Vb-rcb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2VD-cJ-Q6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oQM-Vx-iFX">
+                    <connections>
+                        <action selector="tapView:" destination="J8X-21-XHe" id="sFI-rL-mR0"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="657" y="369"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="G8y-Mn-fvK">
@@ -54,75 +133,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLp-jY-lvb">
-                                <rect key="frame" x="42" y="96" width="141" height="30"/>
+                                <rect key="frame" x="32" y="95" width="141" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKz-XI-NAg">
-                                <rect key="frame" x="42" y="67" width="85" height="21"/>
+                                <rect key="frame" x="32" y="66" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxc-SG-YwN">
-                                <rect key="frame" x="42" y="162" width="97" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-kV-pZj">
-                                <rect key="frame" x="42" y="191" width="141" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="姓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmB-4b-EXb">
-                                <rect key="frame" x="42" y="250" width="29" height="21"/>
+                                <rect key="frame" x="32" y="330" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-bc-kjW">
-                                <rect key="frame" x="42" y="279" width="97" height="30"/>
+                                <rect key="frame" x="32" y="359" width="115" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur2-N9-QMS">
-                                <rect key="frame" x="181" y="250" width="28" height="21"/>
+                                <rect key="frame" x="179" y="331" width="28" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bl3-bh-3iQ">
-                                <rect key="frame" x="181" y="279" width="97" height="30"/>
+                                <rect key="frame" x="179" y="359" width="115" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbc-j0-lMf">
-                                <rect key="frame" x="42" y="343" width="62" height="21"/>
+                                <rect key="frame" x="32" y="423" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yg-KC-OGD">
-                                <rect key="frame" x="42" y="372" width="141" height="30"/>
+                                <rect key="frame" x="32" y="452" width="115" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学年" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-cs-QkO">
-                                <rect key="frame" x="42" y="428" width="43" height="21"/>
+                                <rect key="frame" x="179" y="423" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z68-HR-8AC">
-                                <rect key="frame" x="42" y="457" width="97" height="30"/>
+                                <rect key="frame" x="179" y="452" width="114" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idC-GO-utn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="ユーザ登録" id="Koy-zp-Fem"/>
+                                    <navigationItem title="ユーザ登録" id="rRg-PC-T9h">
+                                        <barButtonItem key="leftBarButtonItem" title="もどる" id="WFp-ti-RMt">
+                                            <connections>
+                                                <segue destination="5Nj-Ml-Ncf" kind="unwind" unwindAction="returnLogin:" id="u1k-fz-4ZU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-Rk-0dG">
@@ -134,9 +208,30 @@
                                 </state>
                                 <connections>
                                     <action selector="tapRegisterButton:" destination="s4C-nx-DRe" eventType="touchUpInside" id="A2N-b5-ngS"/>
-                                    <segue destination="vMT-to-kJt" kind="presentation" id="MGs-Du-3Tq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード（再入力）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQz-ms-7Ue">
+                                <rect key="frame" x="32" y="241" width="180" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9mK-Fx-Aqp">
+                                <rect key="frame" x="32" y="271" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxc-SG-YwN">
+                                <rect key="frame" x="32" y="153" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-kV-pZj">
+                                <rect key="frame" x="32" y="182" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -145,15 +240,26 @@
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="familyNameTextField" destination="ayC-bc-kjW" id="tYW-QY-A61"/>
+                        <outlet property="firstNameTextField" destination="bl3-bh-3iQ" id="9HB-RD-Ttj"/>
+                        <outlet property="gradeTextField" destination="Z68-HR-8AC" id="PFm-Pa-9d4"/>
+                        <outlet property="passwordTextField" destination="iTr-kV-pZj" id="0mp-TW-adn"/>
+                        <outlet property="passwordTextField_reenter" destination="9mK-Fx-Aqp" id="XsJ-hN-iQr"/>
+                        <outlet property="schoolNameTextField" destination="7yg-KC-OGD" id="C2o-bn-m6O"/>
+                        <outlet property="userNameTextField" destination="lLp-jY-lvb" id="84Z-ZE-a0f"/>
+                        <segue destination="vMT-to-kJt" kind="presentation" identifier="register" id="97F-Xt-pl3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5V9-fo-hyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5Nj-Ml-Ncf" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="qG2-eJ-v4W">
                     <connections>
                         <action selector="tapView:" destination="s4C-nx-DRe" id="GLp-Tr-FuS"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="661" y="369"/>
+            <point key="canvasLocation" x="651" y="-364"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="ocS-i9-768">
@@ -170,7 +276,13 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKJ-nr-15P">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Top" id="RfR-MO-qxR"/>
+                                    <navigationItem title="Top" id="sQ0-h8-7r7">
+                                        <barButtonItem key="leftBarButtonItem" title="ログアウト" id="hL2-GH-iIp">
+                                            <connections>
+                                                <action selector="tapLogoutButton:" destination="vMT-to-kJt" id="5Q7-bu-AGp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-G2-QAp">
@@ -199,6 +311,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="358-de-v6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNR-mn-hlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,6 +542,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="tapOKButton:" destination="Ak8-a3-5iG" eventType="touchUpInside" id="VrW-yb-pYO"/>
                                     <segue destination="Eih-bm-15R" kind="unwind" unwindAction="returnTop:" id="CV3-cN-egZ"/>
                                 </connections>
                             </button>
@@ -607,4 +723,7 @@
             <point key="canvasLocation" x="2219" y="369"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="97F-Xt-pl3"/>
+    </inferredMetricsTieBreakers>
 </document>

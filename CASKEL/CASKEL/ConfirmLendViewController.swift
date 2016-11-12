@@ -30,7 +30,27 @@ class ConfirmLendViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tapOKButton(sender: AnyObject) {
+        //*** データベースへレンタル情報を送信 ***
+        // 保存先クラスを作成
+        let obj = NCMBObject(className: "Test_RentalTable")
+        // 値を設定
+        obj.setObject("admin", forKey: "lender")
+        obj.setObject(person, forKey: "renter")
+        obj.setObject(object, forKey: "object")
+        obj.setObject(date, forKey: "returnDate")
+        // 保存を実施
+        obj.saveInBackgroundWithBlock{(error: NSError!) in
+            if (error != nil) {
+                // 保存に失敗した場合の処理
+                print("エラーが発生しました。エラーコード:\(error.code)")
+            }else{
+                // 保存に成功した場合の処理
+                print("保存に成功しました。objectId:\(obj.objectId)")
+            }
+        }
+    }
+    
 }

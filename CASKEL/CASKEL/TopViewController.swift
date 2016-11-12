@@ -12,16 +12,33 @@ class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func tapLogoutButton(sender: AnyObject) {
+        NCMBUser.logOut()
+        let alertController = UIAlertController(
+            title: "ログアウトしました",
+            message: "",
+            preferredStyle: .Alert)
+        
+        alertController.addAction(UIAlertAction(
+            title: "確認",
+            style: .Default,
+            handler: { action in self.pushConfirm() } ))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func returnTop(segue: UIStoryboardSegue) {
         
+    }
+    
+    func pushConfirm() {
+        self.performSegueWithIdentifier("logout", sender: self)
     }
     
 }

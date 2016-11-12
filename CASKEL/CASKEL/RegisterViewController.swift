@@ -10,31 +10,95 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField_reenter: UITextField!
+    @IBOutlet weak var familyNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var schoolNameTextField: UITextField!
+    @IBOutlet weak var gradeTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func tapRegisterButton(sender: AnyObject) {
-        //*** データベースへの接続例 ***
-        // 保存先クラスを作成
-        let obj = NCMBObject(className: "TestClass")
-        // 値を設定
-        obj.setObject("Hello,NCMB!", forKey: "message")
-        // 保存を実施
-        obj.saveInBackgroundWithBlock{(error: NSError!) in
-            if (error != nil) {
-                // 保存に失敗した場合の処理
-                print("エラーが発生しました。エラーコード:\(error.code)")
-            }else{
-                // 保存に成功した場合の処理
-                print("保存に成功しました。objectId:\(obj.objectId)")
+        if isTextFieldEmpty() {
+            let alertController = UIAlertController(
+                title: "未入力の項目があります",
+                message: "",
+                preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            return
+        } else if isNotPasswordMatch() {
+            let alertController = UIAlertController(
+                title: "パスワードが一致しません",
+                message: "",
+                preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        //NCMBUserのインスタンスを作成
+        let user = NCMBUser()
+        //ユーザー名を設定
+        user.userName = self.userNameTextField.text
+        //パスワードを設定
+        user.password = self.passwordTextField.text
+        
+        //その他項目の設定
+        user.setObject(self.familyNameTextField.text, forKey: "familyName")
+        user.setObject(self.firstNameTextField.text, forKey: "firstName")
+        user.setObject(self.schoolNameTextField.text, forKey: "school")
+        user.setObject(self.gradeTextField.text, forKey: "grade")
+        
+        //会員の登録を行う
+        user.signUpInBackgroundWithBlock{(error: NSError!) in
+            if error != nil {
+                // 新規登録失敗時の処理
+                if error.code == 409001 {
+                    // ユーザID重複時
+                    let alertController = UIAlertController(
+                        title: "すでに使用されているユーザIDです",
+                        message: "",
+                        preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(
+                        title: "OK",
+                        style: .Default,
+                        handler: nil ))
+                
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                } else {
+                    // その他のエラー
+                    let alertController = UIAlertController(
+                        title: "ユーザ登録に失敗しました",
+                        message: "エラーコード：\(error.code)",
+                        preferredStyle: .Alert)
+                    
+                    alertController.addAction(UIAlertAction(
+                        title: "OK",
+                        style: .Default,
+                        handler: nil ))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            } else {
+                // 新規登録成功時の処理
+                self.performSegueWithIdentifier("register", sender: self)
             }
         }
     }
@@ -42,6 +106,14 @@ class RegisterViewController: UIViewController {
     @IBAction func tapView(sender: AnyObject) {
         //キーボードを閉じる
         view.endEditing(true)
+    }
+    
+    func isTextFieldEmpty() -> Bool {
+        return (self.userNameTextField.text!.isEmpty || self.passwordTextField.text!.isEmpty || self.passwordTextField_reenter.text!.isEmpty || self.familyNameTextField.text!.isEmpty || self.firstNameTextField.text!.isEmpty || self.schoolNameTextField.text!.isEmpty || self.gradeTextField.text!.isEmpty)
+    }
+    
+    func isNotPasswordMatch() -> Bool {
+        return (self.passwordTextField.text! != self.passwordTextField_reenter.text!)
     }
     
 }
