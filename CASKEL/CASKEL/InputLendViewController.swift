@@ -42,7 +42,7 @@ class InputLendViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toConfirm" {
             let clvc = segue.destinationViewController as! ConfirmLendViewController
-            clvc.object = lendWhat.text!
+            clvc.goods = lendWhat.text!
             clvc.person = lendWho.text!
             clvc.date = returnWhen.date
         }

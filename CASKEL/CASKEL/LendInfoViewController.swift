@@ -12,12 +12,45 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var lendList: UITableView!
     
-    let objectList: NSArray = ["モンスターハンター", "ゼルダの伝説", "スマブラ"]
-    let personList: NSArray = ["山田", "高橋", "田中"]
-    let dateList: NSArray = ["2016/11/15", "2016/11/22", "2016/12/01"]
+    var idList: [String] = []
+    var goodsList: [String] = []
+    var personList: [String] = []
+    var dateList: [NSDate] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let query = NCMBQuery(className: "RentalTable")
+        
+        /** ここに条件 **/
+        query.whereKey("lender", equalTo: NCMBUser.currentUser().userName)
+        query.whereKey("isReturn", equalTo: false)
+        
+        // データストアの検索を実施
+        // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
+        var objects: [AnyObject] = []
+        do {
+            objects = try query.findObjects()
+        } catch {
+            // 検索失敗時の処理
+            let alertController = UIAlertController(
+                title: "データベース接続エラー",
+                message: "",
+                preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        for object in objects {
+            self.idList.append(object.objectId)
+            self.goodsList.append((object.objectForKey("goods") as? String)!)
+            self.personList.append((object.objectForKey("renter") as? String)!)
+            self.dateList.append((object.objectForKey("returnDate") as? NSDate)!)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,20 +58,22 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(lendList: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objectList.count
+        return idList.count
     }
     
     func tableView(lendList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = lendList.dequeueReusableCellWithIdentifier("lendListCell", forIndexPath: indexPath)
         
-        let objectLabel = lendList.viewWithTag(1) as! UILabel
-        objectLabel.text = "\(objectList[indexPath.row])"
+        let goodsLabel = lendList.viewWithTag(1) as! UILabel
+        goodsLabel.text = "\(goodsList[indexPath.row])"
         
         let personLabel = lendList.viewWithTag(2) as! UILabel
         personLabel.text = "\(personList[indexPath.row])"
         
+        let df = NSDateFormatter()
+        df.dateFormat = "yyyy/MM/dd"
         let dateLabel = lendList.viewWithTag(3) as! UILabel
-        dateLabel.text = "\(dateList[indexPath.row])"
+        dateLabel.text = "\(df.stringFromDate(dateList[indexPath.row]))"
         
         return cell
     }
@@ -49,28 +84,67 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let alertController = UIAlertController(
             title: "返してもらった？",
-            message: "行番号：\(row!)",
+            message: "",
             preferredStyle: .Alert)
         
         alertController.addAction(UIAlertAction(
             title: "OK",
             style: .Default,
-            handler: { action in self.pushOK() } ))
+            handler: { action in self.pushOK(row!) } ))
         
         alertController.addAction(UIAlertAction(
             title: "キャンセル",
             style: .Cancel,
-            handler: { action in self.pushCancel() } ))
+            handler: nil ))
         
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func pushOK() {
-        
-    }
-    
-    func pushCancel() {
-        
+    func pushOK(rowNum: Int) {
+        // クラスのNCMBObjectを作成
+        let object = NCMBObject(className: "RentalTable")
+        // objectIdプロパティを設定
+        object.objectId = idList[rowNum]
+        // 設定されたobjectIdを元にデータストアからデータを取得
+        object.fetchInBackgroundWithBlock { (error: NSError!) -> Void in
+            if error != nil {
+                // 取得に失敗した場合の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 取得に成功した場合の処理
+                object.setObject(true, forKey: "isReturn")
+                // データストアへの保存を実施
+                object.saveInBackgroundWithBlock { (error: NSError!) -> Void in
+                    if error != nil {
+                        // 保存に失敗した場合の処理
+                        let alertController = UIAlertController(
+                            title: "データベース接続エラー",
+                            message: "",
+                            preferredStyle: .Alert)
+                        
+                        alertController.addAction(UIAlertAction(
+                            title: "OK",
+                            style: .Default,
+                            handler: nil ))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    } else {
+                        // 保存に成功した場合の処理
+                        self.performSegueWithIdentifier("updated", sender: self)
+                    }
+                }
+            }
+        }
     }
     
 }

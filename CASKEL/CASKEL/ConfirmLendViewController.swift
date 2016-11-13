@@ -13,14 +13,14 @@ class ConfirmLendViewController: UIViewController {
     @IBOutlet weak var who: UILabel!
     @IBOutlet weak var when: UILabel!
     
-    var object:String?
+    var goods:String?
     var person:String?
     var date:NSDate = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        what.text = object
+        what.text = goods
         who.text = person
         
         let df = NSDateFormatter()
@@ -36,20 +36,31 @@ class ConfirmLendViewController: UIViewController {
         //*** データベースへレンタル情報を送信 ***
         let userid = NCMBUser.currentUser().userName
         // 保存先クラスを作成
-        let obj = NCMBObject(className: "Test_RentalTable")
+        let obj = NCMBObject(className: "RentalTable")
         // 値を設定
         obj.setObject(userid, forKey: "lender")
         obj.setObject(person, forKey: "renter")
-        obj.setObject(object, forKey: "object")
+        obj.setObject(goods, forKey: "goods")
         obj.setObject(date, forKey: "returnDate")
+        obj.setObject(false, forKey: "isReturn")
         // 保存を実施
         obj.saveInBackgroundWithBlock{(error: NSError!) in
             if (error != nil) {
                 // 保存に失敗した場合の処理
-                print("エラーが発生しました。エラーコード:\(error.code)")
-            }else{
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "エラーコード：\(error.code)",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
                 // 保存に成功した場合の処理
-                print("保存に成功しました。objectId:\(obj.objectId)")
+                self.performSegueWithIdentifier("complete", sender: self)
             }
         }
     }

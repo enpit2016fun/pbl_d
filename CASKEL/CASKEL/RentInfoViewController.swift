@@ -12,12 +12,45 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var rentList: UITableView!
     
-    let objectList: NSArray = ["マリオカート", "ポケモン ムーン"]
-    let personList: NSArray = ["山本", "佐藤"]
-    let dateList: NSArray = ["2016/11/15", "2016/11/22"]
+    var idList: [String] = []
+    var goodsList: [String] = []
+    var personList: [String] = []
+    var dateList: [NSDate] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let query = NCMBQuery(className: "RentalTable")
+        
+        /** ここに条件 **/
+        query.whereKey("renter", equalTo: NCMBUser.currentUser().userName)
+        query.whereKey("isReturn", equalTo: false)
+        
+        // データストアの検索を実施
+        // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
+        var objects: [AnyObject] = []
+        do {
+            objects = try query.findObjects()
+        } catch {
+            // 検索失敗時の処理
+            let alertController = UIAlertController(
+                title: "データベース接続エラー",
+                message: "",
+                preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        for object in objects {
+            self.idList.append(object.objectId)
+            self.goodsList.append((object.objectForKey("goods") as? String)!)
+            self.personList.append((object.objectForKey("lender") as? String)!)
+            self.dateList.append((object.objectForKey("returnDate") as? NSDate)!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,20 +58,22 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(rentList: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objectList.count
+        return idList.count
     }
     
     func tableView(rentList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = rentList.dequeueReusableCellWithIdentifier("rentListCell", forIndexPath: indexPath)
         
-        let objectLabel = rentList.viewWithTag(1) as! UILabel
-        objectLabel.text = "\(objectList[indexPath.row])"
+        let goodsLabel = rentList.viewWithTag(1) as! UILabel
+        goodsLabel.text = "\(goodsList[indexPath.row])"
         
         let personLabel = rentList.viewWithTag(2) as! UILabel
         personLabel.text = "\(personList[indexPath.row])"
         
+        let df = NSDateFormatter()
+        df.dateFormat = "yyyy/MM/dd"
         let dateLabel = rentList.viewWithTag(3) as! UILabel
-        dateLabel.text = "\(dateList[indexPath.row])"
+        dateLabel.text = "\(df.stringFromDate(dateList[indexPath.row]))"
         
         return cell
     }
