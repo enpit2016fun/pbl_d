@@ -9,19 +9,21 @@
 import UIKit
 
 class ConfirmLendViewController: UIViewController {
+    
     @IBOutlet weak var what: UILabel!
     @IBOutlet weak var who: UILabel!
     @IBOutlet weak var when: UILabel!
     
-    var goods:String?
-    var person:String?
-    var date:NSDate = NSDate()
+    var goods: String = ""
+    var person: String = ""
+    var name: String = ""
+    var date: NSDate = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         what.text = goods
-        who.text = person
+        who.text = name
         
         let df = NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd"

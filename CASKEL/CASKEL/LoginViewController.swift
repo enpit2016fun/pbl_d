@@ -80,7 +80,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapView(sender: AnyObject) {
-        //キーボードを閉じる
         view.endEditing(true)
     }
     

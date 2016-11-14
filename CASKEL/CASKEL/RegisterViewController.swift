@@ -66,6 +66,11 @@ class RegisterViewController: UIViewController {
         user.setObject(self.schoolNameTextField.text, forKey: "school")
         user.setObject(self.gradeTextField.text, forKey: "grade")
         
+        // ユーザ情報の読み込み（検索）を有効化
+        let acl = NCMBACL()
+        acl.setPublicReadAccess(true)
+        user.ACL = acl
+        
         //会員の登録を行う
         user.signUpInBackgroundWithBlock{(error: NSError!) in
             if error != nil {
@@ -108,7 +113,6 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func tapView(sender: AnyObject) {
-        //キーボードを閉じる
         view.endEditing(true)
     }
     

@@ -14,7 +14,11 @@ class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameLabel.text = NCMBUser.currentUser().userName
+        
+        let family = (NCMBUser.currentUser().objectForKey("familyName") as? String)!
+        let first = (NCMBUser.currentUser().objectForKey("firstName") as? String)!
+        
+        userNameLabel.text = "\(family) \(first)"
     }
     
     override func didReceiveMemoryWarning() {
