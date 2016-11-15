@@ -14,8 +14,9 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var idList: [String] = []
     var goodsList: [String] = []
-    var personList: [String] = []
-    var dateList: [NSDate] = []
+    var nameList: [String] = []
+    var dateList: [String] = []
+    var spentDayList: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         /** ここに条件 **/
         query.whereKey("lender", equalTo: NCMBUser.currentUser().userName)
         query.whereKey("isReturn", equalTo: false)
+        
+        // 返却日の近い順に取得
+        query.addAscendingOrder("returnDate")
         
         // データストアの検索を実施
         // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
@@ -48,8 +52,78 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         for object in objects {
             self.idList.append(object.objectId)
             self.goodsList.append((object.objectForKey("goods") as? String)!)
-            self.personList.append((object.objectForKey("renter") as? String)!)
-            self.dateList.append((object.objectForKey("returnDate") as? NSDate)!)
+            
+            let userid = (object.objectForKey("renter") as? String)!
+            
+            var family = "??"
+            var first = "??"
+            
+            let userQuery = NCMBUser.query()
+            
+            /** ここに条件 **/
+            userQuery.whereKey("userName", equalTo: userid)
+            
+            // データストアの検索を実施
+            // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
+            var users: [AnyObject] = []
+            do {
+                users = try userQuery.findObjects()
+            } catch {
+                // 検索失敗時の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+            // 検索成功時の処理
+            if users.count <= 0 {
+                // ユーザ該当なし
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 該当ユーザがいる場合
+                family = (users[0].objectForKey("familyName") as? String)!
+                first = (users[0].objectForKey("firstName") as? String)!
+            }
+            
+            self.nameList.append("\(family) \(first)　さん")
+            
+            let rDate = (object.objectForKey("returnDate") as? NSDate)!
+            
+            let df = NSDateFormatter()
+            df.dateFormat = "yyyy/MM/dd"
+            self.dateList.append(df.stringFromDate(rDate))
+            
+            let cal = NSCalendar.currentCalendar()
+            
+            let originalComp = cal.components([.Year, .Month, .Day], fromDate: NSDate())
+            
+            let novelComp = NSDateComponents()
+            novelComp.year = originalComp.year
+            novelComp.month = originalComp.month
+            novelComp.day = originalComp.day
+            novelComp.hour = 0
+            novelComp.minute = 0
+            novelComp.second = 0
+            
+            let componentsByDay = cal.components([.Day], fromDate: cal.dateFromComponents(novelComp)!, toDate: rDate, options: NSCalendarOptions())
+            self.spentDayList.append(componentsByDay.day)
         }
     }
     
@@ -65,64 +139,24 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = lendList.dequeueReusableCellWithIdentifier("lendListCell", forIndexPath: indexPath)
         
         let goodsLabel = lendList.viewWithTag(1) as! UILabel
-        goodsLabel.text = "\(goodsList[indexPath.row])"
+        goodsLabel.text = goodsList[indexPath.row]
         
-        let userid = personList[indexPath.row]
         let personLabel = lendList.viewWithTag(2) as! UILabel
+        personLabel.text = nameList[indexPath.row]
         
-        var family = "??"
-        var first = "??"
-        
-        let query = NCMBUser.query()
-        
-        /** ここに条件 **/
-        query.whereKey("userName", equalTo: userid)
-        
-        // データストアの検索を実施
-        // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
-        var objects: [AnyObject] = []
-        do {
-            objects = try query.findObjects()
-        } catch {
-            // 検索失敗時の処理
-            let alertController = UIAlertController(
-                title: "データベース接続エラー",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: nil ))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-        // 検索成功時の処理
-        if objects.count <= 0 {
-            // ユーザ該当なし
-            let alertController = UIAlertController(
-                title: "データベース接続エラー",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: nil ))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            // 該当ユーザがいる場合
-            family = (objects[0].objectForKey("familyName") as? String)!
-            first = (objects[0].objectForKey("firstName") as? String)!
-        }
-        
-        personLabel.text = "\(family) \(first)　さん"
-        
-        let df = NSDateFormatter()
-        df.dateFormat = "yyyy/MM/dd"
         let dateLabel = lendList.viewWithTag(3) as! UILabel
-        dateLabel.text = "\(df.stringFromDate(dateList[indexPath.row]))"
+        
+        if spentDayList[indexPath.row] < 0 {
+            dateLabel.textColor = UIColor.redColor()
+        } else if spentDayList[indexPath.row] < 1 {
+            dateLabel.textColor = UIColor.orangeColor()
+        } else if spentDayList[indexPath.row] < 4 {
+            dateLabel.textColor = UIColor.yellowColor()
+        } else {
+            dateLabel.textColor = UIColor.blackColor()
+        }
+        
+        dateLabel.text = dateList[indexPath.row]
         
         return cell
     }

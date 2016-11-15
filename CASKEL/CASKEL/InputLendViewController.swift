@@ -74,7 +74,20 @@ class InputLendViewController: UIViewController {
             clvc.goods = lendWhat.text!
             clvc.person = lendWho.text!
             clvc.name = nameLabel.text!
-            clvc.date = returnWhen.date
+            
+            let cal = NSCalendar.currentCalendar()
+            
+            let originalComp = cal.components([.Year, .Month, .Day], fromDate: returnWhen.date)
+            
+            let novelComp = NSDateComponents()
+            novelComp.year = originalComp.year
+            novelComp.month = originalComp.month
+            novelComp.day = originalComp.day
+            novelComp.hour = 0
+            novelComp.minute = 0
+            novelComp.second = 0
+            
+            clvc.date = cal.dateFromComponents(novelComp)!
         }
     }
     
