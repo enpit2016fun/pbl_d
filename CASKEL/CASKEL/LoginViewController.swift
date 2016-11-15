@@ -22,6 +22,32 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapLoginButton(sender: AnyObject) {
+        loginAction()
+    }
+    
+    @IBAction func tapView(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func pushReturnOnId(textField: UITextField) {
+        // 今フォーカスが当たっているテキストボックスからフォーカスを外す
+        textField.resignFirstResponder()
+        // 次のTag番号を持っているテキストボックスがあれば、フォーカスする
+        let nextTag = textField.tag + 1
+        if let nextTextField = self.view.viewWithTag(nextTag) {
+            nextTextField.becomeFirstResponder()
+        }
+    }
+    
+    @IBAction func pushReturnOnPass(sender: AnyObject) {
+        loginAction()
+    }
+    
+    @IBAction func returnLogin(segue: UIStoryboardSegue) {
+        cleanTextField()
+    }
+    
+    func loginAction() {
         if isTextFieldEmpty() {
             let alertController = UIAlertController(
                 title: "未入力の項目があります",
@@ -37,7 +63,7 @@ class LoginViewController: UIViewController {
         }
         
         // ユーザー名とパスワードでログイン
-        NCMBUser.logInWithUsernameInBackground(self.userNameTextField.text, password: self.passwordTextField.text, block:{(user: NCMBUser?, error: NSError!) in            
+        NCMBUser.logInWithUsernameInBackground(self.userNameTextField.text, password: self.passwordTextField.text, block:{(user: NCMBUser?, error: NSError!) in
             if error != nil {
                 // ログイン失敗時の処理
                 if error.code == 401002 {
@@ -77,14 +103,6 @@ class LoginViewController: UIViewController {
             }
             
         })
-    }
-    
-    @IBAction func tapView(sender: AnyObject) {
-        view.endEditing(true)
-    }
-    
-    @IBAction func returnLogin(segue: UIStoryboardSegue) {
-        cleanTextField()
     }
     
     func isTextFieldEmpty() -> Bool {

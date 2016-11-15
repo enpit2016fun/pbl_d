@@ -95,6 +95,20 @@ class InputLendViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func pushReturnOnGoods(textField: UITextField) {
+        // 今フォーカスが当たっているテキストボックスからフォーカスを外す
+        textField.resignFirstResponder()
+        // 次のTag番号を持っているテキストボックスがあれば、フォーカスする
+        let nextTag = textField.tag + 1
+        if let nextTextField = self.view.viewWithTag(nextTag) {
+            nextTextField.becomeFirstResponder()
+        }
+    }
+    
+    @IBAction func pushReturnOnPerson(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
     @IBAction func returnInputLend(segue: UIStoryboardSegue) {
         
     }

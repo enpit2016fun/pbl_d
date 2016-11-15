@@ -151,7 +151,7 @@ class LendInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         } else if spentDayList[indexPath.row] < 1 {
             dateLabel.textColor = UIColor.orangeColor()
         } else if spentDayList[indexPath.row] < 4 {
-            dateLabel.textColor = UIColor.yellowColor()
+            dateLabel.textColor = UIColor.greenColor()
         } else {
             dateLabel.textColor = UIColor.blackColor()
         }
