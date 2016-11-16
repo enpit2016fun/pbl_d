@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2054B381DDC4EF200DF3FC8 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = D2054B371DDC4EF200DF3FC8 /* Title.png */; };
+		D2054B3A1DDC700500DF3FC8 /* AddRentalGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2054B391DDC700500DF3FC8 /* AddRentalGoodsViewController.swift */; };
+		D2054B3C1DDC7FC300DF3FC8 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = D2054B3B1DDC7FC300DF3FC8 /* Title.png */; };
+		D2054B3E1DDCA52A00DF3FC8 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */; };
 		D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */; };
 		D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */; };
 		D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */; };
@@ -44,7 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D2054B371DDC4EF200DF3FC8 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Title.png; path = ../../../../Downloads/Title.png; sourceTree = "<group>"; };
+		D2054B391DDC700500DF3FC8 /* AddRentalGoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRentalGoodsViewController.swift; sourceTree = "<group>"; };
+		D2054B3B1DDC7FC300DF3FC8 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
+		D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CASKEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D25CB5CF1DD5F4AC00A8DABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,9 +124,11 @@
 		D25CB5C91DD5F4AC00A8DABC /* CASKEL */ = {
 			isa = PBXGroup;
 			children = (
-				D2054B371DDC4EF200DF3FC8 /* Title.png */,
+				D2054B3B1DDC7FC300DF3FC8 /* Title.png */,
 				D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */,
+				D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */,
 				D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */,
+				D2054B391DDC700500DF3FC8 /* AddRentalGoodsViewController.swift */,
 				D26325401DD61D730059D748 /* CASKEL-Bridging-Header.h */,
 				D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */,
 				D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */,
@@ -265,7 +271,7 @@
 			files = (
 				D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */,
 				D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */,
-				D2054B381DDC4EF200DF3FC8 /* Title.png in Resources */,
+				D2054B3C1DDC7FC300DF3FC8 /* Title.png in Resources */,
 				D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,12 +300,14 @@
 				D25CB5FB1DD5F62100A8DABC /* InputLendViewController.swift in Sources */,
 				D25CB6011DD5F63000A8DABC /* RentInfoViewController.swift in Sources */,
 				D25CB5FF1DD5F62B00A8DABC /* RegisterViewController.swift in Sources */,
+				D2054B3A1DDC700500DF3FC8 /* AddRentalGoodsViewController.swift in Sources */,
 				D25CB6031DD5F63B00A8DABC /* RentLendViewController.swift in Sources */,
 				D25CB5FD1DD5F62600A8DABC /* LendInfoViewController.swift in Sources */,
 				D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */,
 				D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */,
 				D25CB5F91DD5F61B00A8DABC /* ConfirmLendViewController.swift in Sources */,
 				D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */,
+				D2054B3E1DDCA52A00DF3FC8 /* TakePhotoViewController.swift in Sources */,
 				D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

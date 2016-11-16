@@ -289,6 +289,98 @@
             </objects>
             <point key="canvasLocation" x="659" y="-111"/>
         </scene>
+        <!--Take Photo View Controller-->
+        <scene sceneID="Ykc-R1-iLN">
+            <objects>
+                <viewController id="pvV-3e-TzL" customClass="TakePhotoViewController" customModule="CASKEL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jBU-OZ-UME"/>
+                        <viewControllerLayoutGuide type="bottom" id="1CW-8S-v4K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AKL-Jk-xPs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEg-Pz-ZUI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="写真をとる" id="apH-el-nsw">
+                                        <barButtonItem key="leftBarButtonItem" title="もどる" id="b7k-Hc-EEr">
+                                            <connections>
+                                                <segue destination="89u-2O-Mkr" kind="unwind" unwindAction="returnTop:" id="7b1-jp-NGo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVy-8K-33c">
+                                <rect key="frame" x="109" y="474" width="102" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="とる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapTakePhotoButton:" destination="pvV-3e-TzL" eventType="touchUpInside" id="6TF-Jf-l1i"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-CA-sPW">
+                                <rect key="frame" x="10" y="114" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.97745076789999996" green="0.97640491750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cameraPreview" destination="wSf-CA-sPW" id="XUB-pT-TAh"/>
+                        <segue destination="Wiv-9x-HYS" kind="presentation" identifier="goodsRegister" id="tdY-Tw-JYf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzP-su-BTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="89u-2O-Mkr" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="-404"/>
+        </scene>
+        <!--Add Rental Goods View Controller-->
+        <scene sceneID="sxc-r3-1ak">
+            <objects>
+                <viewController id="Wiv-9x-HYS" customClass="AddRentalGoodsViewController" customModule="CASKEL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I07-z0-uCq"/>
+                        <viewControllerLayoutGuide type="bottom" id="j6c-Dn-gU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SLu-ar-FF3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAh-e1-Zsa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="貸し出し品登録" id="QB3-3i-1Jp">
+                                        <barButtonItem key="leftBarButtonItem" title="とり直す" id="Dvu-cs-YfE">
+                                            <connections>
+                                                <segue destination="pvV-3e-TzL" kind="presentation" id="hPy-nA-ixy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXi-Yr-Vou">
+                                <rect key="frame" x="60" y="83" width="200" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="goodsImageView" destination="SXi-Yr-Vou" id="r1Z-Pj-ok0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCB-fe-GPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="-404"/>
+        </scene>
         <!--Top View Controller-->
         <scene sceneID="ocS-i9-768">
             <objects>
@@ -332,7 +424,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-G2-QAp">
-                                <rect key="frame" x="58" y="242" width="204" height="40"/>
+                                <rect key="frame" x="58" y="218" width="204" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.37323347740000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸し借り情報を見る">
@@ -342,8 +434,19 @@
                                     <segue destination="djA-pq-KxE" kind="presentation" id="y4m-B8-ya6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-Q1-BgD">
+                                <rect key="frame" x="58" y="448" width="204" height="39"/>
+                                <color key="backgroundColor" red="0.362611882" green="1" blue="0.31011073109999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="貸し出し品登録">
+                                    <color key="titleColor" red="0.32987870050000001" green="0.34263743520000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pvV-3e-TzL" kind="presentation" id="nIh-Bi-w8M"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sno-0h-M3t">
-                                <rect key="frame" x="58" y="393" width="204" height="40"/>
+                                <rect key="frame" x="58" y="339" width="204" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸した！">
@@ -725,7 +828,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySz-nl-mKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eyq-zK-fng" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2213" y="-360"/>
+            <point key="canvasLocation" x="2213" y="339"/>
         </scene>
         <!--Rent Info View Controller-->
         <scene sceneID="SMi-pf-MD4">
@@ -812,11 +915,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59O-c8-i7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8zE-P7-Jrd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2219" y="369"/>
+            <point key="canvasLocation" x="2213" y="1129"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="hPy-nA-ixy"/>
         <segue reference="f29-wp-pxT"/>
-        <segue reference="b86-1s-YKk"/>
+        <segue reference="y4m-B8-ya6"/>
     </inferredMetricsTieBreakers>
 </document>
