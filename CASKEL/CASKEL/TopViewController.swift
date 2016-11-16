@@ -26,19 +26,20 @@ class TopViewController: UIViewController {
     }
     
     @IBAction func tapLogoutButton(sender: AnyObject) {
-        NCMBUser.logOut()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(nil, forKey: "UserID")
-        defaults.setObject(nil, forKey: "Password")
         let alertController = UIAlertController(
-            title: "ログアウトしました",
+            title: "ログアウトしますか？",
             message: "",
             preferredStyle: .Alert)
         
         alertController.addAction(UIAlertAction(
-            title: "確認",
+            title: "はい",
             style: .Default,
             handler: { action in self.pushConfirm() } ))
+        
+        alertController.addAction(UIAlertAction(
+            title: "いいえ",
+            style: .Cancel,
+            handler: nil ))
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
@@ -48,6 +49,11 @@ class TopViewController: UIViewController {
     }
     
     func pushConfirm() {
+        NCMBUser.logOut()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(nil, forKey: "UserID")
+        defaults.setObject(nil, forKey: "Password")
+        
         self.performSegueWithIdentifier("logout", sender: self)
     }
     

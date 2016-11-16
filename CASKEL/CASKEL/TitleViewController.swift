@@ -10,8 +10,12 @@ import UIKit
 
 class TitleViewController: UIViewController {
 
+    @IBOutlet weak var titleImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleImageView.image = UIImage(named: "Title.png")
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +43,7 @@ class TitleViewController: UIViewController {
                         handler: { action in self.pushConfirm() } ))
                         
                     self.presentViewController(alertController, animated: true, completion: nil)
-                }else{
+                } else {
                     // ログイン成功時の処理
                     self.performSegueWithIdentifier("toTop", sender: self)
                 }
