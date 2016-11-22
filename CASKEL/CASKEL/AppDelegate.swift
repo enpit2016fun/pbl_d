@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //********** SDKの初期化 **********
         NCMB.setApplicationKey(applicationkey, clientKey: clientkey)
         
+        // スプラッシュの時間設定
+        sleep(1);
+        
         return true
     }
 

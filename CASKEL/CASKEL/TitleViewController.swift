@@ -9,20 +9,16 @@
 import UIKit
 
 class TitleViewController: UIViewController {
-
-    @IBOutlet weak var titleImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleImageView.image = UIImage(named: "Title.png")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func tapView(sender: AnyObject) {
+    @IBAction func tapStartButton(sender: AnyObject) {
         let defaults = NSUserDefaults.standardUserDefaults()
         let userid = defaults.objectForKey("UserID") as? String
         let password = defaults.objectForKey("Password") as? String

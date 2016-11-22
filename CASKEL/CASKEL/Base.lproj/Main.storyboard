@@ -17,29 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-9d-uNi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CASKELhome.png" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-9d-uNi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rl-tC-It9">
+                                <rect key="frame" x="91" y="364" width="139" height="92"/>
+                                <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJ9-nY-87b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="4OB-O4-RSa" appends="YES" id="epv-Rb-N8L"/>
-                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="titleImageView" destination="cIU-9d-uNi" id="oqf-Qj-EWV"/>
                         <segue destination="J8X-21-XHe" kind="presentation" identifier="toLogin" id="B5y-A6-6QZ"/>
                         <segue destination="vMT-to-kJt" kind="presentation" identifier="toTop" id="f29-wp-pxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="4OB-O4-RSa">
-                    <connections>
-                        <action selector="tapView:" destination="BYZ-38-t0r" id="g1v-rZ-cXx"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="193" y="369"/>
         </scene>
@@ -147,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLp-jY-lvb">
-                                <rect key="frame" x="32" y="95" width="141" height="30"/>
+                                <rect key="frame" x="27" y="312" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                 <connections>
@@ -155,71 +157,59 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKz-XI-NAg">
-                                <rect key="frame" x="32" y="66" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="27" y="291" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="姓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmB-4b-EXb">
-                                <rect key="frame" x="32" y="305" width="29" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="苗字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmB-4b-EXb">
+                                <rect key="frame" x="27" y="140" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-bc-kjW">
-                                <rect key="frame" x="32" y="334" width="106" height="30"/>
+                                <rect key="frame" x="66" y="136" width="87" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="pushReturn:" destination="s4C-nx-DRe" eventType="editingDidEndOnExit" id="Qrq-fi-9ef"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur2-N9-QMS">
-                                <rect key="frame" x="179" y="306" width="28" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur2-N9-QMS">
+                                <rect key="frame" x="173" y="141" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bl3-bh-3iQ">
-                                <rect key="frame" x="179" y="334" width="106" height="30"/>
+                                <rect key="frame" x="213" y="136" width="87" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="pushReturn:" destination="s4C-nx-DRe" eventType="editingDidEndOnExit" id="FrL-Vy-OAe"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校・学年" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbc-j0-lMf">
-                                <rect key="frame" x="32" y="386" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校 / 学年" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbc-j0-lMf">
+                                <rect key="frame" x="27" y="194" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idC-GO-utn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="ユーザ登録" id="rRg-PC-T9h">
-                                        <barButtonItem key="leftBarButtonItem" title="もどる" id="WFp-ti-RMt">
-                                            <connections>
-                                                <segue destination="5Nj-Ml-Ncf" kind="unwind" unwindAction="returnLogin:" id="u1k-fz-4ZU"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード（再入力）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQz-ms-7Ue">
-                                <rect key="frame" x="32" y="225" width="180" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード(確認)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQz-ms-7Ue">
+                                <rect key="frame" x="27" y="431" width="165" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxc-SG-YwN">
-                                <rect key="frame" x="32" y="142" width="97" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="27" y="362" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-kV-pZj">
-                                <rect key="frame" x="32" y="171" width="141" height="30"/>
+                                <rect key="frame" x="27" y="382" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                                 <connections>
@@ -227,7 +217,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9mK-Fx-Aqp">
-                                <rect key="frame" x="32" y="255" width="141" height="30"/>
+                                <rect key="frame" x="27" y="453" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                                 <connections>
@@ -235,7 +225,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yg-KC-OGD">
-                                <rect key="frame" x="32" y="431" width="106" height="30"/>
+                                <rect key="frame" x="27" y="229" width="106" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -243,14 +233,21 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0EX-np-2Va">
-                                <rect key="frame" x="135" y="406" width="176" height="79"/>
+                                <rect key="frame" x="130" y="204" width="176" height="79"/>
                                 <connections>
                                     <outlet property="dataSource" destination="s4C-nx-DRe" id="8Bc-pL-AC0"/>
                                     <outlet property="delegate" destination="s4C-nx-DRe" id="kab-hP-TMA"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tB-fa-x8S">
+                                <rect key="frame" x="255" y="28" width="45" height="30"/>
+                                <state key="normal" title="もどる"/>
+                                <connections>
+                                    <segue destination="5Nj-Ml-Ncf" kind="unwind" unwindAction="returnLogin:" id="K9u-qE-hpx"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-Rk-0dG">
-                                <rect key="frame" x="128" y="509" width="64" height="33"/>
+                                <rect key="frame" x="128" y="505" width="64" height="33"/>
                                 <color key="backgroundColor" red="0.67761962980000001" green="0.95686145629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="登録">
@@ -260,6 +257,9 @@
                                     <action selector="tapRegisterButton:" destination="s4C-nx-DRe" eventType="touchUpInside" id="A2N-b5-ngS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="touroku.png" translatesAutoresizingMaskIntoConstraints="NO" id="idN-VT-rHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -369,17 +369,144 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXi-Yr-Vou">
                                 <rect key="frame" x="60" y="83" width="200" height="200"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iT5-aE-xK8">
+                                <rect key="frame" x="127" y="486" width="66" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonAction:" destination="Wiv-9x-HYS" eventType="touchUpInside" id="V2Y-l4-V3l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO5-l6-bvX">
+                                <rect key="frame" x="60" y="307" width="72" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="St7-rY-3Gm">
+                                <rect key="frame" x="60" y="333" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="pushReturn:" destination="Wiv-9x-HYS" eventType="editingDidEndOnExit" id="8cI-fH-HOb"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ジャンル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlp-MJ-d1L">
+                                <rect key="frame" x="60" y="378" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BG2-gt-7nX">
+                                <rect key="frame" x="60" y="402" width="200" height="63"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wiv-9x-HYS" id="PHF-XO-Fzg"/>
+                                    <outlet property="delegate" destination="Wiv-9x-HYS" id="BHY-lF-0kp"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7Ke-sj-K5O" appends="YES" id="RgT-nY-0wz"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="goodsImageView" destination="SXi-Yr-Vou" id="r1Z-Pj-ok0"/>
+                        <outlet property="goodsTitleTextField" destination="St7-rY-3Gm" id="ttj-XH-k6n"/>
+                        <segue destination="vMT-to-kJt" kind="presentation" identifier="registerComplete" id="gGe-7Y-ag6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCB-fe-GPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7Ke-sj-K5O">
+                    <connections>
+                        <action selector="tapView:" destination="Wiv-9x-HYS" id="vIl-hN-Wvb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1687" y="-404"/>
+        </scene>
+        <!--Goods Info View Controller-->
+        <scene sceneID="ONH-oK-jZK">
+            <objects>
+                <viewController id="YuK-TR-UhS" customClass="GoodsInfoViewController" customModule="CASKEL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pkK-0F-NQS"/>
+                        <viewControllerLayoutGuide type="bottom" id="GCr-Ik-d17"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cSO-au-Cf1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kF-od-B2E">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="貸し出し品リスト" id="XE8-7F-Ksv">
+                                        <barButtonItem key="leftBarButtonItem" title="もどる" id="VkG-fm-8gw">
+                                            <connections>
+                                                <segue destination="bJY-7a-coC" kind="unwind" unwindAction="returnRentLend:" id="etY-Wc-8Ii"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2T0-yJ-6UY">
+                                <rect key="frame" x="0.0" y="45" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodsListCell" rowHeight="118" id="HG7-Na-peh">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="118"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HG7-Na-peh" id="3C1-XL-ARF">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ジャンル：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-zG-LwJ">
+                                                    <rect key="frame" x="123" y="83" width="75" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-vh-UP8">
+                                                    <rect key="frame" x="123" y="33" width="184" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.045086676829999998" green="0.094069756609999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qek-pi-eaL">
+                                                    <rect key="frame" x="192" y="83" width="115" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAy-67-w0l">
+                                                    <rect key="frame" x="18" y="14" width="90" height="90"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YuK-TR-UhS" id="7av-dH-Wy5"/>
+                                    <outlet property="delegate" destination="YuK-TR-UhS" id="bs2-gP-3Vt"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="goodsImageView" destination="SXi-Yr-Vou" id="r1Z-Pj-ok0"/>
+                        <outlet property="goodsList" destination="2T0-yJ-6UY" id="dZC-T0-Nla"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fCB-fe-GPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9PQ-wc-9bO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bJY-7a-coC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="-404"/>
+            <point key="canvasLocation" x="2213" y="-404"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="ocS-i9-768">
@@ -608,7 +735,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH9-WN-VbD">
-                                <rect key="frame" x="58" y="182" width="204" height="40"/>
+                                <rect key="frame" x="58" y="156" width="204" height="40"/>
                                 <color key="backgroundColor" red="0.22883048959999999" green="1" blue="0.42797598450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸してる物リスト">
@@ -619,7 +746,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq0-WV-LF4">
-                                <rect key="frame" x="58" y="362" width="204" height="40"/>
+                                <rect key="frame" x="58" y="283" width="204" height="40"/>
                                 <color key="backgroundColor" red="0.30953822567618272" green="0.75803917981022728" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="借りてる物リスト">
@@ -627,6 +754,17 @@
                                 </state>
                                 <connections>
                                     <segue destination="aHK-u3-rXJ" kind="presentation" id="6fP-aq-bjQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2K-MC-Qgq">
+                                <rect key="frame" x="58" y="399" width="204" height="39"/>
+                                <color key="backgroundColor" red="0.32987870050000001" green="0.34263743520000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="貸し出し品リスト">
+                                    <color key="titleColor" red="0.362611882" green="1" blue="0.31011073109999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YuK-TR-UhS" kind="presentation" id="P86-2W-iks"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -723,7 +861,7 @@
                         <outlet property="what" destination="xXz-l1-Xgx" id="lOI-mg-Vzr"/>
                         <outlet property="when" destination="zsK-LX-JBi" id="HqB-j5-TR3"/>
                         <outlet property="who" destination="GwV-TH-VJX" id="qQL-Oz-Z9S"/>
-                        <segue destination="vMT-to-kJt" kind="presentation" identifier="complete" id="hDV-NV-Cez"/>
+                        <segue destination="vMT-to-kJt" kind="presentation" identifier="rentComplete" id="hDV-NV-Cez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBB-sQ-ELs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -918,9 +1056,13 @@
             <point key="canvasLocation" x="2213" y="1129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CASKELhome.png" width="750" height="1334"/>
+        <image name="touroku.png" width="750" height="1334"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="b86-1s-YKk"/>
+        <segue reference="gGe-7Y-ag6"/>
         <segue reference="hPy-nA-ixy"/>
-        <segue reference="f29-wp-pxT"/>
-        <segue reference="y4m-B8-ya6"/>
     </inferredMetricsTieBreakers>
 </document>
