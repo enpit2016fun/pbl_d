@@ -16,9 +16,14 @@ class InputLendViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     var isIDValid = false
+    
+    var goodsId: String = ""
+    var goodsName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lendWhat.enabled = false
         
         nameLabel.text = ""
         setupDatePicker()
@@ -71,9 +76,10 @@ class InputLendViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toConfirm" {
             let clvc = segue.destinationViewController as! ConfirmLendViewController
-            clvc.goods = lendWhat.text!
-            clvc.person = lendWho.text!
-            clvc.name = nameLabel.text!
+            clvc.goodsId = goodsId
+            clvc.goodsName = goodsName
+            clvc.personId = lendWho.text!
+            clvc.personName = nameLabel.text!
             
             let cal = NSCalendar.currentCalendar()
             
@@ -88,6 +94,9 @@ class InputLendViewController: UIViewController {
             novelComp.second = 0
             
             clvc.date = cal.dateFromComponents(novelComp)!
+        } else if segue.identifier == "goodsSelect" {
+            let givc = segue.destinationViewController as! GoodsInfoViewController
+            givc.selectEnable = true
         }
     }
     
@@ -110,7 +119,7 @@ class InputLendViewController: UIViewController {
     }
     
     @IBAction func returnInputLend(segue: UIStoryboardSegue) {
-        
+        lendWhat.text = goodsName
     }
     
     func isTextFieldEmpty() -> Bool {

@@ -14,16 +14,17 @@ class ConfirmLendViewController: UIViewController {
     @IBOutlet weak var who: UILabel!
     @IBOutlet weak var when: UILabel!
     
-    var goods: String = ""
-    var person: String = ""
-    var name: String = ""
+    var goodsId: String = ""
+    var goodsName: String = ""
+    var personId: String = ""
+    var personName: String = ""
     var date: NSDate = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        what.text = goods
-        who.text = name
+        what.text = goodsName
+        who.text = personName
         
         let df = NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd"
@@ -41,8 +42,8 @@ class ConfirmLendViewController: UIViewController {
         let obj = NCMBObject(className: "RentalTable")
         // 値を設定
         obj.setObject(userid, forKey: "lender")
-        obj.setObject(person, forKey: "renter")
-        obj.setObject(goods, forKey: "goods")
+        obj.setObject(personId, forKey: "renter")
+        obj.setObject(goodsId, forKey: "goods")
         obj.setObject(date, forKey: "returnDate")
         obj.setObject(false, forKey: "isReturn")
         // 保存を実施

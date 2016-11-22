@@ -11,14 +11,31 @@ import UIKit
 class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var goodsList: UITableView!
+    @IBOutlet weak var selectButton: UIButton!
     
     var idList: [String] = []
     var imageList: [UIImage] = []
     var titleList: [String] = []
     var categoryList: [String] = []
     
+    var selectEnable: Bool = false
+    
+    var selectedGoodsId: String = ""
+    var selectedGoodsName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if selectEnable {
+            selectButton.enabled = true
+            selectButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            selectButton.backgroundColor = UIColor.blueColor()
+        } else {
+            selectButton.enabled = false
+            selectButton.setTitleColor(UIColor.clearColor(), forState: UIControlState.Normal)
+            selectButton.backgroundColor = UIColor.clearColor()
+            goodsList.allowsSelection = false
+        }
         
         let query = NCMBQuery(className: "GoodsTable")
         
@@ -79,6 +96,14 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goodsSelected" {
+            let ilvc = segue.destinationViewController as! InputLendViewController
+            ilvc.goodsId = selectedGoodsId
+            ilvc.goodsName = selectedGoodsName
+        }
+    }
+    
     func tableView(goodsList: UITableView, numberOfRowsInSection section: Int) -> Int {
         return idList.count
     }
@@ -98,4 +123,22 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedGoodsId = idList[indexPath.row]
+        selectedGoodsName = titleList[indexPath.row]
+    }
+    
+    @IBAction func tapSelectButton(sender: AnyObject) {
+        performSegueWithIdentifier("goodsSelected", sender: self)
+    }
+    
+    @IBAction func tapBackButton(sender: AnyObject) {
+        if selectEnable {
+            selectedGoodsId = ""
+            selectedGoodsName = ""
+            performSegueWithIdentifier("goodsSelected", sender: self)
+        } else {
+            performSegueWithIdentifier("returnMenu", sender: self)
+        }
+    }
 }

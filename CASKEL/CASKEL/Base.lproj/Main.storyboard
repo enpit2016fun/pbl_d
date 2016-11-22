@@ -448,14 +448,14 @@
                                     <navigationItem title="貸し出し品リスト" id="XE8-7F-Ksv">
                                         <barButtonItem key="leftBarButtonItem" title="もどる" id="VkG-fm-8gw">
                                             <connections>
-                                                <segue destination="bJY-7a-coC" kind="unwind" unwindAction="returnRentLend:" id="etY-Wc-8Ii"/>
+                                                <action selector="tapBackButton:" destination="YuK-TR-UhS" id="4dV-pY-0yM"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2T0-yJ-6UY">
-                                <rect key="frame" x="0.0" y="45" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodsListCell" rowHeight="118" id="HG7-Na-peh">
@@ -495,12 +495,23 @@
                                     <outlet property="delegate" destination="YuK-TR-UhS" id="bs2-gP-3Vt"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDJ-2K-Rr0">
+                                <rect key="frame" x="122" y="506" width="77" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="選択"/>
+                                <connections>
+                                    <action selector="tapSelectButton:" destination="YuK-TR-UhS" eventType="touchUpInside" id="MI5-dS-zUt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="goodsList" destination="2T0-yJ-6UY" id="dZC-T0-Nla"/>
+                        <outlet property="selectButton" destination="oDJ-2K-Rr0" id="DLp-TK-0r1"/>
+                        <segue destination="bJY-7a-coC" kind="unwind" identifier="goodsSelected" unwindAction="returnInputLend:" id="i7W-IV-xzM"/>
+                        <segue destination="bJY-7a-coC" kind="unwind" identifier="returnMenu" unwindAction="returnRentLend:" id="tAw-LP-w7j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PQ-wc-9bO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -638,7 +649,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-Gu-JYM">
-                                <rect key="frame" x="41" y="111" width="237" height="30"/>
+                                <rect key="frame" x="41" y="111" width="171" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -684,6 +695,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wl6-KS-WKb">
+                                <rect key="frame" x="236" y="111" width="42" height="30"/>
+                                <state key="normal" title="選択"/>
+                                <connections>
+                                    <segue destination="YuK-TR-UhS" kind="presentation" identifier="goodsSelect" id="ijh-Yv-Set"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -1061,8 +1079,9 @@
         <image name="touroku.png" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b86-1s-YKk"/>
-        <segue reference="gGe-7Y-ag6"/>
         <segue reference="hPy-nA-ixy"/>
+        <segue reference="hDV-NV-Cez"/>
+        <segue reference="ijh-Yv-Set"/>
+        <segue reference="b86-1s-YKk"/>
     </inferredMetricsTieBreakers>
 </document>
