@@ -30,11 +30,11 @@
 		D27F78A61DE2879A00078CD3 /* CASKELhome.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F789E1DE2879A00078CD3 /* CASKELhome.png */; };
 		D27F78A71DE2879A00078CD3 /* Exkari.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F789F1DE2879A00078CD3 /* Exkari.png */; };
 		D27F78A81DE2879A00078CD3 /* EXkashi.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A01DE2879A00078CD3 /* EXkashi.png */; };
-		D27F78A91DE2879A00078CD3 /* kakunin.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A11DE2879A00078CD3 /* kakunin.png */; };
 		D27F78AA1DE2879A00078CD3 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A21DE2879A00078CD3 /* menu.png */; };
 		D27F78AB1DE2879A00078CD3 /* Monotouroku.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A31DE2879A00078CD3 /* Monotouroku.png */; };
 		D27F78AC1DE2879A00078CD3 /* starting.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A41DE2879A00078CD3 /* starting.png */; };
 		D27F78AD1DE2879A00078CD3 /* touroku.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A51DE2879A00078CD3 /* touroku.png */; };
+		D2B11AF81DE55BA4000855BE /* kakunin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B11AF71DE55BA4000855BE /* kakunin.png */; };
 		D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,11 +86,11 @@
 		D27F789E1DE2879A00078CD3 /* CASKELhome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CASKELhome.png; sourceTree = "<group>"; };
 		D27F789F1DE2879A00078CD3 /* Exkari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exkari.png; sourceTree = "<group>"; };
 		D27F78A01DE2879A00078CD3 /* EXkashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EXkashi.png; sourceTree = "<group>"; };
-		D27F78A11DE2879A00078CD3 /* kakunin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakunin.png; sourceTree = "<group>"; };
 		D27F78A21DE2879A00078CD3 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		D27F78A31DE2879A00078CD3 /* Monotouroku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monotouroku.png; sourceTree = "<group>"; };
 		D27F78A41DE2879A00078CD3 /* starting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starting.png; sourceTree = "<group>"; };
 		D27F78A51DE2879A00078CD3 /* touroku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touroku.png; sourceTree = "<group>"; };
+		D2B11AF71DE55BA4000855BE /* kakunin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakunin.png; sourceTree = "<group>"; };
 		D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,12 +147,12 @@
 				D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */,
 				D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */,
 				D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */,
+				D2B11AF71DE55BA4000855BE /* kakunin.png */,
 				D24AEDE71DE417FB0094A2CE /* GoodsInfoViewController.swift */,
 				D27F789E1DE2879A00078CD3 /* CASKELhome.png */,
 				D27F789F1DE2879A00078CD3 /* Exkari.png */,
 				D24AEDE91DE427B70094A2CE /* NoImage.png */,
 				D27F78A01DE2879A00078CD3 /* EXkashi.png */,
-				D27F78A11DE2879A00078CD3 /* kakunin.png */,
 				D27F78A21DE2879A00078CD3 /* menu.png */,
 				D27F78A31DE2879A00078CD3 /* Monotouroku.png */,
 				D27F78A41DE2879A00078CD3 /* starting.png */,
@@ -302,6 +302,7 @@
 				D27F78A81DE2879A00078CD3 /* EXkashi.png in Resources */,
 				D27F78AC1DE2879A00078CD3 /* starting.png in Resources */,
 				D27F78A61DE2879A00078CD3 /* CASKELhome.png in Resources */,
+				D2B11AF81DE55BA4000855BE /* kakunin.png in Resources */,
 				D27F78AA1DE2879A00078CD3 /* menu.png in Resources */,
 				D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */,
 				D27F789D1DE2851600078CD3 /* Images.xcassets in Resources */,
@@ -311,7 +312,6 @@
 				D24AEDEA1DE427B70094A2CE /* NoImage.png in Resources */,
 				D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */,
 				D27F78A71DE2879A00078CD3 /* Exkari.png in Resources */,
-				D27F78A91DE2879A00078CD3 /* kakunin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

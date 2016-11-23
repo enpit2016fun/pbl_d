@@ -119,6 +119,10 @@ class TakePhotoViewController: UIViewController {
         }
     }
     
+    @IBAction func returnTakePhoto(segue: UIStoryboardSegue) {
+        
+    }
+    
     // 画像を中心から正方形にクリップする
     func cropSquareImage(image: UIImage) -> UIImage {
         // CGImageに変換する際に回転させないための処理

@@ -23,6 +23,9 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     var selectedGoodsId: String = ""
     var selectedGoodsName: String = ""
     
+    var prevSelectedId: String = ""
+    var prevSelectedName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -129,16 +132,35 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func tapSelectButton(sender: AnyObject) {
-        performSegueWithIdentifier("goodsSelected", sender: self)
+        if isSelected() {
+            performSegueWithIdentifier("goodsSelected", sender: self)
+        } else {
+            let alertController = UIAlertController(
+                title: "貸し出し品が未選択です",
+                message: "",
+                preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func tapBackButton(sender: AnyObject) {
         if selectEnable {
-            selectedGoodsId = ""
-            selectedGoodsName = ""
+            selectedGoodsId = prevSelectedId
+            selectedGoodsName = prevSelectedName
             performSegueWithIdentifier("goodsSelected", sender: self)
         } else {
             performSegueWithIdentifier("returnMenu", sender: self)
         }
     }
+    
+    func isSelected() -> Bool {
+        return (!selectedGoodsId.isEmpty && !selectedGoodsName.isEmpty)
+    }
+    
 }

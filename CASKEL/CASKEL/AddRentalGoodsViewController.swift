@@ -62,6 +62,23 @@ class AddRentalGoodsViewController: UIViewController, UIPickerViewDataSource, UI
     }
     
     @IBAction func registerButtonAction(sender: AnyObject) {
+        view.endEditing(true)
+        
+        if isTextFieldEmpty() {
+            let alertController = UIAlertController(
+                title: "未入力の項目があります",
+                message: "",
+                preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil ))
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
         //*** データベースへグッズ情報を送信 ***
         let userid = NCMBUser.currentUser().userName
         // 保存先クラスを作成
@@ -117,6 +134,10 @@ class AddRentalGoodsViewController: UIViewController, UIPickerViewDataSource, UI
                 })
             }
         }
+    }
+    
+    func isTextFieldEmpty() -> Bool {
+        return goodsTitleTextField.text!.isEmpty
     }
     
 }

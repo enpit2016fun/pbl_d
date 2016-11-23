@@ -97,6 +97,8 @@ class InputLendViewController: UIViewController {
         } else if segue.identifier == "goodsSelect" {
             let givc = segue.destinationViewController as! GoodsInfoViewController
             givc.selectEnable = true
+            givc.prevSelectedId = goodsId
+            givc.prevSelectedName = goodsName
         }
     }
     
@@ -123,7 +125,7 @@ class InputLendViewController: UIViewController {
     }
     
     func isTextFieldEmpty() -> Bool {
-        return (self.lendWhat.text!.isEmpty || self.lendWho.text!.isEmpty)
+        return (lendWhat.text!.isEmpty || lendWho.text!.isEmpty)
     }
     
     func setupDatePicker() {
