@@ -22,11 +22,12 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rl-tC-It9">
                                 <rect key="frame" x="91" y="364" width="139" height="92"/>
-                                <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" backgroundImage="NoImage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="NoImage.png"/>
                                 <connections>
                                     <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJ9-nY-87b"/>
                                 </connections>
@@ -57,7 +58,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="touroku.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-8x-7cM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-8x-7cM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoA-hz-slH">
@@ -545,7 +546,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-G2-QAp">
-                                <rect key="frame" x="58" y="235" width="204" height="40"/>
+                                <rect key="frame" x="58" y="278" width="204" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.37323347740000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸し借り情報を見る">
@@ -556,7 +557,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sno-0h-M3t">
-                                <rect key="frame" x="58" y="323" width="204" height="40"/>
+                                <rect key="frame" x="58" y="372" width="204" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.50066727229999997" blue="0.1215729622" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸した！">
@@ -574,7 +575,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-Q1-BgD">
-                                <rect key="frame" x="58" y="413" width="204" height="39"/>
+                                <rect key="frame" x="58" y="462" width="204" height="39"/>
                                 <color key="backgroundColor" red="0.362611882" green="1" blue="0.31011073109999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="貸し出し品登録">
@@ -584,11 +585,24 @@
                                     <segue destination="pvV-3e-TzL" kind="presentation" id="nIh-Bi-w8M"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="評価：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-vF-iuA">
+                                <rect key="frame" x="58" y="218" width="54" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-kl-Nup">
+                                <rect key="frame" x="114" y="218" width="148" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="assessLabel" destination="17F-kl-Nup" id="1XZ-NF-5pK"/>
                         <outlet property="userNameLabel" destination="aXr-xT-aPW" id="6RE-bw-UZI"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="358-de-v6Q"/>
                     </connections>
@@ -728,7 +742,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EXkashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="ooN-Qo-Umo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kashi_kari_List.png" translatesAutoresizingMaskIntoConstraints="NO" id="ooN-Qo-Umo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V24-6O-NQv">
@@ -960,12 +974,111 @@
                     <connections>
                         <outlet property="lendList" destination="43b-QF-IaC" id="fqR-gM-OEI"/>
                         <segue destination="djA-pq-KxE" kind="presentation" identifier="updated" id="b86-1s-YKk"/>
+                        <segue destination="AlA-QF-bPr" kind="presentation" identifier="assess" id="rVr-pj-8lh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySz-nl-mKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eyq-zK-fng" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2207" y="-404"/>
+        </scene>
+        <!--Assess View Controller-->
+        <scene sceneID="VHZ-AD-n8S">
+            <objects>
+                <viewController id="AlA-QF-bPr" customClass="AssessViewController" customModule="CASKEL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ydR-QG-QOn"/>
+                        <viewControllerLayoutGuide type="bottom" id="qpW-S0-sUQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tqv-kE-6Wx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EXkashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="uth-MR-PSc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR2-AZ-gdZ">
+                                <rect key="frame" x="244" y="56" width="45" height="30"/>
+                                <state key="normal" title="もどる"/>
+                                <connections>
+                                    <segue destination="grU-LX-LfD" kind="unwind" unwindAction="returnLendInfo:" id="IOq-aP-GTe"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-ME-DLK">
+                                <rect key="frame" x="30" y="418" width="261" height="31"/>
+                                <connections>
+                                    <action selector="changeSlider:" destination="AlA-QF-bPr" eventType="valueChanged" id="e7I-2P-ewt"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHJ-lP-Go7">
+                                <rect key="frame" x="134" y="347" width="53" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkO-mZ-Kb4">
+                                <rect key="frame" x="32" y="193" width="233" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-nD-Tsh">
+                                <rect key="frame" x="32" y="142" width="233" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="に" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSj-k2-5iR">
+                                <rect key="frame" x="267" y="142" width="22" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="を" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFH-Rr-eaD">
+                                <rect key="frame" x="267" y="193" width="22" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="返してもらった！" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-ES-XNL">
+                                <rect key="frame" x="153" y="230" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="評価しよう！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZH-O3-y6W">
+                                <rect key="frame" x="32" y="302" width="108" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyE-Ju-50X">
+                                <rect key="frame" x="114" y="485" width="93" height="36"/>
+                                <color key="backgroundColor" red="0.67761962980000001" green="0.95686145629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="返却完了">
+                                    <color key="titleColor" red="1" green="0.59231282640000005" blue="0.2562255537" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapReturnButton:" destination="AlA-QF-bPr" eventType="touchUpInside" id="gy7-lo-ndf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="assessLabel" destination="jHJ-lP-Go7" id="o8g-LL-PFL"/>
+                        <outlet property="assessSlider" destination="2Zo-ME-DLK" id="hOA-He-XSh"/>
+                        <outlet property="goodsLabel" destination="jkO-mZ-Kb4" id="gHR-tT-WMy"/>
+                        <outlet property="renterLabel" destination="eR4-nD-Tsh" id="CAZ-rS-7by"/>
+                        <segue destination="Tyn-uN-0rr" kind="presentation" identifier="assessCompleted" id="wd7-Nj-GoG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T1-ru-CH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="grU-LX-LfD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2696" y="-404"/>
         </scene>
         <!--Rent Info View Controller-->
         <scene sceneID="SMi-pf-MD4">
@@ -1058,13 +1171,17 @@
         <image name="EXkashi.png" width="750" height="1334"/>
         <image name="Exkari.png" width="750" height="1334"/>
         <image name="Monotouroku.png" width="750" height="1334"/>
+        <image name="NoImage.png" width="100" height="100"/>
         <image name="kakunin.png" width="750" height="1334"/>
+        <image name="kashi_kari_List.png" width="750" height="1334"/>
+        <image name="login.png" width="750" height="1334"/>
         <image name="menu.png" width="750" height="1334"/>
         <image name="touroku.png" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gGe-7Y-ag6"/>
+        <segue reference="hDV-NV-Cez"/>
         <segue reference="ijh-Yv-Set"/>
+        <segue reference="wd7-Nj-GoG"/>
         <segue reference="b86-1s-YKk"/>
     </inferredMetricsTieBreakers>
 </document>

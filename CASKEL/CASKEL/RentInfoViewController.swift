@@ -31,44 +31,8 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         query.addAscendingOrder("returnDate")
         
         // データストアの検索を実施
-        // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
-        var objects: [AnyObject] = []
-        do {
-            objects = try query.findObjects()
-        } catch {
-            // 検索失敗時の処理
-            let alertController = UIAlertController(
-                title: "データベース接続エラー",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: nil ))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-        for object in objects {
-            self.idList.append(object.objectId)
-            self.goodsList.append((object.objectForKey("goods") as? String)!)
-            
-            let userid = (object.objectForKey("lender") as? String)!
-            
-            var family = "??"
-            var first = "??"
-            
-            let userQuery = NCMBUser.query()
-            
-            /** ここに条件 **/
-            userQuery.whereKey("userName", equalTo: userid)
-            
-            // データストアの検索を実施
-            // *** バックグラウンドで行うとテーブルに反映されないので同期処理で検索 ***
-            var users: [AnyObject] = []
-            do {
-                users = try userQuery.findObjects()
-            } catch {
+        query.findObjectsInBackgroundWithBlock({(objects, error) in
+            if (error != nil){
                 // 検索失敗時の処理
                 let alertController = UIAlertController(
                     title: "データベース接続エラー",
@@ -81,50 +45,77 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
                     handler: nil ))
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
-            }
-            // 検索成功時の処理
-            if users.count <= 0 {
-                // ユーザ該当なし
-                let alertController = UIAlertController(
-                    title: "データベース接続エラー",
-                    message: "",
-                    preferredStyle: .Alert)
-                
-                alertController.addAction(UIAlertAction(
-                    title: "OK",
-                    style: .Default,
-                    handler: nil ))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                // 該当ユーザがいる場合
-                family = (users[0].objectForKey("familyName") as? String)!
-                first = (users[0].objectForKey("firstName") as? String)!
+                // 検索成功時の処理
+                for object in objects {
+                    self.idList.append(object.objectId)
+                    self.goodsList.append((object.objectForKey("goods") as? String)!)
+                    
+                    let userid = (object.objectForKey("lender") as? String)!
+                    
+                    var family = "??"
+                    var first = "??"
+                    
+                    let userQuery = NCMBUser.query()
+                    
+                    /** ここに条件 **/
+                    userQuery.whereKey("userName", equalTo: userid)
+                    
+                    // データストアの検索を実施
+                    // *** データの整合性を取るために2重のバックグラウンド処理はしない ***
+                    var users: [AnyObject] = []
+                    do {
+                        users = try userQuery.findObjects()
+                    } catch {
+                        // 検索失敗時の処理
+                        let alertController = UIAlertController(
+                            title: "データベース接続エラー",
+                            message: "",
+                            preferredStyle: .Alert)
+                        
+                        alertController.addAction(UIAlertAction(
+                            title: "OK",
+                            style: .Default,
+                            handler: nil ))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                    // 検索成功時の処理
+                    if users.count <= 0 {
+                        // ユーザ該当なし
+                    } else {
+                        // 該当ユーザがいる場合
+                        family = (users[0].objectForKey("familyName") as? String)!
+                        first = (users[0].objectForKey("firstName") as? String)!
+                    }
+                    
+                    self.nameList.append("\(family) \(first)　さん")
+                    
+                    let rDate = (object.objectForKey("returnDate") as? NSDate)!
+                    
+                    let df = NSDateFormatter()
+                    df.dateFormat = "yyyy/MM/dd"
+                    self.dateList.append(df.stringFromDate(rDate))
+                    
+                    let cal = NSCalendar.currentCalendar()
+                    
+                    let originalComp = cal.components([.Year, .Month, .Day], fromDate: NSDate())
+                    
+                    let novelComp = NSDateComponents()
+                    novelComp.year = originalComp.year
+                    novelComp.month = originalComp.month
+                    novelComp.day = originalComp.day
+                    novelComp.hour = 0
+                    novelComp.minute = 0
+                    novelComp.second = 0
+                    
+                    let componentsByDay = cal.components([.Day], fromDate: cal.dateFromComponents(novelComp)!, toDate: rDate, options: NSCalendarOptions())
+                    self.spentDayList.append(componentsByDay.day)
+                    
+                    self.rentList.reloadData()
+                }
             }
-            
-            self.nameList.append("\(family) \(first)　さん")
-            
-            let rDate = (object.objectForKey("returnDate") as? NSDate)!
-            
-            let df = NSDateFormatter()
-            df.dateFormat = "yyyy/MM/dd"
-            self.dateList.append(df.stringFromDate(rDate))
-            
-            let cal = NSCalendar.currentCalendar()
-            
-            let originalComp = cal.components([.Year, .Month, .Day], fromDate: NSDate())
-            
-            let novelComp = NSDateComponents()
-            novelComp.year = originalComp.year
-            novelComp.month = originalComp.month
-            novelComp.day = originalComp.day
-            novelComp.hour = 0
-            novelComp.minute = 0
-            novelComp.second = 0
-            
-            let componentsByDay = cal.components([.Day], fromDate: cal.dateFromComponents(novelComp)!, toDate: rDate, options: NSCalendarOptions())
-            self.spentDayList.append(componentsByDay.day)
-        }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,7 +123,7 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(rentList: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return idList.count
+        return nameList.count
     }
     
     func tableView(rentList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

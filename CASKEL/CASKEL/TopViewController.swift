@@ -11,6 +11,7 @@ import UIKit
 class TopViewController: UIViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var assessLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,44 @@ class TopViewController: UIViewController {
         let first = (NCMBUser.currentUser().objectForKey("firstName") as? String)!
         
         userNameLabel.text = "\(family) \(first)"
+        
+        let query = NCMBQuery(className: "AssessTable")
+        
+        /** ここに条件 **/
+        query.whereKey("user", equalTo: NCMBUser.currentUser().userName)
+        
+        // データストアの検索を実施
+        query.findObjectsInBackgroundWithBlock({(objects, error) in
+            if (error != nil){
+                // 検索失敗時の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 検索成功時の処理
+                if objects.count <= 0 {
+                    // 評価なし
+                } else {
+                    // 評価あり
+                    var sum = 0
+                    for object in objects {
+                        sum += (object.objectForKey("value") as? Int)!
+                    }
+                    let mean: Double = Double(sum) / Double(objects.count)
+                    // 小数第2位で四捨五入
+                    let meanRound = round(mean * 10) / 10
+                    self.assessLabel.text! = String(meanRound)
+                }
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {

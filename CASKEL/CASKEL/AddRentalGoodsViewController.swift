@@ -123,7 +123,6 @@ class AddRentalGoodsViewController: UIViewController, UIPickerViewDataSource, UI
                         self.presentViewController(alertController, animated: true, completion: nil)
                     } else {
                         // 保存成功時の処理
-                        self.performSegueWithIdentifier("registerComplete", sender: self)
                     }
                     
                     }, progressBlock: { (int: Int32) -> Void in
@@ -134,6 +133,7 @@ class AddRentalGoodsViewController: UIViewController, UIPickerViewDataSource, UI
                 })
             }
         }
+        self.performSegueWithIdentifier("registerComplete", sender: self)
     }
     
     func isTextFieldEmpty() -> Bool {

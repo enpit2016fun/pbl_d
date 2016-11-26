@@ -63,9 +63,9 @@ class ConfirmLendViewController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
                 // 保存に成功した場合の処理
-                self.performSegueWithIdentifier("rentComplete", sender: self)
             }
         }
+        self.performSegueWithIdentifier("rentComplete", sender: self)
     }
     
 }

@@ -198,10 +198,9 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setObject(self.userNameTextField.text, forKey: "UserID")
                 defaults.setObject(self.passwordTextField.text, forKey: "Password")
-                
-                self.performSegueWithIdentifier("register", sender: self)
             }
         }
+        self.performSegueWithIdentifier("register", sender: self)
     }
 
     @IBAction func tapView(sender: AnyObject) {
