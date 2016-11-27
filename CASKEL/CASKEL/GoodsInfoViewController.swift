@@ -14,9 +14,10 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var selectButton: UIButton!
     
     var idList: [String] = []
-    var imageList: [UIImage] = []
-    var titleList: [String] = []
-    var categoryList: [String] = []
+    // idをキーとした連想配列で管理する
+    var imageList: [String: UIImage] = [:]
+    var titleList: [String: String] = [:]
+    var categoryList: [String: String] = [:]
     
     var selectEnable: Bool = false
     
@@ -63,37 +64,39 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
             } else {
                 // 検索成功時の処理
                 for object in objects {
-                    self.idList.append(object.objectId)
-                    self.titleList.append((object.objectForKey("title") as? String)!)
-                    self.categoryList.append((object.objectForKey("category") as? String)!)
+                    let id = object.objectId
+                    
+                    self.idList.append(id)
+                    self.titleList[id] = object.objectForKey("title") as? String
+                    self.categoryList[id] = object.objectForKey("category") as? String
                     
                     let file: NCMBFile = NCMBFile.fileWithName(object.objectId + ".jpg" ,data: nil) as! NCMBFile
                     
-                    // ファイルストアの検索を実施
-                    // *** データの整合性を取るために2重のバックグラウンド処理はしない ***
-                    var image: NSData? = nil
-                    do {
-                        image = try file.getData()
-                    } catch {
-                        let alertController = UIAlertController(
-                            title: "データベース接続エラー",
-                            message: "",
-                            preferredStyle: .Alert)
-                        
-                        alertController.addAction(UIAlertAction(
-                            title: "OK",
-                            style: .Default,
-                            handler: nil ))
-                        
-                        self.presentViewController(alertController, animated: true, completion: nil)
+                    file.getDataInBackgroundWithBlock { (image: NSData!, error: NSError!) -> Void in
+                        if error != nil {
+                            // ファイル取得失敗時の処理
+                            let alertController = UIAlertController(
+                                title: "データベース接続エラー",
+                                message: "",
+                                preferredStyle: .Alert)
+                            
+                            alertController.addAction(UIAlertAction(
+                                title: "OK",
+                                style: .Default,
+                                handler: nil ))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        } else {
+                            // ファイル取得成功時の処理
+                            if image != nil {
+                                self.imageList[id] = (UIImage(data: image!)!)
+                            } else {
+                                self.imageList[id] = (UIImage(named: "NoImage.png")!)
+                            }
+                            
+                            self.goodsList.reloadData()
+                        }
                     }
-                    if image != nil {
-                        self.imageList.append(UIImage(data: image!)!)
-                    } else {
-                        self.imageList.append(UIImage(named: "NoImage.png")!)
-                    }
-                    
-                    self.goodsList.reloadData()
                 }
             }
         })
@@ -118,21 +121,24 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(goodsList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = goodsList.dequeueReusableCellWithIdentifier("goodsListCell", forIndexPath: indexPath)
         
+        let id = idList[indexPath.row]
+        
         let imageView = goodsList.viewWithTag(1) as! UIImageView
-        imageView.image = imageList[indexPath.row]
+        imageView.image = imageList[id]
         
         let titleLabel = goodsList.viewWithTag(2) as! UILabel
-        titleLabel.text = titleList[indexPath.row]
+        titleLabel.text = titleList[id]
         
         let categoryLabel = goodsList.viewWithTag(3) as! UILabel
-        categoryLabel.text = categoryList[indexPath.row]
+        categoryLabel.text = categoryList[id]
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedGoodsId = idList[indexPath.row]
-        selectedGoodsName = titleList[indexPath.row]
+        let id = idList[indexPath.row]
+        selectedGoodsId = id
+        selectedGoodsName = titleList[id]!
     }
     
     @IBAction func tapSelectButton(sender: AnyObject) {

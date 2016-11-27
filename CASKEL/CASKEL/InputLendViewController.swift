@@ -164,48 +164,45 @@ class InputLendViewController: UIViewController {
         query.whereKey("userName", equalTo: textField.text!)
         
         // データストアの検索を実施
-        // *** バックグラウンドで行うと反映されない可能性があるので同期処理で検索 ***
-        var objects: [AnyObject] = []
-        do {
-            objects = try query.findObjects()
-        } catch {
-            // 検索失敗時の処理
-            let alertController = UIAlertController(
-                title: "データベース接続エラー",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: { action in self.pushOK() } ))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
-            return
-        }
-        // 検索成功時の処理
-        if objects.count <= 0 {
-            // ユーザ該当なし
-            let alertController = UIAlertController(
-                title: "入力されたIDのユーザは存在しません",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: { action in self.pushOK() } ))
+        query.findObjectsInBackgroundWithBlock({(objects, error) in
+            if (error != nil){
+                // 検索失敗時の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: { action in self.pushOK() } ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 検索成功時の処理
+                if objects.count <= 0 {
+                    // ユーザ該当なし
+                    let alertController = UIAlertController(
+                        title: "入力されたIDのユーザは存在しません",
+                        message: "",
+                        preferredStyle: .Alert)
                     
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            // 該当ユーザがいる場合
-            let family = objects[0].objectForKey("familyName") as? String
-            let first = objects[0].objectForKey("firstName") as? String
-            self.nameLabel.text = "\(family!) \(first!)"
+                    alertController.addAction(UIAlertAction(
+                        title: "OK",
+                        style: .Default,
+                        handler: { action in self.pushOK() } ))
                     
-            self.isIDValid = true
-        }
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                } else {
+                    // 該当ユーザがいる場合
+                    let family = objects[0].objectForKey("familyName") as? String
+                    let first = objects[0].objectForKey("firstName") as? String
+                    self.nameLabel.text = "\(family!) \(first!)"
+                    
+                    self.isIDValid = true
+                }
+            }
+        })
     }
     
     func pushOK() {

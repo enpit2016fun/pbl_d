@@ -973,7 +973,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="lendList" destination="43b-QF-IaC" id="fqR-gM-OEI"/>
-                        <segue destination="djA-pq-KxE" kind="presentation" identifier="updated" id="b86-1s-YKk"/>
                         <segue destination="AlA-QF-bPr" kind="presentation" identifier="assess" id="rVr-pj-8lh"/>
                     </connections>
                 </viewController>
@@ -1072,7 +1071,7 @@
                         <outlet property="assessSlider" destination="2Zo-ME-DLK" id="hOA-He-XSh"/>
                         <outlet property="goodsLabel" destination="jkO-mZ-Kb4" id="gHR-tT-WMy"/>
                         <outlet property="renterLabel" destination="eR4-nD-Tsh" id="CAZ-rS-7by"/>
-                        <segue destination="Tyn-uN-0rr" kind="presentation" identifier="assessCompleted" id="wd7-Nj-GoG"/>
+                        <segue destination="djA-pq-KxE" kind="presentation" identifier="assessCompleted" id="Zd7-jP-Hlu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5T1-ru-CH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1181,7 +1180,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="hDV-NV-Cez"/>
         <segue reference="ijh-Yv-Set"/>
-        <segue reference="wd7-Nj-GoG"/>
-        <segue reference="b86-1s-YKk"/>
+        <segue reference="Zd7-jP-Hlu"/>
     </inferredMetricsTieBreakers>
 </document>
