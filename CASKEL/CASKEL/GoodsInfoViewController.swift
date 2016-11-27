@@ -111,6 +111,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
             let ilvc = segue.destinationViewController as! InputLendViewController
             ilvc.goodsId = selectedGoodsId
             ilvc.goodsName = selectedGoodsName
+            ilvc.returnOrigin = "goods"
         }
     }
     

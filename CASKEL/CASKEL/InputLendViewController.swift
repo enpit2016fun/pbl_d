@@ -15,21 +15,20 @@ class InputLendViewController: UIViewController {
     @IBOutlet weak var returnWhen: UIDatePicker!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var isIDValid = false
-    
     var goodsId: String = ""
     var goodsName: String = ""
+    
+    var renterId: String = ""
+    var renterName: String = ""
+    
+    var returnOrigin: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lendWhat.enabled = false
-        
         nameLabel.text = ""
-        setupDatePicker()
         
-        // 編集終了時，貸した相手のIDからユーザ情報を取得
-        lendWho.addTarget(self, action: #selector(researchUser(_:)), forControlEvents: .EditingDidEnd)
+        setupDatePicker()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,27 +36,9 @@ class InputLendViewController: UIViewController {
     }
     
     @IBAction func tapDecisionButton(sender: AnyObject) {
-        // テキストフィールド編集中にボタンを押した場合にも，編集終了の処理を行う
-        view.endEditing(true)
-        
         if isTextFieldEmpty() {
             let alertController = UIAlertController(
                 title: "未入力の項目があります",
-                message: "",
-                preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: nil ))
-            
-            presentViewController(alertController, animated: true, completion: nil)
-            
-            return
-        }
-        
-        if !isIDValid {
-            let alertController = UIAlertController(
-                title: "存在しないユーザIDが指定されています",
                 message: "",
                 preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(
@@ -78,8 +59,8 @@ class InputLendViewController: UIViewController {
             let clvc = segue.destinationViewController as! ConfirmLendViewController
             clvc.goodsId = goodsId
             clvc.goodsName = goodsName
-            clvc.personId = lendWho.text!
-            clvc.personName = nameLabel.text!
+            clvc.personId = renterId
+            clvc.personName = renterName
             
             let cal = NSCalendar.currentCalendar()
             
@@ -99,6 +80,10 @@ class InputLendViewController: UIViewController {
             givc.selectEnable = true
             givc.prevSelectedId = goodsId
             givc.prevSelectedName = goodsName
+        } else if segue.identifier == "userSearch" {
+            let svc = segue.destinationViewController as! SearchViewController
+            svc.prevRenterId = renterId
+            svc.prevRenterName = renterName
         }
     }
     
@@ -121,11 +106,66 @@ class InputLendViewController: UIViewController {
     }
     
     @IBAction func returnInputLend(segue: UIStoryboardSegue) {
-        lendWhat.text = goodsName
+        if returnOrigin == "goods" {
+            lendWhat.text = goodsName
+        } else if returnOrigin == "renter" {
+            lendWho.text = renterId
+            nameLabel.text = ""
+        
+            if !renterName.isEmpty {
+                nameLabel.text = renterName
+            } else if !renterId.isEmpty {
+                let query = NCMBUser.query()
+            
+                /** ここに条件 **/
+                query.whereKey("userName", equalTo: renterId)
+            
+                // データストアの検索を実施
+                query.findObjectsInBackgroundWithBlock({(objects, error) in
+                    if (error != nil){
+                        // 検索失敗時の処理
+                        let alertController = UIAlertController(
+                            title: "データベース接続エラー",
+                            message: "",
+                            preferredStyle: .Alert)
+                    
+                        alertController.addAction(UIAlertAction(
+                            title: "OK",
+                            style: .Default,
+                            handler: { action in self.initNameField() } ))
+                    
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    } else {
+                        // 検索成功時の処理
+                        if objects.count <= 0 {
+                            // ユーザ該当なし
+                            let alertController = UIAlertController(
+                                title: "データベース接続エラー",
+                                message: "",
+                                preferredStyle: .Alert)
+                        
+                            alertController.addAction(UIAlertAction(
+                                title: "OK",
+                                style: .Default,
+                                handler: { action in self.initNameField() } ))
+                        
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        } else {
+                            // 該当ユーザがいる場合
+                            let family = objects[0].objectForKey("familyName") as? String
+                            let first = objects[0].objectForKey("firstName") as? String
+                        
+                            self.renterName = "\(family!) \(first!)"
+                            self.nameLabel.text = self.renterName
+                        }
+                    }
+                })
+            }
+        }
     }
     
     func isTextFieldEmpty() -> Bool {
-        return (lendWhat.text!.isEmpty || lendWho.text!.isEmpty)
+        return (lendWhat.text!.isEmpty || lendWho.text!.isEmpty || nameLabel.text!.isEmpty)
     }
     
     func setupDatePicker() {
@@ -141,74 +181,11 @@ class InputLendViewController: UIViewController {
         returnWhen.maximumDate = maxDate
     }
     
-    func researchUser(textField: UITextField) {
-        if textField.text! == NCMBUser.currentUser().userName {
-            let alertController = UIAlertController(
-                title: "自分のユーザIDが入力されています",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(
-                title: "OK",
-                style: .Default,
-                handler: { action in self.pushOK() } ))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
-            return
-        }
-        
-        let query = NCMBUser.query()
-        
-        /** ここに条件 **/
-        query.whereKey("userName", equalTo: textField.text!)
-        
-        // データストアの検索を実施
-        query.findObjectsInBackgroundWithBlock({(objects, error) in
-            if (error != nil){
-                // 検索失敗時の処理
-                let alertController = UIAlertController(
-                    title: "データベース接続エラー",
-                    message: "",
-                    preferredStyle: .Alert)
-                
-                alertController.addAction(UIAlertAction(
-                    title: "OK",
-                    style: .Default,
-                    handler: { action in self.pushOK() } ))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-            } else {
-                // 検索成功時の処理
-                if objects.count <= 0 {
-                    // ユーザ該当なし
-                    let alertController = UIAlertController(
-                        title: "入力されたIDのユーザは存在しません",
-                        message: "",
-                        preferredStyle: .Alert)
-                    
-                    alertController.addAction(UIAlertAction(
-                        title: "OK",
-                        style: .Default,
-                        handler: { action in self.pushOK() } ))
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                } else {
-                    // 該当ユーザがいる場合
-                    let family = objects[0].objectForKey("familyName") as? String
-                    let first = objects[0].objectForKey("firstName") as? String
-                    self.nameLabel.text = "\(family!) \(first!)"
-                    
-                    self.isIDValid = true
-                }
-            }
-        })
-    }
-    
-    func pushOK() {
+    func initNameField() {
         lendWho.text = ""
         nameLabel.text = ""
-        isIDValid = false
+        renterId = ""
+        renterName = ""
     }
-
+    
 }

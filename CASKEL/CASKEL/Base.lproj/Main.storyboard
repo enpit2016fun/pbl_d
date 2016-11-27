@@ -460,10 +460,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodsListCell" rowHeight="108" id="HG7-Na-peh">
-                                        <rect key="frame" x="0.0" y="28" width="279" height="108"/>
+                                        <rect key="frame" x="0.0" y="28" width="280" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HG7-Na-peh" id="3C1-XL-ARF">
-                                            <rect key="frame" x="0.0" y="0.0" width="279" height="107"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-vh-UP8">
@@ -643,7 +643,7 @@
                                     <action selector="tapDecisionButton:" destination="xah-Cf-1Qv" eventType="touchUpInside" id="SgD-kZ-RAw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-Gu-JYM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-Gu-JYM">
                                 <rect key="frame" x="42" y="152" width="171" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -651,8 +651,8 @@
                                     <action selector="pushReturnOnGoods:" destination="xah-Cf-1Qv" eventType="editingDidEndOnExit" id="gx3-t5-LqX"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザIDを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-p4-Pkm">
-                                <rect key="frame" x="41" y="234" width="237" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-p4-Pkm">
+                                <rect key="frame" x="41" y="234" width="172" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                 <connections>
@@ -704,6 +704,13 @@
                                     <segue destination="yg3-UU-aOB" kind="unwind" unwindAction="returnTop:" id="z43-07-Jk2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ1-Oa-3Zk">
+                                <rect key="frame" x="237" y="234" width="42" height="30"/>
+                                <state key="normal" title="検索"/>
+                                <connections>
+                                    <segue destination="yMk-WZ-DBw" kind="presentation" identifier="userSearch" id="fGT-0j-xGM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -729,6 +736,124 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1169" y="1129"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="f5A-e4-xrz">
+            <objects>
+                <viewController id="yMk-WZ-DBw" customClass="SearchViewController" customModule="CASKEL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TNR-jQ-FTg"/>
+                        <viewControllerLayoutGuide type="bottom" id="XuI-nZ-mgM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QOs-WQ-emx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monotouroku.png" translatesAutoresizingMaskIntoConstraints="NO" id="xOw-4E-4Tp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Rki-5y-n7J" appends="YES" id="fGR-vN-d8s"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq8-cY-pP3">
+                                <rect key="frame" x="243" y="58" width="45" height="30"/>
+                                <state key="normal" title="もどる"/>
+                                <connections>
+                                    <action selector="tapBackButton:" destination="yMk-WZ-DBw" eventType="touchUpInside" id="PFz-TJ-6SB"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザIDを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lu-26-gSJ">
+                                <rect key="frame" x="39" y="183" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                <connections>
+                                    <action selector="newInputOnId:" destination="yMk-WZ-DBw" eventType="editingDidBegin" id="1Ak-wE-E8H"/>
+                                    <action selector="pushReturn:" destination="yMk-WZ-DBw" eventType="editingDidEndOnExit" id="gYi-68-2Cz"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザIDで検索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A0-un-Vpw">
+                                <rect key="frame" x="39" y="154" width="133" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="苗字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmO-2z-SH9">
+                                <rect key="frame" x="39" y="318" width="115" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="newInputOnName:" destination="yMk-WZ-DBw" eventType="editingDidBegin" id="KlF-7f-YBl"/>
+                                    <action selector="pushReturn:" destination="yMk-WZ-DBw" eventType="editingDidEndOnExit" id="p5x-vU-nma"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p44-yO-3W9">
+                                <rect key="frame" x="167" y="318" width="115" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="newInputOnName:" destination="yMk-WZ-DBw" eventType="editingDidBegin" id="Jht-eQ-W1Z"/>
+                                    <action selector="pushReturn:" destination="yMk-WZ-DBw" eventType="editingDidEndOnExit" id="HAh-La-3k8"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="氏名で検索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eB-5Z-cq2">
+                                <rect key="frame" x="39" y="290" width="115" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PI-lO-yeq">
+                                <rect key="frame" x="128" y="493" width="64" height="33"/>
+                                <color key="backgroundColor" red="0.67761962980000001" green="0.95686145629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="選択">
+                                    <color key="titleColor" red="1" green="0.59231282640000005" blue="0.2562255537" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSelectButton:" destination="yMk-WZ-DBw" eventType="touchUpInside" id="qZp-Ng-rL2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="さん" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBj-4l-tbz">
+                                <rect key="frame" x="243" y="221" width="39" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhP-hR-6Ex">
+                                <rect key="frame" x="39" y="220" width="196" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsX-ru-aKn">
+                                <rect key="frame" x="39" y="356" width="244" height="86"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yMk-WZ-DBw" id="Ebw-R1-vbI"/>
+                                    <outlet property="delegate" destination="yMk-WZ-DBw" id="sPV-I6-cxd"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="familyNameTextField" destination="zmO-2z-SH9" id="oa9-uM-AfZ"/>
+                        <outlet property="firstNameTextField" destination="p44-yO-3W9" id="rLm-dE-t5J"/>
+                        <outlet property="idPickerView" destination="IsX-ru-aKn" id="Bcu-es-EMW"/>
+                        <outlet property="idTextField" destination="0lu-26-gSJ" id="jBw-WM-9VH"/>
+                        <outlet property="nameLabel" destination="ZhP-hR-6Ex" id="kdC-b9-QWg"/>
+                        <segue destination="bD0-E2-LuZ" kind="unwind" identifier="renterSelected" unwindAction="returnInputLend:" id="fh0-UQ-eBo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIn-Wt-PmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bD0-E2-LuZ" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Rki-5y-n7J">
+                    <connections>
+                        <action selector="tapView:" destination="yMk-WZ-DBw" id="GK4-Vh-F03"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1171" y="1891"/>
         </scene>
         <!--Rent Lend View Controller-->
         <scene sceneID="eze-sw-xNb">
@@ -1178,8 +1303,8 @@
         <image name="touroku.png" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hDV-NV-Cez"/>
+        <segue reference="97F-Xt-pl3"/>
+        <segue reference="y4m-B8-ya6"/>
         <segue reference="ijh-Yv-Set"/>
-        <segue reference="Zd7-jP-Hlu"/>
     </inferredMetricsTieBreakers>
 </document>
