@@ -18,6 +18,7 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     var nameList: [String: String] = [:]
     var dateList: [String: String] = [:]
     var spentDayList: [String: Int] = [:]
+    var imageList: [String: UIImage] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,67 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
                     let id = object.objectId
                     
                     self.idList.append(id)
-                    self.goodsList[id] = object.objectForKey("goods") as? String
+                    
+                    // グッズ情報検索
+                    let goodsid = (object.objectForKey("goods") as? String)!
+                    
+                    let goodsObj = NCMBObject(className: "GoodsTable")
+                    
+                    /** ここに条件 **/
+                    goodsObj.objectId = goodsid
+                    
+                    // データストアの検索を実施
+                    goodsObj.fetchInBackgroundWithBlock { (error: NSError!) -> Void in
+                        if (error != nil){
+                            // 検索失敗時の処理
+                            let alertController = UIAlertController(
+                                title: "データベース接続エラー",
+                                message: "",
+                                preferredStyle: .Alert)
+                            
+                            alertController.addAction(UIAlertAction(
+                                title: "OK",
+                                style: .Default,
+                                handler: nil ))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        } else {
+                            // 検索成功時の処理
+                            self.goodsList[id] = (goodsObj.objectForKey("title") as? String)!
+                                
+                            let file: NCMBFile = NCMBFile.fileWithName(goodsid + ".jpg" ,data: nil) as! NCMBFile
+                                
+                            file.getDataInBackgroundWithBlock { (image: NSData!, error: NSError!) -> Void in
+                                if error != nil {
+                                    // ファイル取得失敗時の処理
+                                    let alertController = UIAlertController(
+                                        title: "データベース接続エラー",
+                                        message: "",
+                                        preferredStyle: .Alert)
+                                    
+                                    alertController.addAction(UIAlertAction(
+                                        title: "OK",
+                                        style: .Default,
+                                        handler: nil ))
+                                    
+                                    self.presentViewController(alertController, animated: true, completion: nil)
+                                } else {
+                                    // ファイル取得成功時の処理
+                                    if image != nil {
+                                        self.imageList[id] = (UIImage(data: image!)!)
+                                    } else {
+                                        self.imageList[id] = (UIImage(named: "NoImage.png")!)
+                                    }
+                                        
+                                    self.rentList.reloadData()
+                                }
+                            }
+                        }
+                    }
                     
                     let userid = (object.objectForKey("lender") as? String)!
                     
-                    var family = "??"
-                    var first = "??"
-                    
+                    // ユーザ情報検索
                     let userQuery = NCMBUser.query()
                     
                     /** ここに条件 **/
@@ -80,7 +135,10 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
                             
                             self.presentViewController(alertController, animated: true, completion: nil)
                         } else {
-                            // 検索成功時の処理
+                            // 検索成功時の処理                            
+                            var family = "??"
+                            var first = "??"
+                            
                             if users.count <= 0 {
                                 // ユーザ該当なし
                             } else {
@@ -89,32 +147,34 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
                                 first = (users[0].objectForKey("firstName") as? String)!
                             }
                             
-                            self.nameList[id] = "\(family) \(first)　さん"
-                            
-                            let rDate = (object.objectForKey("returnDate") as? NSDate)!
-                            
-                            let df = NSDateFormatter()
-                            df.dateFormat = "yyyy/MM/dd"
-                            self.dateList[id] = df.stringFromDate(rDate)
-                            
-                            let cal = NSCalendar.currentCalendar()
-                            
-                            let originalComp = cal.components([.Year, .Month, .Day], fromDate: NSDate())
-                            
-                            let novelComp = NSDateComponents()
-                            novelComp.year = originalComp.year
-                            novelComp.month = originalComp.month
-                            novelComp.day = originalComp.day
-                            novelComp.hour = 0
-                            novelComp.minute = 0
-                            novelComp.second = 0
-                            
-                            let componentsByDay = cal.components([.Day], fromDate: cal.dateFromComponents(novelComp)!, toDate: rDate, options: NSCalendarOptions())
-                            self.spentDayList[id] = componentsByDay.day
+                            self.nameList[id] = "\(family) \(first)"
                             
                             self.rentList.reloadData()
                         }
                     })
+                    
+                    let rDate = (object.objectForKey("returnDate") as? NSDate)!
+                    
+                    let df = NSDateFormatter()
+                    df.dateFormat = "yyyy/MM/dd"
+                    self.dateList[id] = df.stringFromDate(rDate)
+                    
+                    let cal = NSCalendar.currentCalendar()
+                    
+                    let originalComp = cal.components([.Year, .Month, .Day], fromDate: NSDate())
+                    
+                    let novelComp = NSDateComponents()
+                    novelComp.year = originalComp.year
+                    novelComp.month = originalComp.month
+                    novelComp.day = originalComp.day
+                    novelComp.hour = 0
+                    novelComp.minute = 0
+                    novelComp.second = 0
+                    
+                    let componentsByDay = cal.components([.Day], fromDate: cal.dateFromComponents(novelComp)!, toDate: rDate, options: NSCalendarOptions())
+                    self.spentDayList[id] = componentsByDay.day
+                    
+                    self.rentList.reloadData()
                 }
             }
         })
@@ -125,7 +185,7 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(rentList: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameList.count
+        return min(nameList.count, b: imageList.count, c: spentDayList.count)
     }
     
     func tableView(rentList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -153,7 +213,23 @@ class RentInfoViewController: UIViewController, UITableViewDataSource, UITableVi
         
         dateLabel.text = dateList[id]
         
+        let imageView = rentList.viewWithTag(4) as! UIImageView
+        imageView.image = imageList[id]
+        
         return cell
+    }
+    
+    func min(a: Int, b: Int, c: Int) -> Int {
+        if a < b {
+            if a < c {
+                return a
+            }
+            return c
+        }
+        if b < c {
+            return b
+        }
+        return c
     }
 
 }
