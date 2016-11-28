@@ -15,10 +15,12 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var familyNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var idPickerView: UIPickerView!
+    @IBOutlet weak var assessLabel: UILabel!
     
     var isIDValid = false
     
     var idList: [String] = [""]
+    var assessList: [String: String] = [:]
     
     var renterId: String = ""
     var renterName: String = ""
@@ -30,6 +32,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.viewDidLoad()
         
         nameLabel.text = ""
+        assessLabel.text = "-"
         
         // 編集終了時，貸した相手のIDからユーザ情報を取得
         idTextField.addTarget(self, action: #selector(researchUserForId(_:)), forControlEvents: .EditingDidEnd)
@@ -129,6 +132,11 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         renterId = idList[row]
+        if assessList[renterId] != nil {
+            assessLabel.text = assessList[renterId]
+        } else {
+            getUserAssess(renterId)
+        }
     }
     
     func researchUserForId(textField: UITextField) {
@@ -191,6 +199,12 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     let first = objects[0].objectForKey("firstName") as? String
                     self.nameLabel.text = "\(family!) \(first!)"
                     
+                    if self.assessList[self.renterId] != nil {
+                        self.assessLabel.text = self.assessList[self.renterId]
+                    } else {
+                        self.getUserAssess(self.renterId)
+                    }
+                    
                     self.isIDValid = true
                 }
             }
@@ -246,7 +260,57 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                         self.idPickerView.reloadComponent(0)
                     }
                     self.renterId = self.idList[0]
+                    
+                    if self.assessList[self.renterId] != nil {
+                        self.assessLabel.text = self.assessList[self.renterId]
+                    } else {
+                        self.getUserAssess(self.renterId)
+                    }
+                    
                     self.isIDValid = true
+                }
+            }
+        })
+    }
+    
+    func getUserAssess(userid: String) {
+        let query = NCMBQuery(className: "AssessTable")
+        
+        /** ここに条件 **/
+        query.whereKey("user", equalTo: userid)
+        
+        // データストアの検索を実施
+        query.findObjectsInBackgroundWithBlock({(objects, error) in
+            if (error != nil){
+                // 検索失敗時の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 検索成功時の処理
+                if objects.count <= 0 {
+                    // 評価なし
+                    self.assessList[userid] = "-"
+                    self.assessLabel.text = self.assessList[userid]
+                } else {
+                    // 評価あり
+                    var sum = 0
+                    for object in objects {
+                        sum += (object.objectForKey("value") as? Int)!
+                    }
+                    let mean: Double = Double(sum) / Double(objects.count)
+                    // 小数第2位で四捨五入
+                    let meanRound = round(mean * 10) / 10
+                    self.assessList[userid] = String(meanRound)
+                    self.assessLabel.text = self.assessList[userid]
                 }
             }
         })
@@ -255,6 +319,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func initIdField() {
         idTextField.text = ""
         nameLabel.text = ""
+        assessLabel.text = "-"
         isIDValid = false
     }
     
@@ -262,6 +327,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         familyNameTextField.text = ""
         firstNameTextField.text = ""
         idList = [""]
+        assessLabel.text = "-"
         isIDValid = false
         idPickerView.reloadComponent(0)
     }

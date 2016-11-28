@@ -45,6 +45,7 @@ class TopViewController: UIViewController {
                 // 検索成功時の処理
                 if objects.count <= 0 {
                     // 評価なし
+                    self.assessLabel.text! = "-"
                 } else {
                     // 評価あり
                     var sum = 0
