@@ -12,6 +12,10 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var goodsList: UITableView!
     @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var categoryButton1: UIButton!
+    @IBOutlet weak var categoryButton2: UIButton!
+    @IBOutlet weak var categoryButton3: UIButton!
+    @IBOutlet weak var categoryButton4: UIButton!
     
     var idList: [String] = []
     // idをキーとした連想配列で管理する
@@ -28,8 +32,17 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     var prevSelectedId: String = ""
     var prevSelectedName: String = ""
     
+    let allCategories = ["本・漫画", "CD・DVD", "ゲーム", "その他"]
+    
+    var selectedCategory: String = ""
+    var selectedIdList: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initCategoryButton()
+        pushedButton(categoryButton1)
+        selectedCategory = allCategories[0]
         
         if selectEnable {
             selectButton.enabled = true
@@ -99,7 +112,8 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
                                 self.imageList[id] = (UIImage(named: "NoImage.png")!)
                             }
                             
-                            self.goodsList.reloadData()
+                            self.updateCategory(self.selectedCategory
+                            )
                         }
                     }
                 }
@@ -121,13 +135,13 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(goodsList: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageList.count
+        return selectedIdList.count
     }
     
     func tableView(goodsList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = goodsList.dequeueReusableCellWithIdentifier("goodsListCell", forIndexPath: indexPath)
         
-        let id = idList[indexPath.row]
+        let id = selectedIdList[indexPath.row]
         
         let imageView = goodsList.viewWithTag(1) as! UIImageView
         imageView.image = imageList[id]
@@ -138,6 +152,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         let categoryLabel = goodsList.viewWithTag(3) as! UILabel
         categoryLabel.text = categoryList[id]
         
+        cell.backgroundColor = UIColor.whiteColor()
         if enableList[id]! {
             cell.backgroundColor = UIColor.orangeColor()
         }
@@ -146,9 +161,16 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let id = idList[indexPath.row]
+        let id = selectedIdList[indexPath.row]
         selectedGoodsId = id
         selectedGoodsName = titleList[id]!
+    }
+    
+    @IBAction func tapCategoryButton(button: UIButton) {
+        selectedCategory = (button.titleLabel?.text)!
+        resetCategoryButton()
+        pushedButton(button)
+        updateCategory(selectedCategory)
     }
     
     @IBAction func tapSelectButton(sender: AnyObject) {
@@ -177,6 +199,50 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         } else {
             performSegueWithIdentifier("returnMenu", sender: self)
         }
+    }
+    
+    func initCategoryButton() {
+        categoryButton1.setTitle(allCategories[0], forState: UIControlState.Normal)
+        
+        categoryButton2.setTitle(allCategories[1], forState: UIControlState.Normal)
+        
+        categoryButton3.setTitle(allCategories[2], forState: UIControlState.Normal)
+        
+        categoryButton4.setTitle(allCategories[3], forState: UIControlState.Normal)
+    }
+    
+    func resetCategoryButton() {
+        categoryButton1.selected = false
+        categoryButton1.enabled = true
+        categoryButton1.backgroundColor = UIColor.whiteColor()
+        
+        categoryButton2.selected = false
+        categoryButton2.enabled = true
+        categoryButton2.backgroundColor = UIColor.whiteColor()
+        
+        categoryButton3.selected = false
+        categoryButton3.enabled = true
+        categoryButton3.backgroundColor = UIColor.whiteColor()
+        
+        categoryButton4.selected = false
+        categoryButton4.enabled = true
+        categoryButton4.backgroundColor = UIColor.whiteColor()
+    }
+    
+    func pushedButton(button: UIButton) {
+        button.selected = true
+        button.enabled = false
+        button.backgroundColor = UIColor.lightGrayColor()
+    }
+    
+    func updateCategory(category: String) {
+        selectedIdList = []
+        for id in idList {
+            if categoryList[id] == category {
+                selectedIdList.append(id)
+            }
+        }
+        goodsList.reloadData()
     }
     
     func isSelected() -> Bool {
