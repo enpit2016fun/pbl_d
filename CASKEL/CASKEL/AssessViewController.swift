@@ -73,15 +73,60 @@ class AssessViewController: UIViewController {
             } else {
                 // 取得に成功した場合の処理
                 // *** データベースへユーザ評価情報を送信 ***
+                let goodsid = (object.objectForKey("goods") as? String)!
                 let userid = object.objectForKey("renter")
+                
+                let goodsObj = NCMBObject(className: "GoodsTable")
+                
+                goodsObj.objectId = goodsid
+                
+                goodsObj.fetchInBackgroundWithBlock { (error: NSError!) -> Void in
+                    if error != nil {
+                        // 取得に失敗した場合の処理
+                        let alertController = UIAlertController(
+                            title: "データベース接続エラー",
+                            message: "エラーコード：\(error.code)",
+                            preferredStyle: .Alert)
+                        
+                        alertController.addAction(UIAlertAction(
+                            title: "OK",
+                            style: .Default,
+                            handler: nil ))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    } else {
+                        // 取得に成功した場合の処理
+                        goodsObj.setObject(false, forKey: "isLend")
+                        goodsObj.saveInBackgroundWithBlock({ (error: NSError!) -> Void in
+                            if error != nil {
+                                // 更新に失敗した場合の処理
+                                let alertController = UIAlertController(
+                                    title: "データベース接続エラー",
+                                    message: "エラーコード：\(error.code)",
+                                    preferredStyle: .Alert)
+                                
+                                alertController.addAction(UIAlertAction(
+                                    title: "OK",
+                                    style: .Default,
+                                    handler: nil ))
+                                
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                            }else{
+                                // 更新に成功した場合の処理
+                            }
+                        })
+                    }
+                }
+                
                 let assessVal = Int(self.assessSlider.value)
+                
                 // 保存先クラスを作成
-                let obj = NCMBObject(className: "AssessTable")
+                let assessObj = NCMBObject(className: "AssessTable")
                 // 値を設定
-                obj.setObject(userid, forKey: "user")
-                obj.setObject(assessVal, forKey: "value")
+                assessObj.setObject(userid, forKey: "user")
+                assessObj.setObject(assessVal, forKey: "value")
                 // 保存を実施
-                obj.saveInBackgroundWithBlock{(error: NSError!) in
+                assessObj.saveInBackgroundWithBlock{(error: NSError!) in
                     if (error != nil) {
                         // 保存に失敗した場合の処理
                         let alertController = UIAlertController(
@@ -120,8 +165,9 @@ class AssessViewController: UIViewController {
                     } else {
                         // 保存に成功した場合の処理
                     }
-                    self.performSegueWithIdentifier("assessCompleted", sender: self)
                 }
+                
+                self.performSegueWithIdentifier("assessCompleted", sender: self)
             }
         }
     }

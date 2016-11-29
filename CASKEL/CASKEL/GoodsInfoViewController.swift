@@ -18,6 +18,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     var imageList: [String: UIImage] = [:]
     var titleList: [String: String] = [:]
     var categoryList: [String: String] = [:]
+    var enableList: [String: Bool] = [:]
     
     var selectEnable: Bool = false
     
@@ -45,6 +46,9 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         
         /** ここに条件 **/
         query.whereKey("owner", equalTo: NCMBUser.currentUser().userName)
+        if selectEnable {
+            query.whereKey("isLend", equalTo: false)
+        }
         
         // データストアの検索を実施
         query.findObjectsInBackgroundWithBlock({(objects, error) in
@@ -69,6 +73,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
                     self.idList.append(id)
                     self.titleList[id] = object.objectForKey("title") as? String
                     self.categoryList[id] = object.objectForKey("category") as? String
+                    self.enableList[id] = (object.objectForKey("isLend") as? Bool)!
                     
                     let file: NCMBFile = NCMBFile.fileWithName(object.objectId + ".jpg" ,data: nil) as! NCMBFile
                     
@@ -132,6 +137,10 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         
         let categoryLabel = goodsList.viewWithTag(3) as! UILabel
         categoryLabel.text = categoryList[id]
+        
+        if enableList[id]! {
+            cell.backgroundColor = UIColor.orangeColor()
+        }
         
         return cell
     }

@@ -87,6 +87,7 @@ class AddRentalGoodsViewController: UIViewController, UIPickerViewDataSource, UI
         obj.setObject(userid, forKey: "owner")
         obj.setObject(goodsTitleTextField.text!, forKey: "title")
         obj.setObject(category, forKey: "category")
+        obj.setObject(false, forKey: "isLend")
         // 保存を実施
         obj.saveInBackgroundWithBlock{(error: NSError!) in
             if (error != nil) {

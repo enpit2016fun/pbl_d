@@ -1322,8 +1322,8 @@
         <image name="touroku.png" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="97F-Xt-pl3"/>
         <segue reference="ijh-Yv-Set"/>
+        <segue reference="gGe-7Y-ag6"/>
         <segue reference="Zd7-jP-Hlu"/>
     </inferredMetricsTieBreakers>
 </document>

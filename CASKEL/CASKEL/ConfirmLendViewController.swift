@@ -65,6 +65,49 @@ class ConfirmLendViewController: UIViewController {
                 // 保存に成功した場合の処理
             }
         }
+        
+        let goodsObj = NCMBObject(className: "GoodsTable")
+        
+        goodsObj.objectId = goodsId
+        
+        goodsObj.fetchInBackgroundWithBlock { (error: NSError!) -> Void in
+            if error != nil {
+                // 取得に失敗した場合の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "エラーコード：\(error.code)",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 取得に成功した場合の処理
+                goodsObj.setObject(true, forKey: "isLend")
+                goodsObj.saveInBackgroundWithBlock({ (error: NSError!) -> Void in
+                    if error != nil {
+                        // 更新に失敗した場合の処理
+                        let alertController = UIAlertController(
+                            title: "データベース接続エラー",
+                            message: "エラーコード：\(error.code)",
+                            preferredStyle: .Alert)
+                        
+                        alertController.addAction(UIAlertAction(
+                            title: "OK",
+                            style: .Default,
+                            handler: nil ))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }else{
+                        // 更新に成功した場合の処理
+                    }
+                })
+            }
+        }
+        
         self.performSegueWithIdentifier("rentComplete", sender: self)
     }
     
