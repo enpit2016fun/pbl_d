@@ -86,7 +86,13 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             return
         }
         
-        renterName = nameLabel.text!
+        if !nameLabel.text!.isEmpty {
+            renterName = nameLabel.text!
+        } else if !familyNameTextField.text!.isEmpty && !firstNameTextField.text!.isEmpty {
+            renterName = "\(familyNameTextField.text!) \(firstNameTextField.text!)"
+        } else {
+            renterName = ""
+        }
         
         performSegueWithIdentifier("renterSelected", sender: self)
     }
@@ -97,7 +103,13 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         performSegueWithIdentifier("renterSelected", sender: self)
     }
     
-    @IBAction func pushReturn(sender: AnyObject) {
+    @IBAction func pushReturnOnId(sender: AnyObject) {
+        initNameField()
+        view.endEditing(true)
+    }
+    
+    @IBAction func pushReturnOnName(sender: AnyObject) {
+        initIdField()
         view.endEditing(true)
     }
     
@@ -140,6 +152,10 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func researchUserForId(textField: UITextField) {
+        if isIdTextFieldEmpty() {
+            return
+        }
+        
         if textField.text! == NCMBUser.currentUser().userName {
             let alertController = UIAlertController(
                 title: "自分のユーザIDが入力されています",
@@ -212,6 +228,10 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func researchUserForName(textField: UITextField) {
+        if isNameTextFieldEmpty() {
+            return
+        }
+        
         let query = NCMBUser.query()
         
         /** ここに条件 **/
@@ -319,6 +339,8 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func initIdField() {
         idTextField.text = ""
         nameLabel.text = ""
+        idList = [""]
+        idPickerView.reloadComponent(0)
         assessLabel.text = "-"
         isIDValid = false
     }
@@ -327,9 +349,17 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         familyNameTextField.text = ""
         firstNameTextField.text = ""
         idList = [""]
+        idPickerView.reloadComponent(0)
         assessLabel.text = "-"
         isIDValid = false
-        idPickerView.reloadComponent(0)
+    }
+    
+    func isIdTextFieldEmpty() -> Bool {
+        return idTextField.text!.isEmpty
+    }
+    
+    func isNameTextFieldEmpty() -> Bool {
+        return familyNameTextField.text!.isEmpty && firstNameTextField.text!.isEmpty
     }
     
 }

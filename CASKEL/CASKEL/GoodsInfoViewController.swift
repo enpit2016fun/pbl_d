@@ -112,8 +112,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
                                 self.imageList[id] = (UIImage(named: "NoImage.png")!)
                             }
                             
-                            self.updateCategory(self.selectedCategory
-                            )
+                            self.updateCategory()
                         }
                     }
                 }
@@ -170,7 +169,10 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         selectedCategory = (button.titleLabel?.text)!
         resetCategoryButton()
         pushedButton(button)
-        updateCategory(selectedCategory)
+        updateCategory()
+        
+        selectedGoodsId = ""
+        selectedGoodsName = ""
     }
     
     @IBAction func tapSelectButton(sender: AnyObject) {
@@ -209,6 +211,8 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         categoryButton3.setTitle(allCategories[2], forState: UIControlState.Normal)
         
         categoryButton4.setTitle(allCategories[3], forState: UIControlState.Normal)
+        
+        resetCategoryButton()
     }
     
     func resetCategoryButton() {
@@ -235,10 +239,10 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         button.backgroundColor = UIColor.lightGrayColor()
     }
     
-    func updateCategory(category: String) {
+    func updateCategory() {
         selectedIdList = []
         for id in idList {
-            if categoryList[id] == category {
+            if categoryList[id] == selectedCategory {
                 selectedIdList.append(id)
             }
         }
