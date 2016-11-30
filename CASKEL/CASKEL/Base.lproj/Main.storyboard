@@ -709,7 +709,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monotouroku.png" translatesAutoresizingMaskIntoConstraints="NO" id="RgT-6A-sSm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kashidashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="RgT-6A-sSm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="何を貸した？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwD-nA-EIF">
@@ -835,7 +835,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monotouroku.png" translatesAutoresizingMaskIntoConstraints="NO" id="xOw-4E-4Tp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_kensaku.png" translatesAutoresizingMaskIntoConstraints="NO" id="xOw-4E-4Tp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <gestureRecognizers/>
                             </imageView>
@@ -1031,7 +1031,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kakunin.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Jy-3r-9jy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monoKakunin.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Jy-3r-9jy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-l1-Xgx">
@@ -1220,7 +1220,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EXkashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="uth-MR-PSc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="henkyaku_kakunin.png" translatesAutoresizingMaskIntoConstraints="NO" id="uth-MR-PSc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR2-AZ-gdZ">
@@ -1401,15 +1401,18 @@
         <image name="Exkari.png" width="750" height="1334"/>
         <image name="Monotouroku.png" width="750" height="1334"/>
         <image name="NoImage.png" width="100" height="100"/>
-        <image name="kakunin.png" width="750" height="1334"/>
+        <image name="henkyaku_kakunin.png" width="750" height="1334"/>
         <image name="kashi_kari_List.png" width="750" height="1334"/>
+        <image name="kashidashi.png" width="750" height="1334"/>
         <image name="login.png" width="750" height="1334"/>
         <image name="menu.png" width="750" height="1334"/>
+        <image name="monoKakunin.png" width="750" height="1334"/>
         <image name="touroku.png" width="750" height="1334"/>
+        <image name="user_kensaku.png" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ijh-Yv-Set"/>
-        <segue reference="gGe-7Y-ag6"/>
+        <segue reference="hDV-NV-Cez"/>
         <segue reference="Zd7-jP-Hlu"/>
     </inferredMetricsTieBreakers>
 </document>

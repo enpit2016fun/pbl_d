@@ -93,17 +93,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
                     file.getDataInBackgroundWithBlock { (image: NSData!, error: NSError!) -> Void in
                         if error != nil {
                             // ファイル取得失敗時の処理
-                            let alertController = UIAlertController(
-                                title: "データベース接続エラー",
-                                message: "",
-                                preferredStyle: .Alert)
-                            
-                            alertController.addAction(UIAlertAction(
-                                title: "OK",
-                                style: .Default,
-                                handler: nil ))
-                            
-                            self.presentViewController(alertController, animated: true, completion: nil)
+                            self.imageList[id] = (UIImage(named: "NoImage.png")!)
                         } else {
                             // ファイル取得成功時の処理
                             if image != nil {
@@ -111,9 +101,9 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
                             } else {
                                 self.imageList[id] = (UIImage(named: "NoImage.png")!)
                             }
-                            
-                            self.updateCategory()
                         }
+                        
+                        self.updateCategory()
                     }
                 }
             }
