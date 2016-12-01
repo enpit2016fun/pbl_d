@@ -21,6 +21,8 @@ class TopViewController: UIViewController {
         let first = (NCMBUser.currentUser().objectForKey("firstName") as? String)!
         
         userNameLabel.text = "\(family) \(first)"
+        assessLabel.text = ""
+        assessImage.image = starImage(0.0)
         
         let query = NCMBQuery(className: "AssessTable")
         

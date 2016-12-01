@@ -44,6 +44,18 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.didReceiveMemoryWarning()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "confirm" {
+            let cuvc = segue.destinationViewController as! ConfirmUserViewController
+            cuvc.userid = userNameTextField.text!
+            cuvc.password = passwordTextField.text!
+            cuvc.familyName = familyNameTextField.text!
+            cuvc.firstName = firstNameTextField.text!
+            cuvc.schoolName = schoolNameTextField.text! + school
+            cuvc.grade = grade
+        }
+    }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
     }
@@ -102,6 +114,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             return
         }
+        
         if isInvalidUserId() {
             let alertController = UIAlertController(
                 title: "ユーザIDは半角英数\(minId)文字以上で入力してください",
@@ -116,6 +129,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             return
         }
+        
         if isNotPasswordMatch() {
             let alertController = UIAlertController(
                 title: "パスワードが一致しません",
@@ -130,6 +144,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             return
         }
+        
         if isInvalidPassword() {
             let alertController = UIAlertController(
                 title: "パスワードは半角英数\(minPass)文字以上で入力してください",
@@ -145,62 +160,48 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             return
         }
         
-        //NCMBUserのインスタンスを作成
-        let user = NCMBUser()
-        //ユーザー名を設定
-        user.userName = self.userNameTextField.text
-        //パスワードを設定
-        user.password = self.passwordTextField.text
+        // 同じIDのユーザがいないかチェック
+        let query = NCMBUser.query()
         
-        //その他項目の設定
-        user.setObject(self.familyNameTextField.text, forKey: "familyName")
-        user.setObject(self.firstNameTextField.text, forKey: "firstName")
-        user.setObject(self.schoolNameTextField.text! + school, forKey: "school")
-        user.setObject(grade, forKey: "grade")
+        /** ここに条件 **/
+        query.whereKey("userName", equalTo: userNameTextField.text!)
         
-        // ユーザ情報の読み込み（検索）を有効化
-        let acl = NCMBACL()
-        acl.setPublicReadAccess(true)
-        user.ACL = acl
-        
-        //会員の登録を行う
-        user.signUpInBackgroundWithBlock{(error: NSError!) in
-            if error != nil {
-                // 新規登録失敗時の処理
-                if error.code == 409001 {
-                    // ユーザID重複時
+        // データストアの検索を実施
+        query.findObjectsInBackgroundWithBlock({(objects, error) in
+            if (error != nil){
+                // 検索失敗時の処理
+                let alertController = UIAlertController(
+                    title: "データベース接続エラー",
+                    message: "",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // 検索成功時の処理
+                if objects.count <= 0 {
+                    // ユーザ該当なし
+                    self.performSegueWithIdentifier("confirm", sender: self)
+                } else {
+                    // 該当ユーザがいる場合
                     let alertController = UIAlertController(
                         title: "すでに使用されているユーザIDです",
                         message: "",
                         preferredStyle: .Alert)
-                    alertController.addAction(UIAlertAction(
-                        title: "OK",
-                        style: .Default,
-                        handler: nil ))
-                
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                } else {
-                    // その他のエラー
-                    let alertController = UIAlertController(
-                        title: "ユーザ登録に失敗しました",
-                        message: "エラーコード：\(error.code)",
-                        preferredStyle: .Alert)
                     
                     alertController.addAction(UIAlertAction(
                         title: "OK",
                         style: .Default,
-                        handler: nil ))
+                        handler: { action in self.cleanUserIdTextField() } ))
                     
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
-            } else {
-                // 新規登録成功時の処理
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(self.userNameTextField.text, forKey: "UserID")
-                defaults.setObject(self.passwordTextField.text, forKey: "Password")
             }
-        }
-        self.performSegueWithIdentifier("register", sender: self)
+        })
     }
 
     @IBAction func tapView(sender: AnyObject) {
@@ -211,7 +212,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // 今フォーカスが当たっているテキストボックスからフォーカスを外す
         textField.resignFirstResponder()
         
-        if textField.tag < 3 {
+        if textField.tag > 2 && textField.tag < 6 {
             if !isAllHalfCharacters(textField.text!) {
                 let alertController = UIAlertController(
                     title: "ユーザID・パスワードには半角英数字を使用してください",
@@ -234,6 +235,10 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if let nextTextField = self.view.viewWithTag(nextTag) {
             nextTextField.becomeFirstResponder()
         }
+    }
+    
+    @IBAction func returnRegister(segue: UIStoryboardSegue) {
+        
     }
     
     func cleanUserIdTextField() {

@@ -57,6 +57,7 @@
 		D2FCF8071DE7B8C400EACC6B /* kashi_kari_List.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FCF8051DE7B8C400EACC6B /* kashi_kari_List.png */; };
 		D2FCF8081DE7B8C400EACC6B /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FCF8061DE7B8C400EACC6B /* login.png */; };
 		D2FDB8D51DEAF8370027941C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FDB8D41DEAF8370027941C /* SearchViewController.swift */; };
+		D2FF650B1DF06BA000B893BA /* ConfirmUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF650A1DF06BA000B893BA /* ConfirmUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		D2FCF8051DE7B8C400EACC6B /* kashi_kari_List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashi_kari_List.png; sourceTree = "<group>"; };
 		D2FCF8061DE7B8C400EACC6B /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		D2FDB8D41DEAF8370027941C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D2FF650A1DF06BA000B893BA /* ConfirmUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				D27F789C1DE2851600078CD3 /* Images.xcassets */,
 				D2A7C6C31DE9D8D700A0EF58 /* AssessViewController.swift */,
 				D2FDB8D41DEAF8370027941C /* SearchViewController.swift */,
+				D2FF650A1DF06BA000B893BA /* ConfirmUserViewController.swift */,
 			);
 			path = CASKEL;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				D25CB6011DD5F63000A8DABC /* RentInfoViewController.swift in Sources */,
 				D25CB5FF1DD5F62B00A8DABC /* RegisterViewController.swift in Sources */,
 				D2054B3A1DDC700500DF3FC8 /* AddRentalGoodsViewController.swift in Sources */,
+				D2FF650B1DF06BA000B893BA /* ConfirmUserViewController.swift in Sources */,
 				D25CB6031DD5F63B00A8DABC /* RentLendViewController.swift in Sources */,
 				D24AEDE81DE417FC0094A2CE /* GoodsInfoViewController.swift in Sources */,
 				D25CB5FD1DD5F62600A8DABC /* LendInfoViewController.swift in Sources */,
