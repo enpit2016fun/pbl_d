@@ -10,10 +10,10 @@ import UIKit
 
 class AssessViewController: UIViewController {
     
-    @IBOutlet weak var assessLabel: UILabel!
     @IBOutlet weak var renterLabel: UILabel!
     @IBOutlet weak var goodsLabel: UILabel!
     @IBOutlet weak var assessSlider: UISlider!
+    @IBOutlet weak var assessImage: UIImageView!
     
     var rentalId: String = ""
     var goodsName: String = ""
@@ -22,7 +22,7 @@ class AssessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        assessLabel.text = String(Int(assessSlider.value))
+        assessImage.image = starImage(Int(assessSlider.value))
         renterLabel.text = renterName
         goodsLabel.text = goodsName
     }
@@ -174,7 +174,23 @@ class AssessViewController: UIViewController {
     
     @IBAction func changeSlider(sender: UISlider) {
         sender.value = Float(Int(round(sender.value)))
-        assessLabel.text = String(Int(sender.value))
+        assessImage.image = starImage(Int(assessSlider.value))
+    }
+    
+    func starImage(assess: Int) -> UIImage {
+        if assess == 0 {
+            return UIImage(named: "zero_star")!
+        } else if assess == 1 {
+            return UIImage(named: "one_star")!
+        } else if assess == 2 {
+            return UIImage(named: "two_star")!
+        } else if assess == 3 {
+            return UIImage(named: "three_star")!
+        } else if assess == 4 {
+            return UIImage(named: "four_star")!
+        } else {
+            return UIImage(named: "five_star")!
+        }
     }
     
 }

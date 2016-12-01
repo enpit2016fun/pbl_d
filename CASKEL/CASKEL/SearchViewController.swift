@@ -16,11 +16,12 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var idPickerView: UIPickerView!
     @IBOutlet weak var assessLabel: UILabel!
+    @IBOutlet weak var assessImage: UIImageView!
     
     var isIDValid = false
     
     var idList: [String] = [""]
-    var assessList: [String: String] = [:]
+    var assessList: [String: Double] = [:]
     
     var renterId: String = ""
     var renterName: String = ""
@@ -32,7 +33,8 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.viewDidLoad()
         
         nameLabel.text = ""
-        assessLabel.text = "-"
+        assessLabel.text = ""
+        assessImage.image = starImage(0.0)
         
         // 編集終了時，貸した相手のIDからユーザ情報を取得
         idTextField.addTarget(self, action: #selector(researchUserForId(_:)), forControlEvents: .EditingDidEnd)
@@ -145,7 +147,13 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         renterId = idList[row]
         if assessList[renterId] != nil {
-            assessLabel.text = assessList[renterId]
+            if assessList[renterId] < 0.0 {
+                assessLabel.text = "まだ評価はありません"
+                assessImage.image = starImage(0.0)
+            } else {
+                assessLabel.text = ""
+                assessImage.image = starImage(exRoundUp(assessList[renterId]!))
+            }
         } else {
             getUserAssess(renterId)
         }
@@ -216,7 +224,13 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     self.nameLabel.text = "\(family!) \(first!)"
                     
                     if self.assessList[self.renterId] != nil {
-                        self.assessLabel.text = self.assessList[self.renterId]
+                        if self.assessList[self.renterId] < 0.0 {
+                            self.assessLabel.text = "まだ評価はありません"
+                            self.assessImage.image = self.starImage(0.0)
+                        } else {
+                            self.assessLabel.text = ""
+                            self.assessImage.image = self.starImage(self.exRoundUp(self.assessList[self.renterId]!))
+                        }
                     } else {
                         self.getUserAssess(self.renterId)
                     }
@@ -282,7 +296,13 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     self.renterId = self.idList[0]
                     
                     if self.assessList[self.renterId] != nil {
-                        self.assessLabel.text = self.assessList[self.renterId]
+                        if self.assessList[self.renterId] < 0.0 {
+                            self.assessLabel.text = "まだ評価はありません"
+                            self.assessImage.image = self.starImage(0.0)
+                        } else {
+                            self.assessLabel.text = ""
+                            self.assessImage.image = self.starImage(self.exRoundUp(self.assessList[self.renterId]!))
+                        }
                     } else {
                         self.getUserAssess(self.renterId)
                     }
@@ -318,19 +338,19 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 // 検索成功時の処理
                 if objects.count <= 0 {
                     // 評価なし
-                    self.assessList[userid] = "-"
-                    self.assessLabel.text = self.assessList[userid]
+                    self.assessList[userid] = -1.0
+                    self.assessLabel.text = "まだ評価はありません"
+                    self.assessImage.image = self.starImage(0.0)
                 } else {
                     // 評価あり
                     var sum = 0
                     for object in objects {
                         sum += (object.objectForKey("value") as? Int)!
                     }
-                    let mean: Double = Double(sum) / Double(objects.count)
-                    // 小数第2位で四捨五入
-                    let meanRound = round(mean * 10) / 10
-                    self.assessList[userid] = String(meanRound)
-                    self.assessLabel.text = self.assessList[userid]
+                    let mean = Double(sum) / Double(objects.count)
+                    self.assessList[userid] = mean
+                    self.assessLabel.text = ""
+                    self.assessImage.image = self.starImage(self.exRoundUp(mean))
                 }
             }
         })
@@ -341,7 +361,8 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         nameLabel.text = ""
         idList = [""]
         idPickerView.reloadComponent(0)
-        assessLabel.text = "-"
+        assessLabel.text = ""
+        assessImage.image = starImage(0.0)
         isIDValid = false
     }
     
@@ -350,7 +371,8 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         firstNameTextField.text = ""
         idList = [""]
         idPickerView.reloadComponent(0)
-        assessLabel.text = "-"
+        assessLabel.text = ""
+        assessImage.image = starImage(0.0)
         isIDValid = false
     }
     
@@ -360,6 +382,44 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func isNameTextFieldEmpty() -> Bool {
         return familyNameTextField.text!.isEmpty && firstNameTextField.text!.isEmpty
+    }
+    
+    // 0.5刻みで切り上げを行う
+    func exRoundUp(num: Double) -> Double {
+        let intPart = Double(Int(num))
+        if num - intPart == 0.0 {
+            return intPart
+        } else if num - intPart <= 0.5 {
+            return intPart + 0.5
+        } else {
+            return intPart + 1.0
+        }
+    }
+    
+    func starImage(assess: Double) -> UIImage {
+        if assess == 0.0 {
+            return UIImage(named: "zero_star")!
+        } else if assess == 0.5 {
+            return UIImage(named: "half_star")!
+        } else if assess == 1.0 {
+            return UIImage(named: "one_star")!
+        } else if assess == 1.5 {
+            return UIImage(named: "one_half")!
+        } else if assess == 2.0 {
+            return UIImage(named: "two_star")!
+        } else if assess == 2.5 {
+            return UIImage(named: "two_half")!
+        } else if assess == 3.0 {
+            return UIImage(named: "three_star")!
+        } else if assess == 3.5 {
+            return UIImage(named: "three_half")!
+        } else if assess == 4.0 {
+            return UIImage(named: "four_star")!
+        } else if assess == 4.5 {
+            return UIImage(named: "four_half")!
+        } else {
+            return UIImage(named: "five_star")!
+        }
     }
     
 }

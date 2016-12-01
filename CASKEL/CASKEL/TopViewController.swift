@@ -12,6 +12,7 @@ class TopViewController: UIViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var assessLabel: UILabel!
+    @IBOutlet weak var assessImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,17 +46,17 @@ class TopViewController: UIViewController {
                 // 検索成功時の処理
                 if objects.count <= 0 {
                     // 評価なし
-                    self.assessLabel.text! = "-"
+                    self.assessLabel.text! = "まだ評価はありません"
+                    self.assessImage.image = self.starImage(0.0)
                 } else {
                     // 評価あり
                     var sum = 0
                     for object in objects {
                         sum += (object.objectForKey("value") as? Int)!
                     }
-                    let mean: Double = Double(sum) / Double(objects.count)
-                    // 小数第2位で四捨五入
-                    let meanRound = round(mean * 10) / 10
-                    self.assessLabel.text! = String(meanRound)
+                    let mean = Double(sum) / Double(objects.count)
+                    self.assessLabel.text! = ""
+                    self.assessImage.image = self.starImage(self.exRoundUp(mean))
                 }
             }
         })
@@ -95,6 +96,44 @@ class TopViewController: UIViewController {
         defaults.setObject(nil, forKey: "Password")
         
         self.performSegueWithIdentifier("logout", sender: self)
+    }
+    
+    // 0.5刻みで切り上げを行う
+    func exRoundUp(num: Double) -> Double {
+        let intPart = Double(Int(num))
+        if num - intPart == 0.0 {
+            return intPart
+        } else if num - intPart <= 0.5 {
+            return intPart + 0.5
+        } else {
+            return intPart + 1.0
+        }
+    }
+    
+    func starImage(assess: Double) -> UIImage {
+        if assess == 0.0 {
+            return UIImage(named: "zero_star")!
+        } else if assess == 0.5 {
+            return UIImage(named: "half_star")!
+        } else if assess == 1.0 {
+            return UIImage(named: "one_star")!
+        } else if assess == 1.5 {
+            return UIImage(named: "one_half")!
+        } else if assess == 2.0 {
+            return UIImage(named: "two_star")!
+        } else if assess == 2.5 {
+            return UIImage(named: "two_half")!
+        } else if assess == 3.0 {
+            return UIImage(named: "three_star")!
+        } else if assess == 3.5 {
+            return UIImage(named: "three_half")!
+        } else if assess == 4.0 {
+            return UIImage(named: "four_star")!
+        } else if assess == 4.5 {
+            return UIImage(named: "four_half")!
+        } else {
+            return UIImage(named: "five_star")!
+        }
     }
     
 }

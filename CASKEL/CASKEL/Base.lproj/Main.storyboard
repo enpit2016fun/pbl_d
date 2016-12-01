@@ -673,13 +673,16 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自分の評価：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-vF-iuA">
                                 <rect key="frame" x="58" y="218" width="108" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-kl-Nup">
-                                <rect key="frame" x="174" y="218" width="88" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="949-yo-yG6">
+                                <rect key="frame" x="139" y="217" width="120" height="24"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まだ評価はありません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-kl-Nup">
+                                <rect key="frame" x="139" y="219" width="120" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -688,6 +691,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="assessImage" destination="949-yo-yG6" id="27r-SO-7T6"/>
                         <outlet property="assessLabel" destination="17F-kl-Nup" id="1XZ-NF-5pK"/>
                         <outlet property="userNameLabel" destination="aXr-xT-aPW" id="6RE-bw-UZI"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="358-de-v6Q"/>
@@ -898,7 +902,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsX-ru-aKn">
-                                <rect key="frame" x="39" y="303" width="244" height="69"/>
+                                <rect key="frame" x="39" y="303" width="244" height="86"/>
                                 <connections>
                                     <outlet property="dataSource" destination="yMk-WZ-DBw" id="Ebw-R1-vbI"/>
                                     <outlet property="delegate" destination="yMk-WZ-DBw" id="sPV-I6-cxd"/>
@@ -910,9 +914,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-8R-FGE">
-                                <rect key="frame" x="137" y="435" width="47" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yK-NM-chD">
+                                <rect key="frame" x="39" y="430" width="243" height="48"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まだ評価はありません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-8R-FGE">
+                                <rect key="frame" x="39" y="435" width="243" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -935,6 +942,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="assessImage" destination="4yK-NM-chD" id="r92-pE-7tX"/>
                         <outlet property="assessLabel" destination="fbU-8R-FGE" id="ziG-kf-uLh"/>
                         <outlet property="familyNameTextField" destination="zmO-2z-SH9" id="oa9-uM-AfZ"/>
                         <outlet property="firstNameTextField" destination="p44-yO-3W9" id="rLm-dE-t5J"/>
@@ -1120,7 +1128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EXkashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-Wj-QRs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kasihdashi_now.png" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-Wj-QRs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="43b-QF-IaC">
@@ -1230,25 +1238,16 @@
                                     <segue destination="grU-LX-LfD" kind="unwind" unwindAction="returnLendInfo:" id="IOq-aP-GTe"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-ME-DLK">
-                                <rect key="frame" x="30" y="418" width="261" height="31"/>
-                                <connections>
-                                    <action selector="changeSlider:" destination="AlA-QF-bPr" eventType="valueChanged" id="e7I-2P-ewt"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHJ-lP-Go7">
-                                <rect key="frame" x="134" y="347" width="53" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkO-mZ-Kb4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dot_green.png" translatesAutoresizingMaskIntoConstraints="NO" id="ji3-9b-Wa0">
+                                <rect key="frame" x="0.0" y="259" width="320" height="233"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goods" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkO-mZ-Kb4">
                                 <rect key="frame" x="32" y="193" width="233" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-nD-Tsh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-nD-Tsh">
                                 <rect key="frame" x="32" y="142" width="195" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1273,13 +1272,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="評価しよう！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZH-O3-y6W">
-                                <rect key="frame" x="32" y="302" width="108" height="22"/>
+                                <rect key="frame" x="40" y="310" width="108" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyE-Ju-50X">
-                                <rect key="frame" x="114" y="485" width="93" height="36"/>
+                                <rect key="frame" x="114" y="500" width="93" height="36"/>
                                 <color key="backgroundColor" red="0.67761962980000001" green="0.95686145629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="返却完了">
@@ -1289,12 +1288,21 @@
                                     <action selector="tapReturnButton:" destination="AlA-QF-bPr" eventType="touchUpInside" id="gy7-lo-ndf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-Ne-MGc">
+                                <rect key="frame" x="50" y="354" width="220" height="44"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-ME-DLK">
+                                <rect key="frame" x="43" y="411" width="234" height="31"/>
+                                <connections>
+                                    <action selector="changeSlider:" destination="AlA-QF-bPr" eventType="valueChanged" id="e7I-2P-ewt"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="assessLabel" destination="jHJ-lP-Go7" id="o8g-LL-PFL"/>
+                        <outlet property="assessImage" destination="fcr-Ne-MGc" id="Gf7-cl-sft"/>
                         <outlet property="assessSlider" destination="2Zo-ME-DLK" id="hOA-He-XSh"/>
                         <outlet property="goodsLabel" destination="jkO-mZ-Kb4" id="gHR-tT-WMy"/>
                         <outlet property="renterLabel" destination="eR4-nD-Tsh" id="CAZ-rS-7by"/>
@@ -1401,9 +1409,11 @@
         <image name="Exkari.png" width="750" height="1334"/>
         <image name="Monotouroku.png" width="750" height="1334"/>
         <image name="NoImage.png" width="100" height="100"/>
+        <image name="dot_green.png" width="341" height="326"/>
         <image name="henkyaku_kakunin.png" width="750" height="1334"/>
         <image name="kashi_kari_List.png" width="750" height="1334"/>
         <image name="kashidashi.png" width="750" height="1334"/>
+        <image name="kasihdashi_now.png" width="750" height="1334"/>
         <image name="login.png" width="750" height="1334"/>
         <image name="menu.png" width="750" height="1334"/>
         <image name="monoKakunin.png" width="750" height="1334"/>
@@ -1411,8 +1421,8 @@
         <image name="user_kensaku.png" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gGe-7Y-ag6"/>
+        <segue reference="y4m-B8-ya6"/>
         <segue reference="ijh-Yv-Set"/>
-        <segue reference="hDV-NV-Cez"/>
-        <segue reference="Zd7-jP-Hlu"/>
     </inferredMetricsTieBreakers>
 </document>
