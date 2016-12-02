@@ -10,6 +10,7 @@ import UIKit
 
 class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var backgroudImage: UIImageView!
     @IBOutlet weak var goodsList: UITableView!
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var categoryButton1: UIButton!
@@ -45,10 +46,12 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         selectedCategory = allCategories[0]
         
         if selectEnable {
+            backgroudImage.image = UIImage(named: "kashidashi")
             selectButton.enabled = true
             selectButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             selectButton.backgroundColor = UIColor.blueColor()
         } else {
+            backgroudImage.image = UIImage(named: "EXkashi")
             selectButton.enabled = false
             selectButton.setTitleColor(UIColor.clearColor(), forState: UIControlState.Normal)
             selectButton.backgroundColor = UIColor.clearColor()
