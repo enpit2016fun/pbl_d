@@ -730,16 +730,6 @@
                                     <segue destination="xah-Cf-1Qv" kind="presentation" id="ATS-cO-F6e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-Q1-BgD">
-                                <rect key="frame" x="164" y="404" width="98" height="73"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" backgroundImage="komonotou.png">
-                                    <color key="titleColor" red="0.32987870050000001" green="0.34263743520000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="pvV-3e-TzL" kind="presentation" id="nIh-Bi-w8M"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自分の評価：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-vF-iuA">
                                 <rect key="frame" x="58" y="218" width="108" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -760,6 +750,16 @@
                                 <state key="normal" backgroundImage="roguaut.png"/>
                                 <connections>
                                     <action selector="tapLogoutButton:" destination="vMT-to-kJt" eventType="touchUpInside" id="h6S-gR-t4K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-Q1-BgD">
+                                <rect key="frame" x="164" y="404" width="98" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" backgroundImage="komonotou.png">
+                                    <color key="titleColor" red="0.32987870050000001" green="0.34263743520000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pvV-3e-TzL" kind="presentation" id="nIh-Bi-w8M"/>
                                 </connections>
                             </button>
                         </subviews>
