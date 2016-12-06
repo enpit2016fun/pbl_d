@@ -37,6 +37,25 @@
 		D2A7C6C41DE9D8D700A0EF58 /* AssessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7C6C31DE9D8D700A0EF58 /* AssessViewController.swift */; };
 		D2B11AF81DE55BA4000855BE /* kakunin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B11AF71DE55BA4000855BE /* kakunin.png */; };
 		D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */; };
+		D2C2FA641DF66C75000E8F19 /* kasikari001.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA571DF66C75000E8F19 /* kasikari001.png */; };
+		D2C2FA651DF66C75000E8F19 /* kasikari002.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA581DF66C75000E8F19 /* kasikari002.png */; };
+		D2C2FA661DF66C75000E8F19 /* kasikari003.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA591DF66C75000E8F19 /* kasikari003.png */; };
+		D2C2FA671DF66C75000E8F19 /* kensaku.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5A1DF66C75000E8F19 /* kensaku.png */; };
+		D2C2FA681DF66C75000E8F19 /* modoru.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5B1DF66C75000E8F19 /* modoru.png */; };
+		D2C2FA6A1DF66C75000E8F19 /* ree.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5D1DF66C75000E8F19 /* ree.png */; };
+		D2C2FA6B1DF66C75000E8F19 /* roguaut.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5E1DF66C75000E8F19 /* roguaut.png */; };
+		D2C2FA6C1DF66C75000E8F19 /* roguin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5F1DF66C75000E8F19 /* roguin.png */; };
+		D2C2FA6D1DF66C75000E8F19 /* sentaku.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA601DF66C75000E8F19 /* sentaku.png */; };
+		D2C2FA6E1DF66C75000E8F19 /* sinkyz.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA611DF66C75000E8F19 /* sinkyz.png */; };
+		D2C2FA6F1DF66C75000E8F19 /* tourok.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA621DF66C75000E8F19 /* tourok.png */; };
+		D2C2FA701DF66C75000E8F19 /* tre.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA631DF66C75000E8F19 /* tre.png */; };
+		D2C2FA721DF68018000E8F19 /* komonotou.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA711DF68018000E8F19 /* komonotou.png */; };
+		D2C2FA781DF6ADF9000E8F19 /* henkan.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA731DF6ADF9000E8F19 /* henkan.png */; };
+		D2C2FA791DF6ADF9000E8F19 /* kasikarikai.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA741DF6ADF9000E8F19 /* kasikarikai.png */; };
+		D2C2FA7A1DF6ADF9000E8F19 /* kasitou.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA751DF6ADF9000E8F19 /* kasitou.png */; };
+		D2C2FA7B1DF6ADF9000E8F19 /* satuei.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA761DF6ADF9000E8F19 /* satuei.png */; };
+		D2C2FA7F1DF6ECDF000E8F19 /* morata.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA7D1DF6ECDF000E8F19 /* morata.png */; };
+		D2C2FA801DF6ECDF000E8F19 /* start02.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA7E1DF6ECDF000E8F19 /* start02.png */; };
 		D2C890CE1DEFF093006C99CB /* kasihdashi_now.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890CD1DEFF093006C99CB /* kasihdashi_now.png */; };
 		D2C890DB1DEFF47E006C99CB /* dot_green.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890CF1DEFF47E006C99CB /* dot_green.png */; };
 		D2C890DC1DEFF47E006C99CB /* five_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D01DEFF47E006C99CB /* five_star.png */; };
@@ -115,6 +134,25 @@
 		D2A7C6C31DE9D8D700A0EF58 /* AssessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessViewController.swift; sourceTree = "<group>"; };
 		D2B11AF71DE55BA4000855BE /* kakunin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakunin.png; sourceTree = "<group>"; };
 		D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D2C2FA571DF66C75000E8F19 /* kasikari001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikari001.png; sourceTree = "<group>"; };
+		D2C2FA581DF66C75000E8F19 /* kasikari002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikari002.png; sourceTree = "<group>"; };
+		D2C2FA591DF66C75000E8F19 /* kasikari003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikari003.png; sourceTree = "<group>"; };
+		D2C2FA5A1DF66C75000E8F19 /* kensaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kensaku.png; sourceTree = "<group>"; };
+		D2C2FA5B1DF66C75000E8F19 /* modoru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modoru.png; sourceTree = "<group>"; };
+		D2C2FA5D1DF66C75000E8F19 /* ree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ree.png; sourceTree = "<group>"; };
+		D2C2FA5E1DF66C75000E8F19 /* roguaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roguaut.png; sourceTree = "<group>"; };
+		D2C2FA5F1DF66C75000E8F19 /* roguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roguin.png; sourceTree = "<group>"; };
+		D2C2FA601DF66C75000E8F19 /* sentaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sentaku.png; sourceTree = "<group>"; };
+		D2C2FA611DF66C75000E8F19 /* sinkyz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sinkyz.png; sourceTree = "<group>"; };
+		D2C2FA621DF66C75000E8F19 /* tourok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tourok.png; sourceTree = "<group>"; };
+		D2C2FA631DF66C75000E8F19 /* tre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tre.png; sourceTree = "<group>"; };
+		D2C2FA711DF68018000E8F19 /* komonotou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = komonotou.png; sourceTree = "<group>"; };
+		D2C2FA731DF6ADF9000E8F19 /* henkan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = henkan.png; sourceTree = "<group>"; };
+		D2C2FA741DF6ADF9000E8F19 /* kasikarikai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikarikai.png; sourceTree = "<group>"; };
+		D2C2FA751DF6ADF9000E8F19 /* kasitou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasitou.png; sourceTree = "<group>"; };
+		D2C2FA761DF6ADF9000E8F19 /* satuei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = satuei.png; sourceTree = "<group>"; };
+		D2C2FA7D1DF6ECDF000E8F19 /* morata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morata.png; sourceTree = "<group>"; };
+		D2C2FA7E1DF6ECDF000E8F19 /* start02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start02.png; sourceTree = "<group>"; };
 		D2C890CD1DEFF093006C99CB /* kasihdashi_now.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasihdashi_now.png; sourceTree = "<group>"; };
 		D2C890CF1DEFF47E006C99CB /* dot_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_green.png; sourceTree = "<group>"; };
 		D2C890D01DEFF47E006C99CB /* five_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = five_star.png; sourceTree = "<group>"; };
@@ -188,6 +226,25 @@
 		D25CB5C91DD5F4AC00A8DABC /* CASKEL */ = {
 			isa = PBXGroup;
 			children = (
+				D2C2FA7D1DF6ECDF000E8F19 /* morata.png */,
+				D2C2FA7E1DF6ECDF000E8F19 /* start02.png */,
+				D2C2FA731DF6ADF9000E8F19 /* henkan.png */,
+				D2C2FA741DF6ADF9000E8F19 /* kasikarikai.png */,
+				D2C2FA751DF6ADF9000E8F19 /* kasitou.png */,
+				D2C2FA761DF6ADF9000E8F19 /* satuei.png */,
+				D2C2FA711DF68018000E8F19 /* komonotou.png */,
+				D2C2FA571DF66C75000E8F19 /* kasikari001.png */,
+				D2C2FA581DF66C75000E8F19 /* kasikari002.png */,
+				D2C2FA591DF66C75000E8F19 /* kasikari003.png */,
+				D2C2FA5A1DF66C75000E8F19 /* kensaku.png */,
+				D2C2FA5B1DF66C75000E8F19 /* modoru.png */,
+				D2C2FA5D1DF66C75000E8F19 /* ree.png */,
+				D2C2FA5E1DF66C75000E8F19 /* roguaut.png */,
+				D2C2FA5F1DF66C75000E8F19 /* roguin.png */,
+				D2C2FA601DF66C75000E8F19 /* sentaku.png */,
+				D2C2FA611DF66C75000E8F19 /* sinkyz.png */,
+				D2C2FA621DF66C75000E8F19 /* tourok.png */,
+				D2C2FA631DF66C75000E8F19 /* tre.png */,
 				D2C890CF1DEFF47E006C99CB /* dot_green.png */,
 				D2C890D01DEFF47E006C99CB /* five_star.png */,
 				D2C890D11DEFF47E006C99CB /* four_half.png */,
@@ -365,36 +422,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C2FA781DF6ADF9000E8F19 /* henkan.png in Resources */,
 				D2CDBE961DEEC5470014CED8 /* monoKakunin.png in Resources */,
+				D2C2FA641DF66C75000E8F19 /* kasikari001.png in Resources */,
 				D2C890E41DEFF47E006C99CB /* two_half.png in Resources */,
+				D2C2FA7B1DF6ADF9000E8F19 /* satuei.png in Resources */,
+				D2C2FA6D1DF66C75000E8F19 /* sentaku.png in Resources */,
 				D2C890DD1DEFF47E006C99CB /* four_half.png in Resources */,
+				D2C2FA791DF6ADF9000E8F19 /* kasikarikai.png in Resources */,
 				D27F78A81DE2879A00078CD3 /* EXkashi.png in Resources */,
 				D2FCF8081DE7B8C400EACC6B /* login.png in Resources */,
 				D27F78AC1DE2879A00078CD3 /* starting.png in Resources */,
+				D2C2FA7F1DF6ECDF000E8F19 /* morata.png in Resources */,
 				D27F78A61DE2879A00078CD3 /* CASKELhome.png in Resources */,
 				D2C890DB1DEFF47E006C99CB /* dot_green.png in Resources */,
+				D2C2FA801DF6ECDF000E8F19 /* start02.png in Resources */,
+				D2C2FA721DF68018000E8F19 /* komonotou.png in Resources */,
 				D2C890CE1DEFF093006C99CB /* kasihdashi_now.png in Resources */,
 				D2B11AF81DE55BA4000855BE /* kakunin.png in Resources */,
 				D2CDBE991DEEC66B0014CED8 /* henkyaku_kakunin.png in Resources */,
+				D2C2FA671DF66C75000E8F19 /* kensaku.png in Resources */,
 				D27F78AA1DE2879A00078CD3 /* menu.png in Resources */,
 				D2C890E31DEFF47E006C99CB /* three_star.png in Resources */,
+				D2C2FA661DF66C75000E8F19 /* kasikari003.png in Resources */,
+				D2C2FA701DF66C75000E8F19 /* tre.png in Resources */,
+				D2C2FA7A1DF6ADF9000E8F19 /* kasitou.png in Resources */,
 				D2C890E21DEFF47E006C99CB /* three_half.png in Resources */,
 				D2C890E11DEFF47E006C99CB /* one_star.png in Resources */,
 				D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */,
 				D2C890DF1DEFF47E006C99CB /* half_star.png in Resources */,
+				D2C2FA6B1DF66C75000E8F19 /* roguaut.png in Resources */,
 				D2C890E01DEFF47E006C99CB /* one_half.png in Resources */,
 				D2C890E51DEFF47E006C99CB /* two_star.png in Resources */,
+				D2C2FA6F1DF66C75000E8F19 /* tourok.png in Resources */,
 				D27F789D1DE2851600078CD3 /* Images.xcassets in Resources */,
 				D2C890DE1DEFF47E006C99CB /* four_star.png in Resources */,
 				D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */,
 				D2C890DC1DEFF47E006C99CB /* five_star.png in Resources */,
+				D2C2FA6A1DF66C75000E8F19 /* ree.png in Resources */,
 				D27F78AD1DE2879A00078CD3 /* touroku.png in Resources */,
 				D2CDBE951DEEC5470014CED8 /* kashidashi.png in Resources */,
 				D2C890E61DEFF47E006C99CB /* zero_star.png in Resources */,
+				D2C2FA6C1DF66C75000E8F19 /* roguin.png in Resources */,
 				D27F78AB1DE2879A00078CD3 /* Monotouroku.png in Resources */,
 				D24AEDEA1DE427B70094A2CE /* NoImage.png in Resources */,
+				D2C2FA651DF66C75000E8F19 /* kasikari002.png in Resources */,
 				D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */,
+				D2C2FA681DF66C75000E8F19 /* modoru.png in Resources */,
 				D2CDBE971DEEC5470014CED8 /* user_kensaku.png in Resources */,
+				D2C2FA6E1DF66C75000E8F19 /* sinkyz.png in Resources */,
 				D27F78A71DE2879A00078CD3 /* Exkari.png in Resources */,
 				D2FCF8071DE7B8C400EACC6B /* kashi_kari_List.png in Resources */,
 			);

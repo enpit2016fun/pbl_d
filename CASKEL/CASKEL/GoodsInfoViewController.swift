@@ -45,16 +45,15 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         pushedButton(categoryButton1)
         selectedCategory = allCategories[0]
         
+        selectButton.backgroundColor = UIColor.clearColor()
+        
         if selectEnable {
             backgroudImage.image = UIImage(named: "kashidashi")
+            selectButton.setBackgroundImage(UIImage(named: "sentaku"), forState: UIControlState.Normal)
             selectButton.enabled = true
-            selectButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            selectButton.backgroundColor = UIColor.blueColor()
         } else {
             backgroudImage.image = UIImage(named: "EXkashi")
             selectButton.enabled = false
-            selectButton.setTitleColor(UIColor.clearColor(), forState: UIControlState.Normal)
-            selectButton.backgroundColor = UIColor.clearColor()
             goodsList.allowsSelection = false
         }
         
@@ -141,12 +140,9 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
         let titleLabel = goodsList.viewWithTag(2) as! UILabel
         titleLabel.text = titleList[id]
         
-        let categoryLabel = goodsList.viewWithTag(3) as! UILabel
-        categoryLabel.text = categoryList[id]
-        
         cell.backgroundColor = UIColor.whiteColor()
         if enableList[id]! {
-            cell.backgroundColor = UIColor.orangeColor()
+            cell.backgroundColor = UIColor(red: 0.95, green: 0.75, blue: 0.5, alpha: 1.0)
         }
         
         return cell
@@ -229,7 +225,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     func pushedButton(button: UIButton) {
         button.selected = true
         button.enabled = false
-        button.backgroundColor = UIColor.lightGrayColor()
+        button.backgroundColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1.0)
     }
     
     func updateCategory() {
