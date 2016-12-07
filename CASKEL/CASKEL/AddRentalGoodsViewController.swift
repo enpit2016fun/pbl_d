@@ -16,7 +16,7 @@ class AddRentalGoodsViewController: UIViewController, UIPickerViewDataSource, UI
     var goodsImage: UIImage?
     var goodsImageData: NSData?
     
-    let categoryList = ["本・漫画", "CD・DVD", "ゲーム", "その他"]
+    let categoryList = ["本・マンガ", "CD・DVD", "ゲーム", "その他"]
     
     var category: String = ""
     

@@ -48,7 +48,7 @@ class TopViewController: UIViewController {
                 // 検索成功時の処理
                 if objects.count <= 0 {
                     // 評価なし
-                    self.assessLabel.text! = "まだ評価はありません"
+                    self.assessLabel.text! = "まだひょうかはありません"
                     self.assessImage.image = self.starImage(0.0)
                 } else {
                     // 評価あり

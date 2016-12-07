@@ -148,7 +148,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         renterId = idList[row]
         if assessList[renterId] != nil {
             if assessList[renterId] < 0.0 {
-                assessLabel.text = "まだ評価はありません"
+                assessLabel.text = "まだひょうかはありません"
                 assessImage.image = starImage(0.0)
             } else {
                 assessLabel.text = ""
@@ -225,7 +225,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     
                     if self.assessList[self.renterId] != nil {
                         if self.assessList[self.renterId] < 0.0 {
-                            self.assessLabel.text = "まだ評価はありません"
+                            self.assessLabel.text = "まだひょうかはありません"
                             self.assessImage.image = self.starImage(0.0)
                         } else {
                             self.assessLabel.text = ""
@@ -297,7 +297,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     
                     if self.assessList[self.renterId] != nil {
                         if self.assessList[self.renterId] < 0.0 {
-                            self.assessLabel.text = "まだ評価はありません"
+                            self.assessLabel.text = "まだひょうかはありません"
                             self.assessImage.image = self.starImage(0.0)
                         } else {
                             self.assessLabel.text = ""
@@ -339,7 +339,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 if objects.count <= 0 {
                     // 評価なし
                     self.assessList[userid] = -1.0
-                    self.assessLabel.text = "まだ評価はありません"
+                    self.assessLabel.text = "まだひょうかはありません"
                     self.assessImage.image = self.starImage(0.0)
                 } else {
                     // 評価あり

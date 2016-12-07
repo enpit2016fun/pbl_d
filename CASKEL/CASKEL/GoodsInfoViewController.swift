@@ -33,7 +33,7 @@ class GoodsInfoViewController: UIViewController, UITableViewDataSource, UITableV
     var prevSelectedId: String = ""
     var prevSelectedName: String = ""
     
-    let allCategories = ["本・漫画", "CD・DVD", "ゲーム", "その他"]
+    let allCategories = ["本・マンガ", "CD・DVD", "ゲーム", "その他"]
     
     var selectedCategory: String = ""
     var selectedIdList: [String] = []
