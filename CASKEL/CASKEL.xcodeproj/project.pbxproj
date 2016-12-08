@@ -1,0 +1,781 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2054B3A1DDC700500DF3FC8 /* AddRentalGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2054B391DDC700500DF3FC8 /* AddRentalGoodsViewController.swift */; };
+		D2054B3E1DDCA52A00DF3FC8 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */; };
+		D24AEDE81DE417FC0094A2CE /* GoodsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24AEDE71DE417FB0094A2CE /* GoodsInfoViewController.swift */; };
+		D24AEDEA1DE427B70094A2CE /* NoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D24AEDE91DE427B70094A2CE /* NoImage.png */; };
+		D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */; };
+		D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */; };
+		D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */; };
+		D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25CB5D31DD5F4AC00A8DABC /* LaunchScreen.storyboard */; };
+		D25CB5E01DD5F4AC00A8DABC /* CASKELTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5DF1DD5F4AC00A8DABC /* CASKELTests.swift */; };
+		D25CB5EB1DD5F4AC00A8DABC /* CASKELUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5EA1DD5F4AC00A8DABC /* CASKELUITests.swift */; };
+		D25CB5F91DD5F61B00A8DABC /* ConfirmLendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5F81DD5F61B00A8DABC /* ConfirmLendViewController.swift */; };
+		D25CB5FB1DD5F62100A8DABC /* InputLendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5FA1DD5F62100A8DABC /* InputLendViewController.swift */; };
+		D25CB5FD1DD5F62600A8DABC /* LendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5FC1DD5F62600A8DABC /* LendInfoViewController.swift */; };
+		D25CB5FF1DD5F62B00A8DABC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB5FE1DD5F62B00A8DABC /* RegisterViewController.swift */; };
+		D25CB6011DD5F63000A8DABC /* RentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6001DD5F63000A8DABC /* RentInfoViewController.swift */; };
+		D25CB6031DD5F63B00A8DABC /* RentLendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6021DD5F63B00A8DABC /* RentLendViewController.swift */; };
+		D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6041DD5F64000A8DABC /* TitleViewController.swift */; };
+		D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CB6061DD5F64400A8DABC /* TopViewController.swift */; };
+		D263253F1DD61D410059D748 /* NCMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D263253E1DD61D410059D748 /* NCMB.framework */; };
+		D27F789D1DE2851600078CD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27F789C1DE2851600078CD3 /* Images.xcassets */; };
+		D27F78A61DE2879A00078CD3 /* CASKELhome.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F789E1DE2879A00078CD3 /* CASKELhome.png */; };
+		D27F78A71DE2879A00078CD3 /* Exkari.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F789F1DE2879A00078CD3 /* Exkari.png */; };
+		D27F78A81DE2879A00078CD3 /* EXkashi.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A01DE2879A00078CD3 /* EXkashi.png */; };
+		D27F78AA1DE2879A00078CD3 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A21DE2879A00078CD3 /* menu.png */; };
+		D27F78AB1DE2879A00078CD3 /* Monotouroku.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A31DE2879A00078CD3 /* Monotouroku.png */; };
+		D27F78AC1DE2879A00078CD3 /* starting.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A41DE2879A00078CD3 /* starting.png */; };
+		D27F78AD1DE2879A00078CD3 /* touroku.png in Resources */ = {isa = PBXBuildFile; fileRef = D27F78A51DE2879A00078CD3 /* touroku.png */; };
+		D2A7C6C41DE9D8D700A0EF58 /* AssessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7C6C31DE9D8D700A0EF58 /* AssessViewController.swift */; };
+		D2B11AF81DE55BA4000855BE /* kakunin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B11AF71DE55BA4000855BE /* kakunin.png */; };
+		D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */; };
+		D2C2FA641DF66C75000E8F19 /* kasikari001.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA571DF66C75000E8F19 /* kasikari001.png */; };
+		D2C2FA651DF66C75000E8F19 /* kasikari002.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA581DF66C75000E8F19 /* kasikari002.png */; };
+		D2C2FA661DF66C75000E8F19 /* kasikari003.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA591DF66C75000E8F19 /* kasikari003.png */; };
+		D2C2FA671DF66C75000E8F19 /* kensaku.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5A1DF66C75000E8F19 /* kensaku.png */; };
+		D2C2FA681DF66C75000E8F19 /* modoru.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5B1DF66C75000E8F19 /* modoru.png */; };
+		D2C2FA6A1DF66C75000E8F19 /* ree.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5D1DF66C75000E8F19 /* ree.png */; };
+		D2C2FA6B1DF66C75000E8F19 /* roguaut.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5E1DF66C75000E8F19 /* roguaut.png */; };
+		D2C2FA6C1DF66C75000E8F19 /* roguin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA5F1DF66C75000E8F19 /* roguin.png */; };
+		D2C2FA6D1DF66C75000E8F19 /* sentaku.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA601DF66C75000E8F19 /* sentaku.png */; };
+		D2C2FA6E1DF66C75000E8F19 /* sinkyz.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA611DF66C75000E8F19 /* sinkyz.png */; };
+		D2C2FA6F1DF66C75000E8F19 /* tourok.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA621DF66C75000E8F19 /* tourok.png */; };
+		D2C2FA701DF66C75000E8F19 /* tre.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA631DF66C75000E8F19 /* tre.png */; };
+		D2C2FA721DF68018000E8F19 /* komonotou.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA711DF68018000E8F19 /* komonotou.png */; };
+		D2C2FA781DF6ADF9000E8F19 /* henkan.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA731DF6ADF9000E8F19 /* henkan.png */; };
+		D2C2FA791DF6ADF9000E8F19 /* kasikarikai.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA741DF6ADF9000E8F19 /* kasikarikai.png */; };
+		D2C2FA7A1DF6ADF9000E8F19 /* kasitou.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA751DF6ADF9000E8F19 /* kasitou.png */; };
+		D2C2FA7B1DF6ADF9000E8F19 /* satuei.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA761DF6ADF9000E8F19 /* satuei.png */; };
+		D2C2FA801DF6ECDF000E8F19 /* start02.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FA7E1DF6ECDF000E8F19 /* start02.png */; };
+		D2C890CE1DEFF093006C99CB /* kasihdashi_now.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890CD1DEFF093006C99CB /* kasihdashi_now.png */; };
+		D2C890DB1DEFF47E006C99CB /* dot_green.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890CF1DEFF47E006C99CB /* dot_green.png */; };
+		D2C890DC1DEFF47E006C99CB /* five_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D01DEFF47E006C99CB /* five_star.png */; };
+		D2C890DD1DEFF47E006C99CB /* four_half.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D11DEFF47E006C99CB /* four_half.png */; };
+		D2C890DE1DEFF47E006C99CB /* four_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D21DEFF47E006C99CB /* four_star.png */; };
+		D2C890DF1DEFF47E006C99CB /* half_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D31DEFF47E006C99CB /* half_star.png */; };
+		D2C890E01DEFF47E006C99CB /* one_half.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D41DEFF47E006C99CB /* one_half.png */; };
+		D2C890E11DEFF47E006C99CB /* one_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D51DEFF47E006C99CB /* one_star.png */; };
+		D2C890E21DEFF47E006C99CB /* three_half.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D61DEFF47E006C99CB /* three_half.png */; };
+		D2C890E31DEFF47E006C99CB /* three_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D71DEFF47E006C99CB /* three_star.png */; };
+		D2C890E41DEFF47E006C99CB /* two_half.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D81DEFF47E006C99CB /* two_half.png */; };
+		D2C890E51DEFF47E006C99CB /* two_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890D91DEFF47E006C99CB /* two_star.png */; };
+		D2C890E61DEFF47E006C99CB /* zero_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C890DA1DEFF47E006C99CB /* zero_star.png */; };
+		D2CDBE951DEEC5470014CED8 /* kashidashi.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CDBE921DEEC5470014CED8 /* kashidashi.png */; };
+		D2CDBE961DEEC5470014CED8 /* monoKakunin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CDBE931DEEC5470014CED8 /* monoKakunin.png */; };
+		D2CDBE971DEEC5470014CED8 /* user_kensaku.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CDBE941DEEC5470014CED8 /* user_kensaku.png */; };
+		D2CDBE991DEEC66B0014CED8 /* henkyaku_kakunin.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CDBE981DEEC66B0014CED8 /* henkyaku_kakunin.png */; };
+		D2EDE8131DF92A1C00E38423 /* morata.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EDE8121DF92A1C00E38423 /* morata.png */; };
+		D2FCF8071DE7B8C400EACC6B /* kashi_kari_List.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FCF8051DE7B8C400EACC6B /* kashi_kari_List.png */; };
+		D2FCF8081DE7B8C400EACC6B /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FCF8061DE7B8C400EACC6B /* login.png */; };
+		D2FDB8D51DEAF8370027941C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FDB8D41DEAF8370027941C /* SearchViewController.swift */; };
+		D2FF650B1DF06BA000B893BA /* ConfirmUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF650A1DF06BA000B893BA /* ConfirmUserViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D25CB5DC1DD5F4AC00A8DABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D25CB5BF1DD5F4AB00A8DABC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D25CB5C61DD5F4AB00A8DABC;
+			remoteInfo = CASKEL;
+		};
+		D25CB5E71DD5F4AC00A8DABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D25CB5BF1DD5F4AB00A8DABC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D25CB5C61DD5F4AB00A8DABC;
+			remoteInfo = CASKEL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2054B391DDC700500DF3FC8 /* AddRentalGoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRentalGoodsViewController.swift; sourceTree = "<group>"; };
+		D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
+		D24AEDE71DE417FB0094A2CE /* GoodsInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsInfoViewController.swift; sourceTree = "<group>"; };
+		D24AEDE91DE427B70094A2CE /* NoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoImage.png; sourceTree = "<group>"; };
+		D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CASKEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D25CB5CF1DD5F4AC00A8DABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D25CB5D41DD5F4AC00A8DABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D25CB5D61DD5F4AC00A8DABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25CB5DB1DD5F4AC00A8DABC /* CASKELTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CASKELTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25CB5DF1DD5F4AC00A8DABC /* CASKELTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CASKELTests.swift; sourceTree = "<group>"; };
+		D25CB5E11DD5F4AC00A8DABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25CB5E61DD5F4AC00A8DABC /* CASKELUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CASKELUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25CB5EA1DD5F4AC00A8DABC /* CASKELUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CASKELUITests.swift; sourceTree = "<group>"; };
+		D25CB5EC1DD5F4AC00A8DABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25CB5F81DD5F61B00A8DABC /* ConfirmLendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmLendViewController.swift; sourceTree = "<group>"; };
+		D25CB5FA1DD5F62100A8DABC /* InputLendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLendViewController.swift; sourceTree = "<group>"; };
+		D25CB5FC1DD5F62600A8DABC /* LendInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LendInfoViewController.swift; sourceTree = "<group>"; };
+		D25CB5FE1DD5F62B00A8DABC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D25CB6001DD5F63000A8DABC /* RentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentInfoViewController.swift; sourceTree = "<group>"; };
+		D25CB6021DD5F63B00A8DABC /* RentLendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentLendViewController.swift; sourceTree = "<group>"; };
+		D25CB6041DD5F64000A8DABC /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		D25CB6061DD5F64400A8DABC /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		D263253E1DD61D410059D748 /* NCMB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NCMB.framework; path = NCMB/NCMB.framework; sourceTree = "<group>"; };
+		D26325401DD61D730059D748 /* CASKEL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CASKEL-Bridging-Header.h"; sourceTree = "<group>"; };
+		D27F789C1DE2851600078CD3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D27F789E1DE2879A00078CD3 /* CASKELhome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CASKELhome.png; sourceTree = "<group>"; };
+		D27F789F1DE2879A00078CD3 /* Exkari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exkari.png; sourceTree = "<group>"; };
+		D27F78A01DE2879A00078CD3 /* EXkashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EXkashi.png; sourceTree = "<group>"; };
+		D27F78A21DE2879A00078CD3 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		D27F78A31DE2879A00078CD3 /* Monotouroku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monotouroku.png; sourceTree = "<group>"; };
+		D27F78A41DE2879A00078CD3 /* starting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starting.png; sourceTree = "<group>"; };
+		D27F78A51DE2879A00078CD3 /* touroku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touroku.png; sourceTree = "<group>"; };
+		D2A7C6C31DE9D8D700A0EF58 /* AssessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessViewController.swift; sourceTree = "<group>"; };
+		D2B11AF71DE55BA4000855BE /* kakunin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakunin.png; sourceTree = "<group>"; };
+		D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D2C2FA571DF66C75000E8F19 /* kasikari001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikari001.png; sourceTree = "<group>"; };
+		D2C2FA581DF66C75000E8F19 /* kasikari002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikari002.png; sourceTree = "<group>"; };
+		D2C2FA591DF66C75000E8F19 /* kasikari003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikari003.png; sourceTree = "<group>"; };
+		D2C2FA5A1DF66C75000E8F19 /* kensaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kensaku.png; sourceTree = "<group>"; };
+		D2C2FA5B1DF66C75000E8F19 /* modoru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modoru.png; sourceTree = "<group>"; };
+		D2C2FA5D1DF66C75000E8F19 /* ree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ree.png; sourceTree = "<group>"; };
+		D2C2FA5E1DF66C75000E8F19 /* roguaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roguaut.png; sourceTree = "<group>"; };
+		D2C2FA5F1DF66C75000E8F19 /* roguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roguin.png; sourceTree = "<group>"; };
+		D2C2FA601DF66C75000E8F19 /* sentaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sentaku.png; sourceTree = "<group>"; };
+		D2C2FA611DF66C75000E8F19 /* sinkyz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sinkyz.png; sourceTree = "<group>"; };
+		D2C2FA621DF66C75000E8F19 /* tourok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tourok.png; sourceTree = "<group>"; };
+		D2C2FA631DF66C75000E8F19 /* tre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tre.png; sourceTree = "<group>"; };
+		D2C2FA711DF68018000E8F19 /* komonotou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = komonotou.png; sourceTree = "<group>"; };
+		D2C2FA731DF6ADF9000E8F19 /* henkan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = henkan.png; sourceTree = "<group>"; };
+		D2C2FA741DF6ADF9000E8F19 /* kasikarikai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasikarikai.png; sourceTree = "<group>"; };
+		D2C2FA751DF6ADF9000E8F19 /* kasitou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasitou.png; sourceTree = "<group>"; };
+		D2C2FA761DF6ADF9000E8F19 /* satuei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = satuei.png; sourceTree = "<group>"; };
+		D2C2FA7E1DF6ECDF000E8F19 /* start02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start02.png; sourceTree = "<group>"; };
+		D2C890CD1DEFF093006C99CB /* kasihdashi_now.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kasihdashi_now.png; sourceTree = "<group>"; };
+		D2C890CF1DEFF47E006C99CB /* dot_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_green.png; sourceTree = "<group>"; };
+		D2C890D01DEFF47E006C99CB /* five_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = five_star.png; sourceTree = "<group>"; };
+		D2C890D11DEFF47E006C99CB /* four_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_half.png; sourceTree = "<group>"; };
+		D2C890D21DEFF47E006C99CB /* four_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_star.png; sourceTree = "<group>"; };
+		D2C890D31DEFF47E006C99CB /* half_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = half_star.png; sourceTree = "<group>"; };
+		D2C890D41DEFF47E006C99CB /* one_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one_half.png; sourceTree = "<group>"; };
+		D2C890D51DEFF47E006C99CB /* one_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one_star.png; sourceTree = "<group>"; };
+		D2C890D61DEFF47E006C99CB /* three_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = three_half.png; sourceTree = "<group>"; };
+		D2C890D71DEFF47E006C99CB /* three_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = three_star.png; sourceTree = "<group>"; };
+		D2C890D81DEFF47E006C99CB /* two_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = two_half.png; sourceTree = "<group>"; };
+		D2C890D91DEFF47E006C99CB /* two_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = two_star.png; sourceTree = "<group>"; };
+		D2C890DA1DEFF47E006C99CB /* zero_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zero_star.png; sourceTree = "<group>"; };
+		D2CDBE921DEEC5470014CED8 /* kashidashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashidashi.png; sourceTree = "<group>"; };
+		D2CDBE931DEEC5470014CED8 /* monoKakunin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monoKakunin.png; sourceTree = "<group>"; };
+		D2CDBE941DEEC5470014CED8 /* user_kensaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_kensaku.png; sourceTree = "<group>"; };
+		D2CDBE981DEEC66B0014CED8 /* henkyaku_kakunin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = henkyaku_kakunin.png; sourceTree = "<group>"; };
+		D2EDE8121DF92A1C00E38423 /* morata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morata.png; sourceTree = "<group>"; };
+		D2FCF8051DE7B8C400EACC6B /* kashi_kari_List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashi_kari_List.png; sourceTree = "<group>"; };
+		D2FCF8061DE7B8C400EACC6B /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		D2FDB8D41DEAF8370027941C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D2FF650A1DF06BA000B893BA /* ConfirmUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmUserViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D25CB5C41DD5F4AB00A8DABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D263253F1DD61D410059D748 /* NCMB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5D81DD5F4AC00A8DABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5E31DD5F4AC00A8DABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D25CB5BE1DD5F4AB00A8DABC = {
+			isa = PBXGroup;
+			children = (
+				D263253E1DD61D410059D748 /* NCMB.framework */,
+				D25CB5C91DD5F4AC00A8DABC /* CASKEL */,
+				D25CB5DE1DD5F4AC00A8DABC /* CASKELTests */,
+				D25CB5E91DD5F4AC00A8DABC /* CASKELUITests */,
+				D25CB5C81DD5F4AB00A8DABC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D25CB5C81DD5F4AB00A8DABC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */,
+				D25CB5DB1DD5F4AC00A8DABC /* CASKELTests.xctest */,
+				D25CB5E61DD5F4AC00A8DABC /* CASKELUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D25CB5C91DD5F4AC00A8DABC /* CASKEL */ = {
+			isa = PBXGroup;
+			children = (
+				D2EDE8121DF92A1C00E38423 /* morata.png */,
+				D2C2FA7E1DF6ECDF000E8F19 /* start02.png */,
+				D2C2FA731DF6ADF9000E8F19 /* henkan.png */,
+				D2C2FA741DF6ADF9000E8F19 /* kasikarikai.png */,
+				D2C2FA751DF6ADF9000E8F19 /* kasitou.png */,
+				D2C2FA761DF6ADF9000E8F19 /* satuei.png */,
+				D2C2FA711DF68018000E8F19 /* komonotou.png */,
+				D2C2FA571DF66C75000E8F19 /* kasikari001.png */,
+				D2C2FA581DF66C75000E8F19 /* kasikari002.png */,
+				D2C2FA591DF66C75000E8F19 /* kasikari003.png */,
+				D2C2FA5A1DF66C75000E8F19 /* kensaku.png */,
+				D2C2FA5B1DF66C75000E8F19 /* modoru.png */,
+				D2C2FA5D1DF66C75000E8F19 /* ree.png */,
+				D2C2FA5E1DF66C75000E8F19 /* roguaut.png */,
+				D2C2FA5F1DF66C75000E8F19 /* roguin.png */,
+				D2C2FA601DF66C75000E8F19 /* sentaku.png */,
+				D2C2FA611DF66C75000E8F19 /* sinkyz.png */,
+				D2C2FA621DF66C75000E8F19 /* tourok.png */,
+				D2C2FA631DF66C75000E8F19 /* tre.png */,
+				D2C890CF1DEFF47E006C99CB /* dot_green.png */,
+				D2C890D01DEFF47E006C99CB /* five_star.png */,
+				D2C890D11DEFF47E006C99CB /* four_half.png */,
+				D2C890D21DEFF47E006C99CB /* four_star.png */,
+				D2C890D31DEFF47E006C99CB /* half_star.png */,
+				D2C890D41DEFF47E006C99CB /* one_half.png */,
+				D2C890D51DEFF47E006C99CB /* one_star.png */,
+				D2C890D61DEFF47E006C99CB /* three_half.png */,
+				D2C890D71DEFF47E006C99CB /* three_star.png */,
+				D2C890D81DEFF47E006C99CB /* two_half.png */,
+				D2C890D91DEFF47E006C99CB /* two_star.png */,
+				D2C890DA1DEFF47E006C99CB /* zero_star.png */,
+				D2C890CD1DEFF093006C99CB /* kasihdashi_now.png */,
+				D2CDBE981DEEC66B0014CED8 /* henkyaku_kakunin.png */,
+				D2CDBE921DEEC5470014CED8 /* kashidashi.png */,
+				D2CDBE931DEEC5470014CED8 /* monoKakunin.png */,
+				D2CDBE941DEEC5470014CED8 /* user_kensaku.png */,
+				D2FCF8051DE7B8C400EACC6B /* kashi_kari_List.png */,
+				D2FCF8061DE7B8C400EACC6B /* login.png */,
+				D25CB5CA1DD5F4AC00A8DABC /* AppDelegate.swift */,
+				D2054B3D1DDCA52A00DF3FC8 /* TakePhotoViewController.swift */,
+				D2BDDE9A1DD74B020065D214 /* LoginViewController.swift */,
+				D2B11AF71DE55BA4000855BE /* kakunin.png */,
+				D24AEDE71DE417FB0094A2CE /* GoodsInfoViewController.swift */,
+				D27F789E1DE2879A00078CD3 /* CASKELhome.png */,
+				D27F789F1DE2879A00078CD3 /* Exkari.png */,
+				D24AEDE91DE427B70094A2CE /* NoImage.png */,
+				D27F78A01DE2879A00078CD3 /* EXkashi.png */,
+				D27F78A21DE2879A00078CD3 /* menu.png */,
+				D27F78A31DE2879A00078CD3 /* Monotouroku.png */,
+				D27F78A41DE2879A00078CD3 /* starting.png */,
+				D27F78A51DE2879A00078CD3 /* touroku.png */,
+				D2054B391DDC700500DF3FC8 /* AddRentalGoodsViewController.swift */,
+				D26325401DD61D730059D748 /* CASKEL-Bridging-Header.h */,
+				D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */,
+				D25CB5D11DD5F4AC00A8DABC /* Assets.xcassets */,
+				D25CB5F81DD5F61B00A8DABC /* ConfirmLendViewController.swift */,
+				D25CB5D31DD5F4AC00A8DABC /* LaunchScreen.storyboard */,
+				D25CB5FE1DD5F62B00A8DABC /* RegisterViewController.swift */,
+				D25CB5FC1DD5F62600A8DABC /* LendInfoViewController.swift */,
+				D25CB5FA1DD5F62100A8DABC /* InputLendViewController.swift */,
+				D25CB6041DD5F64000A8DABC /* TitleViewController.swift */,
+				D25CB6061DD5F64400A8DABC /* TopViewController.swift */,
+				D25CB6021DD5F63B00A8DABC /* RentLendViewController.swift */,
+				D25CB6001DD5F63000A8DABC /* RentInfoViewController.swift */,
+				D25CB5D61DD5F4AC00A8DABC /* Info.plist */,
+				D27F789C1DE2851600078CD3 /* Images.xcassets */,
+				D2A7C6C31DE9D8D700A0EF58 /* AssessViewController.swift */,
+				D2FDB8D41DEAF8370027941C /* SearchViewController.swift */,
+				D2FF650A1DF06BA000B893BA /* ConfirmUserViewController.swift */,
+			);
+			path = CASKEL;
+			sourceTree = "<group>";
+		};
+		D25CB5DE1DD5F4AC00A8DABC /* CASKELTests */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5DF1DD5F4AC00A8DABC /* CASKELTests.swift */,
+				D25CB5E11DD5F4AC00A8DABC /* Info.plist */,
+			);
+			path = CASKELTests;
+			sourceTree = "<group>";
+		};
+		D25CB5E91DD5F4AC00A8DABC /* CASKELUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB5EA1DD5F4AC00A8DABC /* CASKELUITests.swift */,
+				D25CB5EC1DD5F4AC00A8DABC /* Info.plist */,
+			);
+			path = CASKELUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D25CB5C61DD5F4AB00A8DABC /* CASKEL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25CB5EF1DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKEL" */;
+			buildPhases = (
+				D25CB5C31DD5F4AB00A8DABC /* Sources */,
+				D25CB5C41DD5F4AB00A8DABC /* Frameworks */,
+				D25CB5C51DD5F4AB00A8DABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CASKEL;
+			productName = CASKEL;
+			productReference = D25CB5C71DD5F4AB00A8DABC /* CASKEL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D25CB5DA1DD5F4AC00A8DABC /* CASKELTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25CB5F21DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELTests" */;
+			buildPhases = (
+				D25CB5D71DD5F4AC00A8DABC /* Sources */,
+				D25CB5D81DD5F4AC00A8DABC /* Frameworks */,
+				D25CB5D91DD5F4AC00A8DABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D25CB5DD1DD5F4AC00A8DABC /* PBXTargetDependency */,
+			);
+			name = CASKELTests;
+			productName = CASKELTests;
+			productReference = D25CB5DB1DD5F4AC00A8DABC /* CASKELTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D25CB5E51DD5F4AC00A8DABC /* CASKELUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25CB5F51DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELUITests" */;
+			buildPhases = (
+				D25CB5E21DD5F4AC00A8DABC /* Sources */,
+				D25CB5E31DD5F4AC00A8DABC /* Frameworks */,
+				D25CB5E41DD5F4AC00A8DABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D25CB5E81DD5F4AC00A8DABC /* PBXTargetDependency */,
+			);
+			name = CASKELUITests;
+			productName = CASKELUITests;
+			productReference = D25CB5E61DD5F4AC00A8DABC /* CASKELUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D25CB5BF1DD5F4AB00A8DABC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "enPiT TeamD";
+				TargetAttributes = {
+					D25CB5C61DD5F4AB00A8DABC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8V64VANYRR;
+					};
+					D25CB5DA1DD5F4AC00A8DABC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D25CB5C61DD5F4AB00A8DABC;
+					};
+					D25CB5E51DD5F4AC00A8DABC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D25CB5C61DD5F4AB00A8DABC;
+					};
+				};
+			};
+			buildConfigurationList = D25CB5C21DD5F4AB00A8DABC /* Build configuration list for PBXProject "CASKEL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D25CB5BE1DD5F4AB00A8DABC;
+			productRefGroup = D25CB5C81DD5F4AB00A8DABC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D25CB5C61DD5F4AB00A8DABC /* CASKEL */,
+				D25CB5DA1DD5F4AC00A8DABC /* CASKELTests */,
+				D25CB5E51DD5F4AC00A8DABC /* CASKELUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D25CB5C51DD5F4AB00A8DABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C2FA781DF6ADF9000E8F19 /* henkan.png in Resources */,
+				D2CDBE961DEEC5470014CED8 /* monoKakunin.png in Resources */,
+				D2C2FA641DF66C75000E8F19 /* kasikari001.png in Resources */,
+				D2C890E41DEFF47E006C99CB /* two_half.png in Resources */,
+				D2C2FA7B1DF6ADF9000E8F19 /* satuei.png in Resources */,
+				D2C2FA6D1DF66C75000E8F19 /* sentaku.png in Resources */,
+				D2C890DD1DEFF47E006C99CB /* four_half.png in Resources */,
+				D2C2FA791DF6ADF9000E8F19 /* kasikarikai.png in Resources */,
+				D27F78A81DE2879A00078CD3 /* EXkashi.png in Resources */,
+				D2FCF8081DE7B8C400EACC6B /* login.png in Resources */,
+				D27F78AC1DE2879A00078CD3 /* starting.png in Resources */,
+				D27F78A61DE2879A00078CD3 /* CASKELhome.png in Resources */,
+				D2C890DB1DEFF47E006C99CB /* dot_green.png in Resources */,
+				D2C2FA801DF6ECDF000E8F19 /* start02.png in Resources */,
+				D2C2FA721DF68018000E8F19 /* komonotou.png in Resources */,
+				D2C890CE1DEFF093006C99CB /* kasihdashi_now.png in Resources */,
+				D2B11AF81DE55BA4000855BE /* kakunin.png in Resources */,
+				D2CDBE991DEEC66B0014CED8 /* henkyaku_kakunin.png in Resources */,
+				D2C2FA671DF66C75000E8F19 /* kensaku.png in Resources */,
+				D27F78AA1DE2879A00078CD3 /* menu.png in Resources */,
+				D2C890E31DEFF47E006C99CB /* three_star.png in Resources */,
+				D2C2FA661DF66C75000E8F19 /* kasikari003.png in Resources */,
+				D2C2FA701DF66C75000E8F19 /* tre.png in Resources */,
+				D2C2FA7A1DF6ADF9000E8F19 /* kasitou.png in Resources */,
+				D2C890E21DEFF47E006C99CB /* three_half.png in Resources */,
+				D2C890E11DEFF47E006C99CB /* one_star.png in Resources */,
+				D2EDE8131DF92A1C00E38423 /* morata.png in Resources */,
+				D25CB5D51DD5F4AC00A8DABC /* LaunchScreen.storyboard in Resources */,
+				D2C890DF1DEFF47E006C99CB /* half_star.png in Resources */,
+				D2C2FA6B1DF66C75000E8F19 /* roguaut.png in Resources */,
+				D2C890E01DEFF47E006C99CB /* one_half.png in Resources */,
+				D2C890E51DEFF47E006C99CB /* two_star.png in Resources */,
+				D2C2FA6F1DF66C75000E8F19 /* tourok.png in Resources */,
+				D27F789D1DE2851600078CD3 /* Images.xcassets in Resources */,
+				D2C890DE1DEFF47E006C99CB /* four_star.png in Resources */,
+				D25CB5D21DD5F4AC00A8DABC /* Assets.xcassets in Resources */,
+				D2C890DC1DEFF47E006C99CB /* five_star.png in Resources */,
+				D2C2FA6A1DF66C75000E8F19 /* ree.png in Resources */,
+				D27F78AD1DE2879A00078CD3 /* touroku.png in Resources */,
+				D2CDBE951DEEC5470014CED8 /* kashidashi.png in Resources */,
+				D2C890E61DEFF47E006C99CB /* zero_star.png in Resources */,
+				D2C2FA6C1DF66C75000E8F19 /* roguin.png in Resources */,
+				D27F78AB1DE2879A00078CD3 /* Monotouroku.png in Resources */,
+				D24AEDEA1DE427B70094A2CE /* NoImage.png in Resources */,
+				D2C2FA651DF66C75000E8F19 /* kasikari002.png in Resources */,
+				D25CB5D01DD5F4AC00A8DABC /* Main.storyboard in Resources */,
+				D2C2FA681DF66C75000E8F19 /* modoru.png in Resources */,
+				D2CDBE971DEEC5470014CED8 /* user_kensaku.png in Resources */,
+				D2C2FA6E1DF66C75000E8F19 /* sinkyz.png in Resources */,
+				D27F78A71DE2879A00078CD3 /* Exkari.png in Resources */,
+				D2FCF8071DE7B8C400EACC6B /* kashi_kari_List.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5D91DD5F4AC00A8DABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5E41DD5F4AC00A8DABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D25CB5C31DD5F4AB00A8DABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2FDB8D51DEAF8370027941C /* SearchViewController.swift in Sources */,
+				D2A7C6C41DE9D8D700A0EF58 /* AssessViewController.swift in Sources */,
+				D25CB5FB1DD5F62100A8DABC /* InputLendViewController.swift in Sources */,
+				D25CB6011DD5F63000A8DABC /* RentInfoViewController.swift in Sources */,
+				D25CB5FF1DD5F62B00A8DABC /* RegisterViewController.swift in Sources */,
+				D2054B3A1DDC700500DF3FC8 /* AddRentalGoodsViewController.swift in Sources */,
+				D2FF650B1DF06BA000B893BA /* ConfirmUserViewController.swift in Sources */,
+				D25CB6031DD5F63B00A8DABC /* RentLendViewController.swift in Sources */,
+				D24AEDE81DE417FC0094A2CE /* GoodsInfoViewController.swift in Sources */,
+				D25CB5FD1DD5F62600A8DABC /* LendInfoViewController.swift in Sources */,
+				D25CB6051DD5F64000A8DABC /* TitleViewController.swift in Sources */,
+				D25CB6071DD5F64400A8DABC /* TopViewController.swift in Sources */,
+				D25CB5F91DD5F61B00A8DABC /* ConfirmLendViewController.swift in Sources */,
+				D2BDDE9B1DD74B020065D214 /* LoginViewController.swift in Sources */,
+				D2054B3E1DDCA52A00DF3FC8 /* TakePhotoViewController.swift in Sources */,
+				D25CB5CB1DD5F4AC00A8DABC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5D71DD5F4AC00A8DABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25CB5E01DD5F4AC00A8DABC /* CASKELTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25CB5E21DD5F4AC00A8DABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25CB5EB1DD5F4AC00A8DABC /* CASKELUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D25CB5DD1DD5F4AC00A8DABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D25CB5C61DD5F4AB00A8DABC /* CASKEL */;
+			targetProxy = D25CB5DC1DD5F4AC00A8DABC /* PBXContainerItemProxy */;
+		};
+		D25CB5E81DD5F4AC00A8DABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D25CB5C61DD5F4AB00A8DABC /* CASKEL */;
+			targetProxy = D25CB5E71DD5F4AC00A8DABC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D25CB5CE1DD5F4AC00A8DABC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D25CB5CF1DD5F4AC00A8DABC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D25CB5D31DD5F4AC00A8DABC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D25CB5D41DD5F4AC00A8DABC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D25CB5ED1DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D25CB5EE1DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D25CB5F01DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NCMB",
+				);
+				INFOPLIST_FILE = CASKEL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKEL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nishimura/Documents/pbl_d/CASKEL/CASKEL/CASKEL-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		D25CB5F11DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NCMB",
+				);
+				INFOPLIST_FILE = CASKEL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKEL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nishimura/Documents/pbl_d/CASKEL/CASKEL/CASKEL-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		D25CB5F31DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CASKELTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CASKEL.app/CASKEL";
+			};
+			name = Debug;
+		};
+		D25CB5F41DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CASKELTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CASKEL.app/CASKEL";
+			};
+			name = Release;
+		};
+		D25CB5F61DD5F4AC00A8DABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CASKELUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CASKEL;
+			};
+			name = Debug;
+		};
+		D25CB5F71DD5F4AC00A8DABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CASKELUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = enPiT.teamD.CASKELUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CASKEL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D25CB5C21DD5F4AB00A8DABC /* Build configuration list for PBXProject "CASKEL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5ED1DD5F4AC00A8DABC /* Debug */,
+				D25CB5EE1DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25CB5EF1DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKEL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5F01DD5F4AC00A8DABC /* Debug */,
+				D25CB5F11DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25CB5F21DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5F31DD5F4AC00A8DABC /* Debug */,
+				D25CB5F41DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25CB5F51DD5F4AC00A8DABC /* Build configuration list for PBXNativeTarget "CASKELUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25CB5F61DD5F4AC00A8DABC /* Debug */,
+				D25CB5F71DD5F4AC00A8DABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D25CB5BF1DD5F4AB00A8DABC /* Project object */;
+}
